@@ -166,48 +166,57 @@ Categoryadd(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUEST['
 </div></td>
 </tr>
 <tr>
-<td colspan="3" bgcolor="#eaeaea"><strong>Category Properties</strong></td>
+<td colspan="3" bgcolor="#eaeaea"><strong>Category Properties:</strong></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Name [For Menu]</td>
+<td width="300" align="left" style="vertical-align:top;">Category Name [For Menu] <span style="color:#d90009;">*</span></td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text"  name="category_name" id="category_name" style="width:400px;" /><?php echo @$error['category_name']; ?></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Alias [For URL]</td>
+<td width="300" align="left" style="vertical-align:top;">Category Alias [For URL] <span style="color:#d90009;">*</span></td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text"  name="category_alias" id="category_alias" style="width:400px;" /><?php echo @$error['category_alias']; ?></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Heading [Displayed on Page]</td>
+
+<td width="300" align="left" style="vertical-align:top;">Category Heading [For Category Page] <span style="color:#d90009;">*</span></td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="category_title" id="category_title" style="width:400px;" /></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Code [Inventory]</td>
+
+<td width="300" align="left" style="vertical-align:top;">Category Code [For Inventory] <span style="color:#d90009;">*</span></td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="category_code" id="category_code" style="width:400px;" /><?php echo @$error['category_code']; ?></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Priority [For Sorting]</td>
+
+<td width="300" align="left" style="vertical-align:top;">Priority [For Sorting]</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="category_order" id="category_order" width="150" /></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Description [Top]</td>
+
+<td width="300" align="left" style="vertical-align:top;">Category Description [Top]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea  name="category_description_top" id="category_description_top" style="width:600px; height:100px;"></textarea></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Description [Bottom]</td>
+
+<td width="300" align="left" style="vertical-align:top;">Category Description [Bottom]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="category_description_bottom" id="category_description_bottom" style="width:600px; height:100px;"></textarea></td>
 </tr>
 <tr>
-<td colspan="3" bgcolor="#eaeaea"><strong>Category Images</strong></td>
+
+<td colspan="3" bgcolor="#eaeaea"><strong>Category Images:</strong></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Banner [Size]</td>
+<td width="300" align="left" valign="top">Category Banner [Size: 740x250]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="file" name="category_banner" style="width:300px;" /></td>
 </tr>
@@ -216,12 +225,16 @@ Categoryadd(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUEST['
 <td colspan="3">&nbsp;</td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Category Thumbnail[size]</td>
+
+<td width="300" align="left" valign="top">Category Thumbnail [Sixe:225x225]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="file" name="category_thumbnail" style="width:300px;" /></td>
 </tr>
 <tr>
-<td colspan="3" bgcolor="#eaeaea"><strong>Category SEO Properties</strong></td>
+
+<td colspan="3" bgcolor="#eaeaea"><strong>Category SEO Properties:</strong></td>
+
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Meta Title</td>
@@ -239,7 +252,9 @@ Categoryadd(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUEST['
 <td width="650" align="left" style="vertical-align:top;"><textarea  name="category_meta_keywords" id="category_meta_keywords" style="width:600px; height:50px;"></textarea></td>
 </tr>
 <tr>
-<td colspan="3" bgcolor="#eaeaea"><strong>Category Display Properties</strong></td>
+
+<td colspan="3" bgcolor="#eaeaea"><strong>Category Display Properties:</strong></td>
+
 </tr>
 <tr>
 <td width="300" align="left" valign="top"><input type="checkbox"  name="category_status" id="category_status" value="1"  style="margin-right:20px;" />Active</td>
@@ -258,7 +273,8 @@ Categoryadd(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUEST['
 <td colspan="3">&nbsp;</td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">&nbsp;</td>
+
+<td width="300" align="left" style="vertical-align:top;">&nbsp;</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="submit" name="submit" id="submit"  value="Save" class="grey-button" />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="categories.php?start=<?php echo $_REQUEST['start'];?>" style="text-decoration:none; cursor:pointer;"><input class="grey-button" type="button" value="Cancel" /></a>

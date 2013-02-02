@@ -29,5 +29,33 @@
 <h4>Store</h4>
 <div class="full-width-brdr"></div>
 
+<div class="store-collection">
+<div class="featured-dealers-box">
+<ul>
+<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-1.jpg" /></a>
+<h3><a href="dealers.php">Antiques of River Oaks Antiques of River Oaks Antiques of River Oaks12</a></h3>
+</li>
+<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-2.jpg" /></a>
+<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+</li>
+<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-3.jpg" /></a>
+<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+</li>
+<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-4.jpg" /></a>
+<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+</li>
+<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-4.jpg" /></a>
+<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+</li>
+<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-4.jpg" /></a>
+<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="full-width-brdr"></div>
+
+
 </section>
 <!--Store Page End -->

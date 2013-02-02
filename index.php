@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
+
 <?php
 ob_start();
 include 'common.php';
@@ -12,6 +13,7 @@ include 'includes/head.php';
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="iFortune" />
 
+
 <?php include 'design/includes/head.php'; ?>
 
 </head>
@@ -22,6 +24,7 @@ include 'includes/head.php';
 
 <?php include 'design/includes/header.php'; ?>
 <?php include 'design/includes/main-menu.php'; ?>        
+
 <?php
 $featuredDealers = "SELECT dealer_thumbnail,dealer_store_name FROM  `dealers` WHERE `dealer_featured` = 1 ORDER BY `id` desc LIMIT 0, 4"; 
  $featuredDealersData = $db->getRows($featuredDealers);
@@ -46,6 +49,7 @@ $featuredDealers = "SELECT dealer_thumbnail,dealer_store_name FROM  `dealers` WH
  //print_r($saleProductsData);
  
 ?>
+
 <div id="content" class="clearfix">
 <div id="content-wrap" class="clearfix">
 <?php include 'design/includes/home-page-content.php'; ?>

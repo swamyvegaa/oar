@@ -1,7 +1,10 @@
 
+
+<!-- This is not there in the my version
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
 <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />
-<link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css" />-->
+
 
 <!--Google Fonts Link Style Starts Here: -->
 <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
@@ -10,7 +13,9 @@
 
 <link rel="stylesheet" href="design/css/style.css" type="text/css" />
 <link rel="stylesheet" href="design/css/oar-style.css" type="text/css" />
+
 <!--<link rel="stylesheet" href="design/css/colors.php" type="text/css" /> -->
+
 <link rel="stylesheet" href="design/css/tipsy.css" type="text/css" />
 <link rel="stylesheet" href="design/images/fancybox/jquery.fancybox.css" type="text/css" />
 <!--<link rel="stylesheet" href="design/css/responsive.css" type="text/css" />-->
@@ -19,21 +24,58 @@
 <link rel="stylesheet" href="design/css/gallery-style.css" type="text/css" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
 <!--[if lt IE 9]>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
+
 
 <script type="text/javascript" src="design/scripts/jquery.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.easing.js"></script>
 <script type="text/javascript" src="design/scripts/superfish.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.fitvids.js"></script>
+
 <script type="text/javascript" src="design/scripts/jquery.carouFredSel.js"></script>
+
 <script type="text/javascript" src="design/scripts/accordion.js"></script>
 
 <script type="text/javascript" src="design/scripts/jquery.flexslider.js"></script>
 <script type="text/javascript" src="design/scripts/amazon_scroller.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.ad-gallery.js"></script>
 <script type="text/javascript" src="design/scripts/treeMenu.js"></script>
+
+
+<script type="text/javascript" src="design/scripts/lightbox-01.js"></script>
+<style type="text/css">
+#lightbox{
+	background-color:#eaeaea;
+	padding: 10px;
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	}
+#lightboxDetails{
+	font-size: 0.8em;
+	padding-top: 0.4em;
+	}	
+#lightboxCaption{ float: left; }
+#keyboardMsg{ float: right; }
+#closeButton{ top: 5px; right: 5px; }
+
+#lightbox img{ border: none; clear: both;} 
+#overlay img{ border: none; }
+
+#overlay{ background-image: url(overlay.png); }
+
+* html #overlay{
+	background-color: #333;
+	back\ground-color: transparent;
+	background-image: url(blank.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/overlay.png", sizingMethod="scale");
+	}
+</style>
+
+
+
+
 
 <script type="text/javascript">
 $(function() {
@@ -114,25 +156,6 @@ onopenclose:function(header, index, state, isuseractivated){ //custom code to ru
 }
 })
 </script>
-
-
-<!--<script src="design/scripts/jquery.cookie.js" type="text/javascript"></script>
-<script src="design/scripts/jquery.treeview.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-	$(function() {
-		$("#tree").treeview({
-			collapsed: true,
-			animated: "medium",
-			control:"#sidetreecontrol",
-			prerendered: true,
-			persist: "location"
-		});
-	})	
-</script> -->
-
-
-
 
 
 

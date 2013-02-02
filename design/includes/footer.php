@@ -24,6 +24,10 @@
 						<img src="design/images/widget-line.png" alt="Infringe Logo" title="Infringe Logo" /></p>
                         
                         <p align="center"><a href="index.php">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="about-us.php">About Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="store.php">Store</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">New Arrivals</a>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+
+
+<p align="center"><a href="privacy-policy.php">Privacy Policy</a>|<a href="terms-of-services.php">Terms of Service</a>|<a href="site-map.php">Sitemap</a></p>                        
+
                     
 			</div>
 			
@@ -57,8 +61,12 @@
 <div id="copyrights" class="clearfix">
 
 				<div id="foo-left">&copy; 2012&nbsp;&nbsp;On Antique Row Inc.&nbsp;&nbsp;All Rights Reserved.<br /></div>
+
+                <div id="foo-right-ifc-logo"><a href="http://www.ifortune.org" target="_blank"><img src="design/images/ifortune-logo.png"  /></a></div>
+                <div id="foo-right">Powered By<a href="http://www.ifortune.org" target="_blank">iFortune.org</a></div>
                 
-                <div id="foo-right"><a href="privacy-policy.php">Privacy Policy</a>|<a href="terms-of-services.php">Terms of Service</a>|<a href="site-map.php">Sitemap</a></div>
+                
+
            
 </div>
 

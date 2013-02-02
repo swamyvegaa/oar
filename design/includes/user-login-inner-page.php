@@ -3,7 +3,9 @@
 <div class="clear"></div>
 <div class="login-box">
 <form>
-<img src="design/images/onantiquerow-cms-login.jpg" alt="On Antique Row Logo"  />
+
+<img src="design/images/user-login-image.jpg" alt="On Antique Row Logo"  />
+
 <label>User Name:</label>
 <input type="text" id="user-name" name="" value="" />
 <div class="clear"></div>

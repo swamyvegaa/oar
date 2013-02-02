@@ -2,11 +2,13 @@
 <html>
 
 <head>
+
 <title>iFortune</title>
 <meta name="description" content="ifortune">
 <meta name="keywords" content="ifortune">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="iFortune" />
+
 
 <?php include 'design/includes/head.php'; ?>
 

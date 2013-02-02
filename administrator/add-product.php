@@ -65,7 +65,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
-      $handle->file_dst_name= '/images/products/'. $handle->file_dst_name;
+      $handle->file_dst_name= 'images/products/'. $handle->file_dst_name;
   }
   
 }
@@ -97,7 +97,7 @@ $productaler_icon = new upload($file);
        $productaler_icon->process($dir_dest1);
       
 	   }
-	  $product_secondary_image[]= '/images/products/thumb/'. $productaler_icon->file_dst_name;
+	  $product_secondary_image[]= 'images/products/thumb/'. $productaler_icon->file_dst_name;
   }
   
  $product_secondary_image= implode(",",$product_secondary_image);
@@ -133,7 +133,9 @@ if(@$_REQUEST['product_coming_soon']==''){
 $_REQUEST['product_coming_soon']='0';
 }
 $_REQUEST['product_category']=implode(",",$_REQUEST['product_category']);
+
 Productadd(@$_REQUEST['product_dealer'],@$_REQUEST['product_category'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_available'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_sale'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad']); 
+
  }
  
 }
@@ -210,11 +212,13 @@ foreach( $dealer_re as $dealer_res){ ?>
 </td>
 </tr>
 <tr>
+
 <td width="300" align="left" style="vertical-align:top">Select Primary Category</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left">
 <div>
 <select name="product_categoryPrimary" id="product_categoryPrimary" style="width:600px;" size="10">
+
 <option value="0" >Root Category</option>
 <?php 
  $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE category_status!='-1' AND category_root=0"; 
@@ -248,6 +252,7 @@ foreach( $dealer_re as $dealer_res){ ?>
 </select>
 </div></td>
 </tr>
+
 <tr>
 <td width="300" align="left" style="vertical-align:top">Select Secondary Category</td>
 <td width="50">&nbsp;</td>
@@ -287,6 +292,7 @@ foreach( $dealer_re as $dealer_res){ ?>
 </select>
 </div></td>
 </tr>
+
 <tr>
 <td colspan="3" bgcolor="#eaeaea"><strong>Product Properties</strong></td>
 </tr>

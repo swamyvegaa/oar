@@ -74,7 +74,9 @@ if(count(@$error)==0){
 
 if(@$_FILES['dealer_banner']['name']!=''){
 
-$dir_dest = (isset($_GET['dir']) ? $_GET['dir'] : '../images/dealer');
+
+$dir_dest = (isset($_GET['dir']) ? $_GET['dir'] : '../images/dealers');
+
 
 $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
 
@@ -87,7 +89,9 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
-      $handle->file_dst_name= '/images/dealer/'. $handle->file_dst_name;
+
+      $handle->file_dst_name= 'images/dealers/'. $handle->file_dst_name;
+
   }
   
 }
@@ -98,7 +102,9 @@ else{
   if(@$_FILES['dealer_thumbnail']['name']!=''){
 
 $foo = new upload($_FILES['dealer_thumbnail']);
-$dir_dest1 = (isset($_GET['dir']) ? $_GET['dir'] : '../images/dealer');
+
+$dir_dest1 = (isset($_GET['dir']) ? $_GET['dir'] : '../images/dealers');
+
 $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
    if ($foo->uploaded) {
       
@@ -107,7 +113,9 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $foo->image_x               = 225;
      
       $foo->process($dir_dest1);
-       $foo->file_dst_name= '/images/dealer/'. $foo->file_dst_name;
+
+       $foo->file_dst_name= 'images/dealers/'. $foo->file_dst_name;
+
   }
   }else{
   @ $foo->file_dst_name='';
@@ -116,7 +124,9 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
   if(@$_FILES['dealer_icon']['name']!=''){
 
 $dealer_icon = new upload($_FILES['dealer_icon']);
-$dir_dest1 = (isset($_GET['dir']) ? $_GET['dir'] : '../images/dealer');
+
+$dir_dest1 = (isset($_GET['dir']) ? $_GET['dir'] : '../images/dealers');
+
 $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
    if ($dealer_icon->uploaded) {
       
@@ -125,7 +135,9 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $dealer_icon->image_x               = 100;
      
        $dealer_icon->process($dir_dest1);
-       $dealer_icon->file_dst_name= '/images/dealer/'. $dealer_icon->file_dst_name;
+
+       $dealer_icon->file_dst_name= 'images/dealers/'. $dealer_icon->file_dst_name;
+
   }
   }else{
   @ $dealer_icon->file_dst_name='';
@@ -289,12 +301,16 @@ Delearadd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer
 <td width="650" align="left"><input type="text" name="dealer_website" id="dealer_website" style="width:400px;" /></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Dealer Description [Top]</td>
+
+<td width="300" align="left" style="vertical-align:top;">Dealer Description [Top]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_description_top" id="dealer_description_top" style="width:600px; height:100px;"></textarea></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Dealer Description [Bottom]</td>
+
+<td width="300" align="left" style="vertical-align:top;">Dealer Description [Bottom]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_description_bottom" id="dealer_description_bottom" style="width:600px; height:100px;"></textarea></td>
 </tr>
@@ -324,17 +340,23 @@ Delearadd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer
 <td colspan="3" bgcolor="#eaeaea"><strong>Dealer SEO Properties</strong></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Meta Title</td>
+
+<td width="300" align="left" style="vertical-align:top;">Meta Title</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="dealer_meta_title" id="dealer_meta_title" style="width:600px;" /></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Meta Description</td>
+
+<td width="300" align="left" style="vertical-align:top;">Meta Description</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_meta_description" id="dealer_meta_description" style="width:600px; height:50px;"></textarea></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Meta Keywords</td>
+
+<td width="300" align="left" style="vertical-align:top;">Meta Keywords</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_meta_keywords" id="dealer_meta_keywords" style="width:600px; height:50px;"></textarea></td>
 </tr>
@@ -343,7 +365,9 @@ Delearadd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer
 <td colspan="3" bgcolor="#eaeaea"><strong>Ads</strong></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Ad Content on Dealer Page</td>
+
+<td width="300" align="left" style="vertical-align:top;">Ad Content on Dealer Page</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_ad" id="dealer_ad" style="width:600px; height:50px;"></textarea></td>
 </tr>
