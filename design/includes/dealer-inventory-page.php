@@ -3,15 +3,15 @@
 <?php
 $dealer_data="select * from dealers where dealer_code='".$_GET['code']."'";
 $dealer_row=$db->getrow($dealer_data);
-$products_data="select * from products where product_dealer='".$_GET['code']."'";
-$products_rows=$db->getrow($products_data);
-//print_r($products_rows);
+$products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1";
+$products_rows=$db->getrows($products_data);
+print_r($dealer_row['id']);
 ?>
 <div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealers.php">Dealers</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="#">Nicholas Haslam LTD</a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <address>
-<h3 style="font-size:17px; margin:0px; line-height:24px;">Nicholas Haslam LTD</h3>
+<h3 style="font-size:17px; margin:0px; line-height:24px;"><?php echo $dealer_row['dealer_name'];?>Nicholas Haslam LTD</h3>
 12-14 Holbein Place<br/>
 London, UK SW1W8NL<br/>
 UK<br/><br/>
@@ -287,82 +287,22 @@ UK<br/><br/>
 <div class="full-width-brdr"></div>
 <div class="category-list-imgs">
 <ul>
-<li><a href="#" title=""><img src="design/images/category-img-1.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
+<?php 
+foreach($products_rows as $row => $product_value){
+?>
+<li><a href="#" title=""><img src="<?php echo $product_value['product_primary_image'];?>" /></a>
+<h3><?php echo $product_value['product_name'];?></h3>
+<span class="price">$<?php echo $product_value['product_sale_price'];?></span>
 </li>
-<li><a href="#" title=""><img src="design/images/category-img-2.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-3.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
+<?php
+}
+?>
 </ul>
-<div class="full-width-brdr"></div>
-<ul>
-<li><a href="#" title=""><img src="design/images/category-img-4.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-5.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-6.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-</ul>
-<div class="full-width-brdr"></div>
-<ul>
-<li><a href="#" title=""><img src="design/images/category-img-7.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-8.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-9.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-</ul>
-<div class="full-width-brdr"></div>
-<ul>
-<li><a href="#" title=""><img src="design/images/category-img-10.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-11.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-12.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-</ul>
-<div class="full-width-brdr"></div>
-<ul>
-<li><a href="#" title=""><img src="design/images/category-img-13.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-14.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-<li><a href="#" title=""><img src="design/images/category-img-15.jpg" /></a>
-<h3>Pair of Vintage Pineapple<br/>Table Lamp</h3>
-<span class="price">$4,520</span>
-</li>
-</ul>
-<div class="full-width-brdr"></div>
-
 </div>
+
+
+
+
 <div class="page-numeric">
 <a href="#"><<</a>
 <a href="#">1</a>
