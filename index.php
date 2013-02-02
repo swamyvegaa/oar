@@ -6,6 +6,17 @@ ob_start();
 include 'common.php';
 include 'includes/head.php';
 ?>
+<script type="text/javascript" src="design/scripts/jquery.cycle.all.js"></script>
+<script type="text/javascript" language="javascript">
+function slideArrivals(){
+$('#arrSlide').cycle({ 
+    fx:      'scrollRight', 
+    next:   '.nextArr', 
+    timeout:  3, 
+    easing:  'easeInOutBack' 
+});
+};
+</script>
 <head>
 <title>iFortune</title>
 <meta name="description" content="ifortune">
@@ -18,7 +29,7 @@ include 'includes/head.php';
 
 </head>
 
-<body class="fitVids">
+<body class="fitVids" onLoad="slideArrivals()">
 
 <div class="container clearfix">
 
@@ -40,7 +51,7 @@ $featuredDealers = "SELECT dealer_thumbnail,dealer_store_name FROM  `dealers` WH
  $featuredCategoriesData = $db->getRows($featuredCategories);
  //print_r($featuredCategoriesData[0]);
  //echo "<br /> arrr";
- $newArrProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_new_arrival` = 1 ORDER BY `id` desc LIMIT 0, 4"; 
+ $newArrProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_new_arrival` = 1 ORDER BY `id` desc LIMIT 0, 12"; 
  $newArrProductsData = $db->getRows($newArrProducts);
  //print_r($newArrProductsData);
  echo "<br /> sale";

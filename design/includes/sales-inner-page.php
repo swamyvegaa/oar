@@ -1,4 +1,13 @@
 <!--Sales Page Start -->
+<?php
+ $saleProducts = "SELECT * FROM  `products` WHERE `product_on_sale` = 1 ORDER BY `id` desc LIMIT 0, 4"; 
+ $saleProductsData = $db->getRows($saleProducts);
+//$dealer_data="select * from dealers where dealer_code='".$_GET['code']."'";
+//$dealer_row=$db->getrow($dealer_data);
+//$products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1";
+//$products_rows=$db->getrows($products_data);
+//print_r($dealer_row['id']);
+?>
 <div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="sales.php">Sales</a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
@@ -28,6 +37,47 @@
 <section id="category-page-rightside">
 <h4>Sales</h4>
 <div class="full-width-brdr"></div>
+<div class="category-list-imgs">
+<ul>
+<?php 
+foreach($saleProductsData as $row => $product_value){
+?>
+<li>
+<a href="sale.php" title="<?php echo $product_value['product_name'];?>">
+<img src="<?php echo $product_value['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $product_value['product_name'];?>" title="<?php echo $product_value['product_name'];?>" />
+
+</a>
+<h3><?php echo $product_value['product_name'];?></h3>
+<span class="price">$<?php echo $product_value['product_sale_price'];?></span>
+</li>
+
+<?php
+}
+?>
+</ul>
+</div>
+
+
+
+
+<div class="page-numeric">
+<a href="#"><<</a>
+<a href="#">1</a>
+<a href="#">2</a>
+<a href="#">3</a>
+<a href="#">4</a>
+<a href="#">5</a>
+<a href="#">6</a>
+<a href="#">7</a>
+<a href="#">8</a>
+<a href="#">9</a>
+<a href="#">10</a>
+<a href="#">....</a>
+<a href="#">>></a>
+</div>
 
 </section>
+
+
 <!--Sales Page End -->
+

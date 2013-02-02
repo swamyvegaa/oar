@@ -7,23 +7,70 @@
 <img src="design/images/icons/arrow-grey-icon.png" />
 </div>
 </div>
+<div id="arrSlide">
+<div class="nextArr">
 <div class="new-arrivals">
 
-<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 </div>
 <div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 </div>
 <div class="new-arrivals">
-<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 </div>
 <div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 
+</div></div>
+<div class="nextArr">
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+</div>
+<div class="nextArr">
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+<div class="new-arrivals" style="margin-right:0px;">
+<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+
+</div>
+</div>
 </div>
 </aside>
 
@@ -136,18 +183,18 @@
 <div class="sale-box">
 <ul>
 
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
 </ul>
 </div>
 <div class="clearfix"></div>
