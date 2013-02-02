@@ -156,12 +156,16 @@
 <td width="650" align="left"><input type="text" style="width:400px;" /></td>
 </tr>
 <tr>
+
 <td width="300" align="left" style="vertical-align:top;">Designer Description [Top]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea style="width:600px; height:100px;"></textarea></td>
 </tr>
 <tr>
+
 <td width="300" align="left" style="vertical-align:top;">Designer Description [Bottom]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea style="width:600px; height:100px;"></textarea></td>
 </tr>
@@ -179,7 +183,9 @@
 <td width="650" align="left"><input type="file" name="category-banner" style="width:300px;" /></td>
 </tr>
 <tr>
+
 <td width="300" align="left" valign="top">Designer Image [Size: 480x360]</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="file" name="category-banner" style="width:300px;" /></td>
 </tr>
@@ -191,17 +197,23 @@
 <td colspan="3" bgcolor="#eaeaea"><strong>Designer SEO Properties</strong></td>
 </tr>
 <tr>
+
 <td width="300" align="left" style="vertical-align:top;">Meta Title</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" style="width:600px;" /></td>
 </tr>
 <tr>
+
 <td width="300" align="left" style="vertical-align:top;">Meta Description</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea style="width:600px; height:50px;"></textarea></td>
 </tr>
 <tr>
+
 <td width="300" align="left" style="vertical-align:top;">Meta Keywords</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea style="width:600px; height:50px;"></textarea></td>
 </tr>
@@ -210,7 +222,9 @@
 <td colspan="3" bgcolor="#eaeaea"><strong>Ads</strong></td>
 </tr>
 <tr>
+
 <td width="300" align="left" style="vertical-align:top;">Ad Content on Designer Page</td>
+
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea style="width:600px; height:50px;"></textarea></td>
 </tr>

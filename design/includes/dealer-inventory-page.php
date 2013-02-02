@@ -1,3 +1,4 @@
+
 <!--Dealer inventory Page Start -->
 <?php
 $dealer_data="select * from dealers where dealer_code='".$_GET['code']."'";
@@ -252,6 +253,7 @@ UK<br/><br/>
 		</li>
 	</ul>
 </div>
+
 </div>
 
 <div class="category-leftside-form">
@@ -278,7 +280,9 @@ UK<br/><br/>
 
 </aside>
 <section id="category-page-rightside">
+
 <p><img src="<?php echo $dealer_row['dealer_banner'];?>" width="740px" height="250px;"  /></p><br/>
+
 <h4>Products</h4>
 <div class="full-width-brdr"></div>
 <div class="category-list-imgs">
@@ -357,11 +361,6 @@ UK<br/><br/>
 </li>
 </ul>
 <div class="full-width-brdr"></div>
-
-
-
-
-
 
 </div>
 <div class="page-numeric">

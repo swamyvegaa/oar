@@ -8,20 +8,22 @@
 </div>
 </div>
 <div class="new-arrivals">
-<a href="product-details.php"><img src="design/images/new-arrival-img-1.jpg" /></a>
-<h1><a href="product-details.php">Pair of Chippendale Mahogany<br/>Armchairs</a></h1>
+
+<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
 </div>
 <div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php"><img src="design/images/new-arrival-img-2.jpg" /></a>
-<h1><a href="product-details.php">Swedish Neoclassical Gilt Bronze and<br/>Crystal Chandelier</a></h1>
+<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
 </div>
 <div class="new-arrivals">
-<a href="product-details.php"><img src="design/images/new-arrival-img-3.jpg" /></a>
-<h1><a href="product-details.php">Early 19th Century<br/>English Chest</a></h1>
+<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
 </div>
 <div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php"><img src="design/images/new-arrival-img-4.jpg" /></a>
-<h1><a href="product-details.php">Pair Antique Bronze Rare Small Size Girondelles circa 1855</a></h1>
+<a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
+<h4><?php echo $featuredProductsData[0]['product_name'];?></h4>
+
 </div>
 </aside>
 
@@ -48,20 +50,22 @@
 <div class="full-width-brdr clearfix"></div>
 <div class="featured-dealers-box">
 <ul>
-<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-1.jpg" /></a>
-<h3><a href="dealers.php">Antiques of River Oaks Antiques of River Oaks Antiques of River Oaks12</a></h3>
+
+<li><a href="dealers.php" title="<?php echo $featuredDealersData[0]['dealer_store_name'];?>"><img src="<?php echo $featuredDealersData[0]['dealer_thumbnail'];?>" width="225px" height="170px" alt="<?php echo $featuredDealersData[0]['dealer_store_name'];?>" title="<?php echo $featuredDealersData[0]['dealer_store_name'];?>"/></a>
+<h3><?php echo $featuredDealersData[0]['dealer_store_name'];?></h3>
 <!--<p>Antiques of River Oaks is a 9,000 square foot<br/>gallery representin...</p> -->
 </li>
-<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-2.jpg" /></a>
-<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+<li><a href="dealers.php" title="<?php echo $featuredDealersData[1]['dealer_store_name'];?>"><img src="<?php echo $featuredDealersData[1]['dealer_thumbnail'];?>" width="225px" height="170px" alt="<?php echo $featuredDealersData[1]['dealer_store_name'];?>" title="<?php echo $featuredDealersData[1]['dealer_store_name'];?>"/></a>
+<h3><?php echo $featuredDealersData[1]['dealer_store_name'];?></h3>
 <!--<p>Antiques of River Oaks is a 9,000 square foot<br/>gallery representin...</p> -->
 </li>
-<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-3.jpg" /></a>
-<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+<li><a href="dealers.php" title="<?php echo $featuredDealersData[2]['dealer_store_name'];?>"><img src="<?php echo $featuredDealersData[2]['dealer_thumbnail'];?>" width="225px" height="170px" alt="<?php echo $featuredDealersData[2]['dealer_store_name'];?>" title="<?php echo $featuredDealersData[2]['dealer_store_name'];?>"/></a>
+<h3><?php echo $featuredDealersData[2]['dealer_store_name'];?></h3>
 <!--<p>Antiques of River Oaks is a 9,000 square foot<br/>gallery representin...</p> -->
 </li>
-<li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-4.jpg" /></a>
-<h3><a href="dealers.php">Antiques of River Oaks</a></h3>
+<li><a href="dealers.php" title="<?php echo $featuredDealersData[3]['dealer_store_name'];?>"><img src="<?php echo $featuredDealersData[3]['dealer_thumbnail'];?>" width="225px" height="170px" alt="<?php echo $featuredDealersData[3]['dealer_store_name'];?>" title="<?php echo $featuredDealersData[3]['dealer_store_name'];?>"/></a>
+<h3><?php echo $featuredDealersData[3]['dealer_store_name'];?></h3>
+
 <!--<p>Antiques of River Oaks is a 9,000 square foot<br/>gallery representin...</p> -->
 </li>
 </ul>
@@ -77,17 +81,19 @@
 <div class="full-width-brdr clearfix"></div>
 <div class="featured-dealers-box">
 <ul>
-<li><a href="product-details.php" title=""><img src="design/images/fea-products-img-225-1.jpg" /></a>
-<h3><a href="dealers.php">Pair of Carved Oak Arm Chairs<br/><br/></a></h3>
+
+<li><a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
+<h3><?php echo $featuredProductsData[0]['product_name'];?><br/><br/></h3>
 </li>
-<li><a href="product-details.php" title=""><img src="design/images/fea-products-img-225-2.jpg" /></a>
-<h3><a href="dealers.php">Tole Console Table<br/><br/></a></h3>
+<li><a href="product-details.php" title="<?php echo $featuredProductsData[1]['product_name'];?>"><img src="<?php echo $featuredProductsData[1]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[1]['product_name'];?>" title="<?php echo $featuredProductsData[1]['product_name'];?>" /></a>
+<h3><?php echo $featuredProductsData[1]['product_name'];?><br/><br/></h3>
 </li>
-<li><a href="#" title=""><img src="design/images/fea-products-img-225-3.jpg" /></a>
-<h3><a href="dealers.php">French 19th Century Gilt<br/>Bronze Mantle Clock</a></h3>
+<li><a href="product-details.php" title="<?php echo $featuredProductsData[2]['product_name'];?>"><img src="<?php echo $featuredProductsData[2]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[2]['product_name'];?>" title="<?php echo $featuredProductsData[2]['product_name'];?>"/></a>
+<h3><?php echo $featuredProductsData[2]['product_name'];?><br/><br/></h3>
 </li>
-<li><a href="#" title=""><img src="design/images/fea-products-img-225-4.jpg" /></a>
-<h3><a href="dealers.php">Bronze Candilesticks<br/><br/></a></h3>
+<li><a href="product-details.php" title="<?php echo $featuredProductsData[3]['product_name'];?>"><img src="<?php echo $featuredProductsData[3]['product_primary_image'];?>" style="width:225px;height:225px;"  alt="<?php echo $featuredProductsData[3]['product_name'];?>" title="<?php echo $featuredProductsData[3]['product_name'];?>"/></a>
+<h3><?php echo $featuredProductsData[3]['product_name'];?><br/><br/></h3>
+
 </li>
 </ul>
 </div>
@@ -102,22 +108,25 @@
 <div class="full-width-brdr clearfix"></div>
 <div class="featured-dealers-box">
 <ul>
-<li><a href="category.php" title=""><img src="design/images/fea-categories-img-225-1.jpg" /></a>
-<h3><a href="dealers.php">Antique Mirrors</a></h3>
+
+<li><a href="category.php" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"><img src="<?php echo $featuredCategoriesData[0]['category_thumbnail'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredCategoriesData[0]['category_name'];?>" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"/></a>
+<h3><?php echo $featuredCategoriesData[0]['category_name'];?></h3>
 </li>
-<li><a href="category.php" title=""><img src="design/images/fea-categories-img-225-2.jpg" /></a>
-<h3><a href="dealers.php">Antique Sofas</a></h3>
+<li><a href="category.php" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"><img src="<?php echo $featuredCategoriesData[0]['category_thumbnail'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredCategoriesData[0]['category_name'];?>" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"/></a>
+<h3><?php echo $featuredCategoriesData[0]['category_name'];?></h3>
 </li>
-<li><a href="#" title=""><img src="design/images/fea-categories-img-225-3.jpg" /></a>
-<h3><a href="dealers.php">Antique Armoires</a></h3>
+<li><a href="category.php" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"><img src="<?php echo $featuredCategoriesData[0]['category_thumbnail'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredCategoriesData[0]['category_name'];?>" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"/></a>
+<h3><?php echo $featuredCategoriesData[0]['category_name'];?></h3>
 </li>
-<li><a href="#" title=""><img src="design/images/fea-categories-img-225-4.jpg" /></a>
-<h3><a href="dealers.php">Antique Chandliers</a></h3>
+<li><a href="category.php" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"><img src="<?php echo $featuredCategoriesData[0]['category_thumbnail'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredCategoriesData[0]['category_name'];?>" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"/></a>
+<h3><?php echo $featuredCategoriesData[0]['category_name'];?></h3>
 </li>
 </ul>
 </div>
+
+
 </section>
-<div class="full-width-brdr clearfix"></div>
+
 
 <div id="newsletter-box">
 <div class="page-link-buttons">
@@ -126,22 +135,23 @@
 <div class="full-width-brdr clearfix"></div>
 <div class="sale-box">
 <ul>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-1.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-2.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-3.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-4.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-5.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-6.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-7.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-8.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-9.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-10.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-11.jpg" /></a></li>
-<li><a href="sale.php" title=""><img src="design/images/sale-img-12.jpg" /></a></li>
+
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
+<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></a></li>
 </ul>
 </div>
 <div class="clearfix"></div>
-<div class="full-width-brdr"></div>
+
 <div class="page-link-buttons">
 <h4 class="clearleft">News Letter</h4>
 </div>
@@ -166,7 +176,7 @@
 <li><a href="#">Capsule Collection: Line Vautrin</a></li>
 </ul>
 </div>
-<div class="full-width-brdr clearfix"></div>
+
 </div>
 
 
@@ -220,7 +230,8 @@
 </div>
 
 <div id="event-right-side-box">
-<div class="full-width-brdr"></div>
+
+
 <div class="page-link-buttons">
 <h4 class="clearleft">Events</h4>
 </div>
@@ -254,7 +265,7 @@
 <p>A selling show at 1stdibs' gallery at the New York Design Center showcases more than 65 exquisite antique textiles from Africa, the Americas, Asia, Europe and the Middle East.</p>
 <div align="right" style="margin:10px 0px 0px;"><a href="events.php"><img src="design/images/icons/read-more-button.jpg"  /></a></div>
 </div>
-<div class="full-width-brdr clearfix"></div>
+
 </div>
 
 <div class="ad-content-btm">

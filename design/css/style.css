@@ -160,7 +160,9 @@ h3 {
 
 h4 {
     font-family: "Oxygen";
+
 	font-size: 16px;
+
 	line-height: 22px;
 }
 
@@ -173,12 +175,14 @@ h6 {
 	font-size: 12px;
 	line-height: 16px;
 }
+
 h1 {
 	font-family:"Oxygen";
 	font-size:18px;
 	line-height:24px;
 	color:#444;	
 }
+
 
 address { font-style: normal; }
 
@@ -1304,7 +1308,9 @@ label.error {
 
 #copyrights a {
     color: #DDD;
+
     border-bottom: 0px dotted #EEE;
+
     text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 }
 
@@ -1323,6 +1329,7 @@ label.error {
 	
 }
 
+
 #copyrights #foo-left {
 	display: block;
 	position: relative;
@@ -1331,12 +1338,15 @@ label.error {
     max-width: 37%;
 	margin-right: 6%;	
 }
+
 #copyrights #foo-right {
 	display: block;
 	position: relative;
 	float: left;
+
     padding: 15px 0px;
     max-width: 37%;
+
 	margin-right: 6%;
 
 }
@@ -1349,12 +1359,14 @@ label.error {
 
 #copyrights #foo-right {
 	float: right;
+
 	margin-right: 0px;
 }
 #copyrights #foo-right-ifc-logo {
 	float: right;
 	border:0 none;
 	margin:10px 20px 0px 0px;
+
 }
 
 #fsocial,#fsocial li {

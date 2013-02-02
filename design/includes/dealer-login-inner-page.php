@@ -3,7 +3,9 @@
 <div class="clear"></div>
 <div class="login-box">
 <form>
+
 <img src="design/images/dealer-login-image.jpg" alt="On Antique Row Logo"  />
+
 <label style="margin-left:61px;">Dealer Name:</label>
 <input type="text" id="user-name" name="" value="" />
 <div class="clear"></div>

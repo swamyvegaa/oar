@@ -27,7 +27,9 @@
 <div class="clear"></div>
 
 <div class="content">
+
 <div class="dashboard-button clearfix"><a href="add-designer.php"><img src="cms-images/add.png"  /><br/>Create New<br/>Designer</a></div>
+
 <div class="clear"></div>
 <div class="cms-heading">Designers</div>
 <div class="clear"></div>

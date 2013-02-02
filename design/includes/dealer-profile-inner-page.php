@@ -1,8 +1,10 @@
 <!--Designer Profile Page Start -->
+
 <div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="designers.php">Dealer</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="#">Luis Bustamante</a></div>
 <div class="clear"></div>
 <div id="dealers-profile-page-500-box">
 <img class="dealer-pro-top-img" src="design/images/designer-profile-img.jpg" width="480" height="360" />
+
 <address>
 <h3>Luis Bustamante</h3>
 London, UK <br/>

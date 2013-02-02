@@ -1,3 +1,11 @@
+
+
+<!-- This is not there in the my version
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css" />-->
+
+
 <!--Google Fonts Link Style Starts Here: -->
 <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 
@@ -5,6 +13,9 @@
 
 <link rel="stylesheet" href="design/css/style.css" type="text/css" />
 <link rel="stylesheet" href="design/css/oar-style.css" type="text/css" />
+
+<!--<link rel="stylesheet" href="design/css/colors.php" type="text/css" /> -->
+
 <link rel="stylesheet" href="design/css/tipsy.css" type="text/css" />
 <link rel="stylesheet" href="design/images/fancybox/jquery.fancybox.css" type="text/css" />
 <!--<link rel="stylesheet" href="design/css/responsive.css" type="text/css" />-->
@@ -14,17 +25,25 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
 
 <script type="text/javascript" src="design/scripts/jquery.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.easing.js"></script>
 <script type="text/javascript" src="design/scripts/superfish.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.fitvids.js"></script>
+
+<script type="text/javascript" src="design/scripts/jquery.carouFredSel.js"></script>
+
 <script type="text/javascript" src="design/scripts/accordion.js"></script>
 
 <script type="text/javascript" src="design/scripts/jquery.flexslider.js"></script>
 <script type="text/javascript" src="design/scripts/amazon_scroller.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.ad-gallery.js"></script>
 <script type="text/javascript" src="design/scripts/treeMenu.js"></script>
+
 
 <script type="text/javascript" src="design/scripts/lightbox-01.js"></script>
 <style type="text/css">
@@ -53,6 +72,7 @@
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/overlay.png", sizingMethod="scale");
 	}
 </style>
+
 
 
 
@@ -114,8 +134,6 @@ $(document).ready(function()
 </script>
 
 
-
-
 <script type="text/javascript">
 ddaccordion.init({
 headerclass: "submenuheader", //Shared CSS class name of headers group
@@ -138,8 +156,6 @@ onopenclose:function(header, index, state, isuseractivated){ //custom code to ru
 }
 })
 </script>
-
-
 
 
 

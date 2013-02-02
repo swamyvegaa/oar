@@ -1,3 +1,4 @@
+
 <?php 
 $dealers = "select dealer_code,dealer_name,dealer_thumbnail,dealer_store_name from dealers where dealer_status=1 order by dealer_order asc"; 
  $dealers_data = $db->getRows($dealers);
@@ -16,6 +17,7 @@ foreach($dealers_data as $data => $value){
 <?php
 }
 ?>
+
 </ul>
 </div>
 <div class="ad-content-btm">

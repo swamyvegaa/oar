@@ -47,6 +47,7 @@
 	text-align:center;
 	vertical-align:top;	
 }
+
 .new-arrivals h1 {
 	margin:5px 0px 0px;
 	padding:0px;
@@ -69,6 +70,7 @@
 	text-decoration:none;
 	
 }
+
 
 .home-page-right-side {
 	float:left;
@@ -127,7 +129,9 @@
     background-repeat: repeat-x;
     float: left;
     height: 3px;
+
 	margin:5px 0px;	
+
 }
 .section-full-width {
 	width:990px;
@@ -151,7 +155,9 @@
 	position:relative;
 	background:#eaeaea;
 	float:left;
+
 	width:225px;
+
 	padding:7px;
 	margin-right:11px;
 	margin-bottom:10px;	
@@ -161,10 +167,12 @@
     color: #444444;
     font-family: "Arial";
     font-size: 12px;
+
     font-weight: bold;
     line-height: 16px;
 	height:30px;
 	display:block;
+
     margin: 5px 0 0;
     text-align: center;
 }
@@ -180,8 +188,10 @@
 .featured-dealers-box li a {
 	width:225px;
 	padding:0px;
+
 	color:#444;
 	text-decoration:none;
+
 	display:inline;	
 }
 .featured-dealers-box li a img {
@@ -191,8 +201,10 @@
 	margin-right:0px;	
 }
 .featured-dealers-box li a:hover {
+
 	text-decoration:none;
 	color:#d90009;	
+
 }
 /* Featured Dealers Style:End */
 
@@ -364,7 +376,9 @@
 	font-size:12px;	
 }
 .blog-list ul li a:hover {
+
 	color:#d90009;
+
 	text-decoration:none;	
 }
 
@@ -556,8 +570,10 @@
 	line-height:20px;
 	text-align:left;
 	color:#444;
+
 	padding:0px;
 	margin-top:-12px;	
+
 }
 #category-page-rightside p {
 	font-family:"Arial";
@@ -802,6 +818,7 @@
 
 
 
+
 #treeMenu { width:215px;  font:12px 'Oxygen', Helvetica, Arial, sans-serif; }
 #treeMenu h2 { font:bold 14px 'Arial'; color:#444; margin-bottom:12px;}
 #treeMenu ul { list-style:none; margin:0; padding:0; }
@@ -813,6 +830,7 @@
 	#treeMenu ul li div { clear:both; height:auto; }
 	#treeMenu ul li li { background:#fff; border:0; margin:0; padding-left:5px; border-bottom:solid 1px #eaeaea; clear:both;}
 	#treeMenu ul li li a { color:#626262; font-size:12px; font-weight:normal; padding:5px 0; float:left;  width:170px; }
+
 	#treeMenu ul li li a:hover { text-decoration:underline; color:#333;}
 	#treeMenu ul li li span { float:left; display:inline; width:15px; height:20px;  background-position:-10px -263px; cursor:default; }
 	#treeMenu ul li li span.closed { background-position:-10px -131px; cursor:pointer;}
@@ -1013,7 +1031,9 @@
 	padding:0px 0px 0px 5px
 	margin:0px 25px 10px 0px;	
 }
+
 .product-details-left h1 {
+
 	font-family:"Oxygen";
 	font-size:16px;
 	line-height:20px;
@@ -1029,6 +1049,7 @@
 	text-align:justify;
 	float:left;	
 }
+
 .product-details-left .dealers-link-button {
 	font-family:"Oxygen";
 	font-size:12px;
@@ -1046,6 +1067,7 @@
 	color:#fff;
 	text-decoration:none;
 }
+
 .product-inner-list {
     float: left;
     margin:0 0px 5px 0px;
@@ -1106,6 +1128,7 @@
 	position:relative;
 	border:1px solid #eaeaea;
 	float:left;
+
 	width:100px;
 	padding:5px;
 	margin:0px 16px 25px 0px;	
@@ -1113,6 +1136,7 @@
 .featured-products-list li:hover {
 	border:1px solid #d90009;	
 }
+
 .featured-products-list li .details {
 	display:block;
 	font-family:"Arial";
@@ -1123,9 +1147,11 @@
 	text-align:center;	
 }
 .featured-products-list li a {
+
 	padding:0px;
 	color:#4444;
 	display:block;	
+
 }
 .featured-products-list li a img {
 	width:100px;
@@ -1151,11 +1177,13 @@
 }
 .login-box img {
 	width:225px;
+
 	height:180px;
 	display:block;
 	text-align:center;
 	vertical-align:top;
 	margin:12px auto 0px;	
+
 }
 .login-box label {
 	float:left;
@@ -1204,6 +1232,7 @@
 	padding:4px;
 	margin:0 auto 0 155px;	
 }
+
 /* User Login and Dealer Login Style:End */
 
 
@@ -1216,3 +1245,4 @@
 }
 
 /* Store Page Style:End */
+

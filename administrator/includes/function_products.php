@@ -1,11 +1,18 @@
 <?php 
 
-function Productadd($product_dealer,$product_category,$product_name,$product_alias,$product_title,$product_code,$product_cost_price,$product_sale_price,$product_call_for_fee,$product_offer_price,$product_period,$product_origin,$product_condition,$product_height,$product_width,$product_depth,$product_weight,$product_shipping_price,$product_free_shipping,$product_instock_qty,$product_overview,$product_description,$product_additional_information,$product_available,$product_sold,$product_featured,$product_on_sale,$product_new_arrival,$product_coming_soon,$product_priority,$product_primary_image,$product_secondary_image,$product_meta_title,$product_meta_description,$product_meta_keywords,$product_ad){
+
+function Productadd($product_dealer,$product_category,$product_categoryPrimary,$product_name,$product_alias,$product_title,$product_code,$product_cost_price,$product_sale_price,$product_call_for_fee,$product_offer_price,$product_period,$product_origin,$product_condition,$product_height,$product_width,$product_depth,$product_weight,$product_shipping_price,$product_free_shipping,$product_instock_qty,$product_overview,$product_description,$product_additional_information,$product_available,$product_sold,$product_featured,$product_on_sale,$product_new_arrival,$product_coming_soon,$product_priority,$product_primary_image,$product_secondary_image,$product_meta_title,$product_meta_description,$product_meta_keywords,$product_ad){
 global $db;
+$product_categoryArr= explode(",",$product_category);
+$product_categoryEle = $product_categoryPrimary;
+$product_categoryEle2 = $product_category;
 
 $today=date("Y-m-d H:i:s");						
 								$sub_array = array(
-										'product_dealer' 			       => $product_dealer,										
+										'product_dealer' 			       => $product_dealer,	
+'product_primary_category'    =>  		$product_categoryEle,		
+'product_secodary_category'    =>  		$product_categoryEle2,								
+
 										'product_name' 			           => $product_name,
 										'product_alias' 			       => $product_alias,										
 										'product_title' 		           => $product_title,
@@ -61,7 +68,9 @@ $today=date("Y-m-d H:i:s");
 										}
 									}	
 									
-									$product_category= explode(",",$product_category);
+
+									//$product_category= explode(",",$product_category);
+
 									
 									if(count($product_category)>0){
 								foreach($product_category as $product_category_id){
@@ -71,7 +80,9 @@ $today=date("Y-m-d H:i:s");
 										
 								 $sub_array = stripslashes_deep($sub_array);
 								
-								 $id=$db->insert('product_category',$sub_array);
+
+								// $id=$db->insert('product_category',$sub_array);
+
 										
 										}
 									}	

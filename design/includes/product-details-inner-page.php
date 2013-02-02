@@ -3,6 +3,7 @@
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <h4>Store</h4>
+
 <div class="left_menu_main">
 <div id="treeMenu">
 	<ul>   <!-- First Li Start Here.... -->
@@ -216,6 +217,7 @@
 		</li>
 	</ul>
 </div>
+
 </div>
 
 <div class="category-leftside-form">
@@ -241,6 +243,7 @@
 
 </aside>
 <div class="product-details-box">
+
 <h1>Superb Swedish Art Deco 3 drawer chest with pewter inlay.</h1>
 <div class="full-width-brdr"></div>
 <div class="product-details-left">
@@ -339,6 +342,7 @@ Email:
 <img src="design/images/products/lighting-img-225x170-05.jpg"  /></a>
 <a href="design/images/products/lighting-img-large-06.jpg" rel="lightbox">
 <img src="design/images/products/lighting-img-225x170-06.jpg"  /></a>
+
 </div>
 <div class="clear"></div>
 <h4>Other Items You May Like:</h4>

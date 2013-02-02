@@ -28,6 +28,7 @@
 <section id="category-page-rightside">
 <h4>Store</h4>
 <div class="full-width-brdr"></div>
+
 <div class="store-collection">
 <div class="featured-dealers-box">
 <ul>
@@ -54,6 +55,7 @@
 </div>
 
 <div class="full-width-brdr"></div>
+
 
 </section>
 <!--Store Page End -->
