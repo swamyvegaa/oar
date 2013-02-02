@@ -1,40 +1,54 @@
 
 <!--Dealer inventory Page Start -->
 <?php
-$dealer_data="select * from dealers where dealer_code='".$_GET['code']."'";
+$dealer_data="select * from dealers where dealer_code='".$_GET['name']."'";
 $dealer_row=$db->getrow($dealer_data);
-$products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1";
+$page_id=$_GET['page'];
+$limit=10;
+$start=($page_id-1)*$limit;
+$last=$page_id*$limit;
+$products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1 limit ".$start.",".$last;
 $products_rows=$db->getrows($products_data);
-print_r($dealer_row['id']);
+
+//$categories_parent_data="select id, category_name from categories where category_root=0 and category_status=1";
+//$categories_parent_rows=$db->getrows($categories_parent_data);
+//$categories_parent_data="select category_name from categories where category_status=1 and id in(select category_root from categories where category_status=1)";
+//$categories_parent_rows=$db->getrows($categories_parent_data);
+//$categories_child_data="select id, category_name from categories where category_root=";
+//$categories_child_rows=$db->getrows($categories_parent_data);
+//print_r($categories_parent_rows);
+
 ?>
 <div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealers.php">Dealers</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="#">Nicholas Haslam LTD</a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <address>
-<h3 style="font-size:17px; margin:0px; line-height:24px;"><?php echo $dealer_row['dealer_name'];?>Nicholas Haslam LTD</h3>
-12-14 Holbein Place<br/>
-London, UK SW1W8NL<br/>
-UK<br/><br/>
+<h3 style="font-size:17px; margin:0px; line-height:24px;"><?php echo $dealer_row['dealer_store_name'];?></h3>
+<?php echo $dealer_row['dealer_address1'];?><br/>
+<?php echo $dealer_row['dealer_address2'];?><br/>
+<?php echo $dealer_row['dealer_address3'];?><br/>
+<?php echo $dealer_row['dealer_city'];?>, <?php echo $dealer_row['dealer_state'];?>, <?php echo $dealer_row['dealer_zip_code'];?><br/>
+<?php echo $dealer_row['dealer_country'];?><br/><br/>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 <tr>
 <td>Phone:</td>
-<td>305-446-1688</td>
+<td><?php echo $dealer_row['dealer_phone'];?></td>
 </tr>
 <tr>
 <td>Fax:</td>
-<td>305-446-1689</td>
+<td><?php echo $dealer_row['dealer_fax'];?></td>
 </tr>
 <tr>
 <td>Toll-free:</td>
-<td>866-446-1688</td>
+<td><?php echo $dealer_row['dealer_toll_free'];?></td>
 </tr>
 <tr>
 <td>E-Mail:</td>
-<td style="font-size:11px;">sales@nicholashaslam.com</td>
+<td style="font-size:11px;"><?php echo $dealer_row['dealer_email'];?></td>
 </tr>
 <tr>
 <td>Website:</td>
-<td style="font-size:11px;">http://www.nicholashaslam.com</td>
+<td style="font-size:11px;"><?php echo $dealer_row['dealer_website'];?></td>
 </tr>
 </table>
 </address>
@@ -42,216 +56,62 @@ UK<br/><br/>
 <div class="full-width-brdr"></div>
 <div class="left_menu_main">
 <div id="treeMenu">
-	<ul>   <!-- First Li Start Here.... -->
-   	<li><a href="#" class="parent">Antique Furniture</a><span></span>
-   	<div>
-   	<ul>
-   	<li><span></span><a href="#" class="parent">Armories</a>
-   	<div>
-   	<ul>
-   	<li><span></span><a href="#">Subcategory1.1</a>
-   	<div>
-   	<ul>
-   	<li><span></span><a href="#">Subcategory1.1.1</a></li>
-   <li><span></span><a href="#">Subcategory1.1.2</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#">Other links</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#" class="parent">Bedroom Furniture</a>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Subcategory1.2.1</a></li>
-   <li><span></span><a href="#">Subcategory1.2.2</a></li>
-   <li><span></span><a href="#">Subcategory1.2.3</a></li>
-   <li><span></span><a href="#">Subcategory1.2.4</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#" class="parent">Clocks</a>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#" class="parent">Desks &amp; Secretaires</a>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   </ul>
-   </div>
-   </li>
-   </ul>
-   </div>
-   </li> <!-- First Li End Here.... -->
+<?php
+$categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE category_status!='-1' AND category_root=0"; 
+ $categorylistre = $db->getRows($categorylist);
+ $category_num = sqlnumber($categorylist);
+ if( $category_num>0){
+ echo "<ul>";
+ foreach($categorylistre as  $categorylist_result){?>
+  <li><a href="#" class="parent"><?php echo $categorylist_result['category_name']; ?></a><span></span><div>
+  <?php 
+   $categorylist_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$categorylist_result['id']; 
+   $category_sub = $db->getRows($categorylist_sub);
+   $category_num2 = sqlnumber($categorylist_sub);
    
-   <!-- Second Li Start Here.... -->
-   <li><a href="#">Fine Art</a><span></span>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Director Academic</a></li>
-   <li><span></span><a href="#" class="parent">Director Student Services</a> 
-   <div>
-   <ul>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-	<li><span></span><a href="#">Director GRADE</a></li>
-	<li><span></span><a href="#" class="parent">I/C Officer Material Production</a>
-    	<div>
-		<ul>
-			<li><span></span><a href="#">Other links</a></li>
-			<li><span></span><a href="#">Other links</a></li>
-			<li><span></span><a href="#">Other links</a></li>
-		</ul>
-		</div>
-	</li>
-	<li><span></span><a href="#">Staff Training Development</a></li>
-	</ul>
-	</div>
-	</li>
-    <li><span></span><a href="#" class="parent">Architechtural Elements</a> 
-            <div>
-              <ul>
-                <li><span></span><a href="#">Bathrooms</a> 
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Bathrooms-01</a></li>
-                      <li><span></span><a href="#">Bathrooms-02</a></li>
-                      <li><span></span><a href="#">Bathrooms-03</a></li>
-                      <li><span></span><a href="#">Bathrooms-04</a></li>
-                      <li><span></span><a href="#">Bathrooms-05</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">Doors</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Doors-01</a></li>
-                      <li><span></span><a href="#">Doors-02</a></li>
-                      <li><span></span><a href="#">Doors-03</a></li>
-                      <li><span></span><a href="#">Doors-04</a></li>
-                      <li><span></span><a href="#">Doors-05</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">Gates</a></li>
-              </ul>
-            </div>
-          </li>
-	<li><a href="#" class="parent">Asian Antiques</a><span></span>
-            <div>
-              <ul>
-                <li><span></span><a href="#">Library</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">SC / ST Cell</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">STML</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          	<li><span></span><a href="#">American Antiques</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">French Antiques</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Collections</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Gift Ideas</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">New Arrivals</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Coming Soon!</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Sale!</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-	</ul>
+	if($category_num2>0){
+ echo "<ul>";  
+  foreach($category_sub as  $category_sub_re){?>
+  
+  <li><span></span><a href="#" class="parent"><?php echo $category_sub_re['category_name']; ?></a>
+   	<div>
+   <?php 
+   $categorylist_sub_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_re['id']; 
+   $category_sub_sub = $db->getRows($categorylist_sub_sub);
+ $category_num3 = sqlnumber($categorylist_sub_sub);
+   
+	if($category_num3>0) {
+   echo "<ul>";
+  foreach($category_sub_sub as  $category_sub_res){?>
+   <li><span></span><a href="#" class="parent"><?php echo $category_sub_res['category_name']; ?></a>
+   	<div>
+	  <?php 
+   $categorylist_sub_sub1 = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_res['id']; 
+   $category_sub_sub1 = $db->getRows($categorylist_sub_sub1);
+ $category_num4 = sqlnumber($categorylist_sub_sub1);
+   
+	if($category_num4>0){
+   echo "<ul>".$category_num4;
+  foreach($category_sub_sub1 as  $category_sub_res1){?>
+   <span></span><a href="#"><?php echo $category_sub_res1['category_name']; ?></a></li>
+   
+  <?php }
+   echo "</ul>";
+  }
+ 
+  }
+  echo "</div></li></ul>";
+  }
+  
+  }
+   echo "</div></li></ul>";
+  }
+ 
+  }
+  echo "</div></li></ul>";
+}
+?>
+	
 </div>
 
 </div>
@@ -299,7 +159,12 @@ foreach($products_rows as $row => $product_value){
 ?>
 </ul>
 </div>
+<?php 
+$products_count="select count(*) from products where product_dealer=".$dealer_row['id']." and product_available=1";
+$products_rows_count=$db->numrows($products_count);
+echo $products_rows_count;
 
+?>
 
 
 
