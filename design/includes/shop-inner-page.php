@@ -1,5 +1,5 @@
 <!--Store Page Start -->
-<div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="store.php">Store</a></div>
+<div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="shop.php">Shop</a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <div class="category-leftside-form">
@@ -26,10 +26,10 @@
 
 </aside>
 <section id="category-page-rightside">
-<h4>Store</h4>
+<h4>Shop</h4>
 <div class="full-width-brdr"></div>
 
-<div class="store-collection">
+<div class="shop-collection">
 <div class="featured-dealers-box">
 <ul>
 <li><a href="dealers.php" title=""><img src="design/images/fea-dealers-img-225-1.jpg" /></a>

@@ -21,7 +21,7 @@
 
 <div id="content" class="clearfix">
 <div id="content-wrap" class="clearfix">
-<?php include 'design/includes/store-inner-page.php'; ?>
+<?php include 'design/includes/shop-inner-page.php'; ?>
 </div>                
 </div>
      
