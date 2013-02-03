@@ -1,33 +1,26 @@
 
 <!--Dealer inventory Page Start -->
 <?php
-$dealer_data="select * from dealers where dealer_code='".$_GET['name']."'";
-$dealer_row=$db->getrow($dealer_data);
-$page_id=20;
-if(!empty($_GET['page'])){
-$page_id=$_GET['page'];
+$dealer_data="select * from dealers where dealer_code='".$_GET['name']."'";// get the dealer data.
+$dealer_row=$db->getrow($dealer_data);// fetching the dealer data
+$page_id=1;
+$start_count = 1;
+if(!empty($_GET['page'])){//Check wether page is empty
+
+if($_GET['page']<=0){//Checking the page id wether 0 or less than zero.
+$page_id=1; // Then assigning the page id value is equal to 1
 }
-
-$limit=10;
-$start=($page_id-1)*$limit;
-$last=$page_id*$limit;
-$products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1 limit ".$start.",".$last;
-$products_rows=$db->getrows($products_data);
-
-
-
-print_r($products_rows);
-
-//$categories_parent_data="select id, category_name from categories where category_root=0 and category_status=1";
-//$categories_parent_rows=$db->getrows($categories_parent_data);
-//$categories_parent_data="select category_name from categories where category_status=1 and id in(select category_root from categories where category_status=1)";
-//$categories_parent_rows=$db->getrows($categories_parent_data);
-//$categories_child_data="select id, category_name from categories where category_root=";
-//$categories_child_rows=$db->getrows($categories_parent_data);
-//print_r($categories_parent_rows);
-
+else{
+$page_id=$_GET['page']; //If not getting the the page_id value.
+}
+}
+$limit=10; // Results per page.
+$start=($page_id-1)*$limit; //Setting the starting limit.
+$last=$page_id*$limit; //Setting the ending limit.
+$products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1 limit ".$start.",".$last; //Getting the products data based on dealer id.
+$products_rows=$db->getrows($products_data); // Fetching the results.
 ?>
-<div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealers.php">Dealers</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="#">Nicholas Haslam LTD</a></div>
+<div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealers.php">Dealers</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>"><?php echo $dealer_row['dealer_store_name'];?></a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <address>
@@ -65,14 +58,13 @@ print_r($products_rows);
 <div class="left_menu_main">
 <div id="treeMenu">
 <?php
-
 $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE category_status!='-1' AND category_root=0"; 
  $categorylistre = $db->getRows($categorylist);
  $category_num = sqlnumber($categorylist);
  if( $category_num>0){
  echo "<ul>";
  foreach($categorylistre as  $categorylist_result){?>
-  <li><a href="#" class="parent"><?php echo $categorylist_result['category_name']; ?></a><span></span><div>
+  <li><a href="category.php?name=<?php echo $categorylist_result['category_name']; ?>" class="parent"><?php echo $categorylist_result['category_name']; ?></a><span></span><div>
   <?php 
    $categorylist_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$categorylist_result['id']; 
    $category_sub = $db->getRows($categorylist_sub);
@@ -82,7 +74,7 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
  echo "<ul>";  
   foreach($category_sub as  $category_sub_re){?>
   
-  <li><span></span><a href="#" class="parent"><?php echo $category_sub_re['category_name']; ?></a>
+  <li><span></span><a href="category.php?name=<?php echo $category_sub_re['category_name']; ?>" class="parent"><?php echo $category_sub_re['category_name']; ?></a>
    	<div>
    <?php 
    $categorylist_sub_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_re['id']; 
@@ -92,7 +84,7 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 	if($category_num3>0) {
    echo "<ul>";
   foreach($category_sub_sub as  $category_sub_res){?>
-   <li><span></span><a href="#" class="parent"><?php echo $category_sub_res['category_name']; ?></a>
+   <li><span></span><a href="category.php?name=<?php echo $category_sub_res['category_name']; ?>" class="parent"><?php echo $category_sub_res['category_name']; ?></a>
    	<div>
 	  <?php 
    $categorylist_sub_sub1 = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_res['id']; 
@@ -102,7 +94,7 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 	if($category_num4>0){
    echo "<ul>".$category_num4;
   foreach($category_sub_sub1 as  $category_sub_res1){?>
-   <span></span><a href="#"><?php echo $category_sub_res1['category_name']; ?></a></li>
+   <span></span><a href="category.php?name=<?php echo $category_sub_res1['category_name']; ?>"><?php echo $category_sub_res1['category_name']; ?></a></li>
    
   <?php }
    echo "</ul>";
@@ -168,60 +160,92 @@ foreach($products_rows as $row => $product_value){
 ?>
 </ul>
 </div>
+<!-- Products listing query -->
 <?php 
 $products_count="select * from products where product_dealer=".$dealer_row['id']." and product_available=1";
 $products_rows_count=sqlnumber($products_count);
 $page_count=round($products_rows_count/$limit);
 $show=10;
-print_r($page_count);
 ?>
+<!-- Paging for products -->
 <div class="page-numeric">
 <?php
-if($page_id <=1 )
+
+   
+if($page_id <=1)
    {
-    echo "<span id='page_links' style='font-weight:bold;'>Pre</span>";
+    echo "<span id='page_links' style='font-weight:bold;'><<</span>";
    }
    else
    {
     $j = $page_id - 1;
     ?>
-	<a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>"><<</a>
+	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>"><<</a>
+	
 	<?php
-    //echo "<a href='#'><<</a>";
+	if($page_id > $limit)
+   {
+   echo "<span id='page_links' style='font-weight:bold;'>...</span>";
    }
+   }
+   $start_count=$page_id-$limit;
+   if($start_count<0)
+   {
 	for($i=1; $i <= $page_count; $i++)
    {
     if($i<>$page_id)
     {
 	?>
-     <a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+     <a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
     <?php
-	//echo '<a href="#"></a>';
 	}
     else
     {
      echo "<span id='page_links' style='font-weight:bold;'>$i</span>";
     }
+
+   }
+   }
+   else{
+   for($i=$start_count; $i <= $page_count; $i++)
+   {
+    if($i<>$page_id)
+    {
+	?>
+     <a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+    <?php
+	}
+    else
+    {
+     echo "<span id='page_links' style='font-weight:bold;'>$i</span>";
+    }
+
+   }
    }
    if($page_id == $page_count )
    {
-    echo "<span id='page_links' style='font-weight:bold;'>Next ></span>";
+    echo "<span id='page_links' style='font-weight:bold;'>>></span>";
    }
    else
    {
     $j = $page_id + 1;
-	?>
-	<a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>">>></a>
-	<?php
-    //echo "<a href='#'>>></a>";
+	if($page_count > $page_id)
+   {
+   echo "<span id='page_links' style='font-weight:bold;'>...</span>";
    }
-
+	?>
+	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>">>></a>
+	<?php
+   }
 ?>
 
 </div>
+<!-- End Paging for products -->
+
+
 <!--
 <div class="page-numeric">
-<a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>"><<</a>
+<a href="#"><<</a>
 <a href="#">1</a>
 <a href="#">2</a>
 <a href="#">3</a>
