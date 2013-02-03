@@ -3,7 +3,7 @@
 <div id="primary-menu" style="clear:both;">
 	<ul>
 		<li><a class="menu-home" href="index.php"><div>Home</div></a></li>
-		<li><a href="store.php"><div>Store</div></a>
+		<li><a href="shop.php"><div>Shop</div></a>
         	<ul>
 				<li><a href="#">
 				<div>Antique Furniture</div></a>

@@ -3,12 +3,20 @@
 <?php
 $dealer_data="select * from dealers where dealer_code='".$_GET['name']."'";
 $dealer_row=$db->getrow($dealer_data);
+$page_id=20;
+if(!empty($_GET['page'])){
 $page_id=$_GET['page'];
+}
+
 $limit=10;
 $start=($page_id-1)*$limit;
 $last=$page_id*$limit;
 $products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1 limit ".$start.",".$last;
 $products_rows=$db->getrows($products_data);
+
+
+
+print_r($products_rows);
 
 //$categories_parent_data="select id, category_name from categories where category_root=0 and category_status=1";
 //$categories_parent_rows=$db->getrows($categories_parent_data);
@@ -57,6 +65,7 @@ $products_rows=$db->getrows($products_data);
 <div class="left_menu_main">
 <div id="treeMenu">
 <?php
+
 $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE category_status!='-1' AND category_root=0"; 
  $categorylistre = $db->getRows($categorylist);
  $category_num = sqlnumber($categorylist);
@@ -160,16 +169,59 @@ foreach($products_rows as $row => $product_value){
 </ul>
 </div>
 <?php 
-$products_count="select count(*) from products where product_dealer=".$dealer_row['id']." and product_available=1";
-$products_rows_count=$db->numrows($products_count);
-echo $products_rows_count;
+$products_count="select * from products where product_dealer=".$dealer_row['id']." and product_available=1";
+$products_rows_count=sqlnumber($products_count);
+$page_count=round($products_rows_count/$limit);
+$show=10;
+print_r($page_count);
+?>
+<div class="page-numeric">
+<?php
+if($page_id <=1 )
+   {
+    echo "<span id='page_links' style='font-weight:bold;'>Pre</span>";
+   }
+   else
+   {
+    $j = $page_id - 1;
+    ?>
+	<a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>"><<</a>
+	<?php
+    //echo "<a href='#'><<</a>";
+   }
+	for($i=1; $i <= $page_count; $i++)
+   {
+    if($i<>$page_id)
+    {
+	?>
+     <a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+    <?php
+	//echo '<a href="#"></a>';
+	}
+    else
+    {
+     echo "<span id='page_links' style='font-weight:bold;'>$i</span>";
+    }
+   }
+   if($page_id == $page_count )
+   {
+    echo "<span id='page_links' style='font-weight:bold;'>Next ></span>";
+   }
+   else
+   {
+    $j = $page_id + 1;
+	?>
+	<a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>">>></a>
+	<?php
+    //echo "<a href='#'>>></a>";
+   }
 
 ?>
 
-
-
+</div>
+<!--
 <div class="page-numeric">
-<a href="#"><<</a>
+<a href="dealer-inventory.php?code=<?php echo $dealer_row['dealer_code'];?>&name=<?php echo $dealer_row['dealer_name'];?>"><<</a>
 <a href="#">1</a>
 <a href="#">2</a>
 <a href="#">3</a>
@@ -182,6 +234,6 @@ echo $products_rows_count;
 <a href="#">10</a>
 <a href="#">....</a>
 <a href="#">>></a>
-</div>
+</div>-->
 </section>
 <!--category Page End -->
