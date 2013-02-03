@@ -15,10 +15,10 @@
 <link rel="stylesheet" href="design/css/oar-style.css" type="text/css" />
 
 <!--<link rel="stylesheet" href="design/css/colors.php" type="text/css" /> -->
-
+<link rel="stylesheet" href="design/css/slider.css" type="text/css" />
 <link rel="stylesheet" href="design/css/tipsy.css" type="text/css" />
 <link rel="stylesheet" href="design/images/fancybox/jquery.fancybox.css" type="text/css" />
-<!--<link rel="stylesheet" href="design/css/responsive.css" type="text/css" />-->
+<!--<link rel="stylesheet" href="design/css/responsive.css" type="text/css" /> -->
 
 <link rel="stylesheet" href="design/images/flexslider.css" type="text/css" />
 <link rel="stylesheet" href="design/css/gallery-style.css" type="text/css" />
@@ -38,7 +38,8 @@
 <script type="text/javascript" src="design/scripts/jquery.carouFredSel.js"></script>
 
 <script type="text/javascript" src="design/scripts/accordion.js"></script>
-
+<script type="text/javascript" src="design/scripts/jquery.scrollTo-slider.js"></script>
+<script type="text/javascript" src="design/scripts/common.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.flexslider.js"></script>
 <script type="text/javascript" src="design/scripts/amazon_scroller.js"></script>
 <script type="text/javascript" src="design/scripts/jquery.ad-gallery.js"></script>

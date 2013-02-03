@@ -11,7 +11,7 @@
 
 
 
-<?php include 'design/includes/new-arrivals-box-slideshow.php';?>
+<?php include 'design/includes/new-arrivals-slider.php';?>
 
 
 </aside>

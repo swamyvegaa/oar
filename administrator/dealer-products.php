@@ -42,7 +42,17 @@ if(@$_REQUEST['status']=='1')
 if(@$_REQUEST['action']=='delete'){
 Statusdelete($_REQUEST['id'],$start);
 }
+if(@$_REQUEST['featured_id']!=''){
+array_print($_REQUEST);
 
+if($_REQUEST['featured_check']=='1'){
+$statusproduct='1';
+}else{
+$statusproduct='0';
+}
+
+Statusfeatured($_REQUEST['featured_id'],$start,$statusproduct);
+}
 if(@$_REQUEST['featured_id']!=''){
 array_print($_REQUEST);
 
@@ -91,9 +101,9 @@ Statussale($_REQUEST['sale_id'],$start,$statusdealer);
 <tr>
 <th width="50"><input class="check-all" type="checkbox" /></th>
 <th width="100" align="left">Product Code</th>
-<th width="450" align="left">Product Name</th>
+<th width="400" align="left">Product Name</th>
 <th width="50" align="right">Price</th>
-
+<th width="50" align="right">Featured</th>
 <th width="200" align="center">Action</th>
 </tr>
 </thead>
@@ -113,7 +123,11 @@ Statussale($_REQUEST['sale_id'],$start,$statusdealer);
   <td><img src="cms-images/product.png" style="margin-right:10px;"  /><a href="#"><?php echo $productlist_result['product_code']; ?></a></td>
   <td><a href="#"><?php echo $productlist_result['product_name']; ?></a></td>
   <td><a href="#"><?php echo $productlist_result['product_sale_price']; ?></a></td>
+   <td align="center" valign="middle">
   
+  <form action=""  method="post" name='product_form<?php echo $productlist_result['id']; ?>'><input class="check-all" type="checkbox" onclick="document.product_form<?php echo $productlist_result['id']; ?>.submit();" name="featured_check"  id="featured_check" value="1" <?php if($productlist_result['product_featured']=='1'){ ?> checked="checked"<?php } ?>/><input type="hidden" name="featured_id" id="featured_id" value="<?php echo $productlist_result['id']; ?>"  /></form>
+  
+  </td>
   <td align="center" valign="middle">
   <a href="edit-product-dealer.php?id=<?php echo $productlist_result['id']; ?>&start=<?php echo $start; ?>"><img src="cms-images/edit.png" style="margin:0px 5px 0px 5px;" alt="Edit" title="Edit"/></a>&nbsp;
   <a href="?action=delete&id=<?php echo $productlist_result['id']; ?>&start=<?php echo $start; ?>"><img src="cms-images/delete.png" style="margin:0px 5px 0px 5px;" alt="Delete" title="Delete"/></a>&nbsp;
