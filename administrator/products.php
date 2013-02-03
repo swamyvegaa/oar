@@ -62,7 +62,17 @@ $statusdealer='0';
 
 Statussale($_REQUEST['sale_id'],$start,$statusdealer);
 }
+if(@$_REQUEST['hold_id']!=''){
 
+
+if($_REQUEST['hold_check']=='1'){
+$statusHold='1';
+}else{
+$statusHold='0';
+}
+
+StatusHoldFn($_REQUEST['hold_id'],$start,$statusHold);
+}
 ?>
 </head>
 
@@ -84,15 +94,16 @@ Statussale($_REQUEST['sale_id'],$start,$statusdealer);
 <tr>
 <th width="50"><input class="check-all" type="checkbox" /></th>
 <th width="100" align="left">Product Code</th>
-<th width="450" align="left">Product Name</th>
+<th width="400" align="left">Product Name</th>
 <th width="50" align="right">Price</th>
 <th width="50" align="center">Featured</th>
 <th width="50" align="center">Sale</th>
+<th width="50" align="left">Hold</th>
 <th width="200" align="center">Action</th>
 </tr>
 </thead>
 <?php 
- $productlist = "SELECT id,product_name,product_status,product_featured,product_on_sale,product_code,product_sale_price  FROM  products WHERE product_status!='-1'  LIMIT ".$start.", ".$q_limit.""; 
+ $productlist = "SELECT id,product_name,product_status,product_featured,product_on_sale,product_code,product_sale_price,product_on_hold FROM  products WHERE product_status!='-1'  LIMIT ".$start.", ".$q_limit.""; 
  $productlistre = $db->getRows($productlist);
  
  if( $product_num>0){
@@ -114,6 +125,9 @@ Statussale($_REQUEST['sale_id'],$start,$statusdealer);
   </td>
   <td align="center" valign="middle">
     <form action=""  method="post" name='product_sale<?php echo $productlist_result['id']; ?>'><input class="check-all" type="checkbox" onclick="document.product_sale<?php echo $productlist_result['id']; ?>.submit();" name="sale_check"  id="sale_check" value="1" <?php if($productlist_result['product_on_sale']=='1'){ ?> checked="checked"<?php } ?>/><input type="hidden" name="sale_id" id="sale_id" value="<?php echo $productlist_result['id']; ?>"  /></form>
+  </td>
+   <td align="center" valign="middle">
+    <form action=""  method="post" name='product_hold<?php echo $productlist_result['id']; ?>'><input class="check-all" type="checkbox" onclick="document.product_hold<?php echo $productlist_result['id']; ?>.submit();" name="hold_check"  id="hold_check" value="1" <?php if($productlist_result['product_on_hold']=='1'){ ?> checked="checked"<?php } ?>/><input type="hidden" name="hold_id" id="hold_id" value="<?php echo $productlist_result['id']; ?>"  /></form>
   </td>
   <td align="center" valign="middle">
 <a href="?action=status&id=<?php echo $productlist_result['id']; ?>&status=<?php echo $productlist_result['product_status']; ?>&start=<?php echo $start; ?>"><?php if($productlist_result['product_status']=='1'){?><img src="cms-images/active.png" style="margin:0px 5px 0px 5px;" alt="Active" title="Active"/><?php }else{ ?><img src="cms-images/inactive.png" style="margin:0px 5px 0px 5px;" alt="Inactive" title="Inactive"/><?php } ?></a>&nbsp;

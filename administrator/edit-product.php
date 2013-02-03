@@ -12,7 +12,9 @@ Checklogin();
 Checklogin(); 
 include("includes/function_products.php");
 include('includes/class.upload.php');
-
+$catRootPr = "SELECT product_primary_category,product_secodary_category  FROM  products WHERE id=".$_REQUEST['id']; 
+ $catRootArr = $db->getRow($catRootPr);
+ 
 $Productedit=Productedit($_REQUEST['id'],$_REQUEST['start']);
 
 if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
@@ -135,7 +137,7 @@ $_REQUEST['product_coming_soon']='0';
 }
 $_REQUEST['product_category']=implode(",",$_REQUEST['product_category']);
 
-Productupdate(@$_REQUEST['product_dealer'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_available'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_sale'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad'],$_REQUEST['start'],$_REQUEST['id']); 
+Productupdate(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_available'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_sale'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad'],$_REQUEST['start'],$_REQUEST['id']); 
  }
  
 }
@@ -212,11 +214,13 @@ foreach( $dealer_re as $dealer_res){ ?>
 </td>
 </tr>
 <tr>
-<td width="300" align="left" style="vertical-align:top">Select  Category</td>
+
+<td width="300" align="left" style="vertical-align:top">Select Primary Category</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left">
 <div>
-<select name="product_category[]" id="product_category[]" style="width:600px;" size="10" multiple="multiple">
+<select name="product_categoryPrimary" id="product_categoryPrimary" style="width:600px;" size="10">
+
 <option value="0" >Root Category</option>
 <?php 
  $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE category_status!='-1' AND category_root=0"; 
@@ -224,22 +228,22 @@ foreach( $dealer_re as $dealer_res){ ?>
  $category_num = sqlnumber($categorylist);
  if( $category_num>0){
  foreach($categorylistre as  $categorylist_result){?>
-  <option value="<?php echo $categorylist_result['id']; ?>" <?php if(in_array($categorylist_result['id'],$product_category_ids)){?> selected="selected"<?php } ?> ><?php echo $categorylist_result['category_name']; ?></option>
+  <option value="<?php echo $categorylist_result['id']; ?>" <?php if( $categorylist_result['id']==$catRootArr['product_primary_category']){?>selected="selected"<?php }?> ><?php echo $categorylist_result['category_name']; ?></option>
   <?php 
    $categorylist_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$categorylist_result['id']; 
    $category_sub = $db->getRows($categorylist_sub);
    foreach($category_sub as  $category_sub_re){?>
-  <option value="<?php echo $category_sub_re['id']; ?>" <?php if(in_array($category_sub_re['id'],$product_category_ids)){?> selected="selected"<?php } ?>>&nbsp;&nbsp;&nbsp;<?php echo $category_sub_re['category_name']; ?></option>
+  <option value="<?php echo $category_sub_re['id']; ?>" <?php if( $category_sub_re['id']==$catRootArr['product_primary_category']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;<?php echo $category_sub_re['category_name']; ?></option>
    <?php 
    $categorylist_sub_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_re['id']; 
    $category_sub_sub = $db->getRows($categorylist_sub_sub);
    foreach($category_sub_sub as  $category_sub_res){?>
-    <option value="<?php echo $category_sub_res['id']; ?>"  <?php if(in_array($category_sub_res['id'],$product_category_ids)){?> selected="selected"<?php } ?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res['category_name']; ?></option>
+    <option value="<?php echo $category_sub_res['id']; ?>"  <?php if( $category_sub_res['id']==$catRootArr['product_primary_category']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res['category_name']; ?></option>
 	  <?php 
    $categorylist_sub_sub1 = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_res['id']; 
    $category_sub_sub1 = $db->getRows($categorylist_sub_sub1);
    foreach($category_sub_sub1 as  $category_sub_res1){?>
-   <option value="<?php echo $category_sub_res1['id']; ?>"  <?php if(in_array($category_sub_res1['id'],$product_category_ids)){?> selected="selected"<?php } ?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res1['category_name']; ?></option>
+   <option value="<?php echo $category_sub_res1['id']; ?>"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res1['category_name']; ?></option>
    
   <?php }}}
   }
@@ -251,6 +255,45 @@ foreach( $dealer_re as $dealer_res){ ?>
 </div></td>
 </tr>
 
+<tr>
+<td width="300" align="left" style="vertical-align:top">Select Secondary Category</td>
+<td width="50">&nbsp;</td>
+<td width="650" align="left">
+<div>
+<select name="product_category[]" id="product_category[]" style="width:600px;" size="10" multiple="multiple">
+<option value="0" >Root Category</option>
+<?php 
+ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE category_status!='-1' AND category_root=0"; 
+ $categorylistre = $db->getRows($categorylist);
+ $category_num = sqlnumber($categorylist);
+ if( $category_num>0){
+ foreach($categorylistre as  $categorylist_result){?>
+  <option value="<?php echo $categorylist_result['id']; ?>" <?php if( $categorylist_result['id']==$catRootArr['product_secodary_category']){?>selected="selected"<?php }?> ><?php echo $categorylist_result['category_name']; ?></option>
+  <?php 
+   $categorylist_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$categorylist_result['id']; 
+   $category_sub = $db->getRows($categorylist_sub);
+   foreach($category_sub as  $category_sub_re){?>
+  <option value="<?php echo $category_sub_re['id']; ?>" <?php if( $category_sub_re['id']==$catRootArr['product_secodary_category']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;<?php echo $category_sub_re['category_name']; ?></option>
+   <?php 
+   $categorylist_sub_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_re['id']; 
+   $category_sub_sub = $db->getRows($categorylist_sub_sub);
+   foreach($category_sub_sub as  $category_sub_res){?>
+    <option value="<?php echo $category_sub_res['id']; ?>"  <?php if( $category_sub_res['id']==$catRootArr['product_secodary_category']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res['category_name']; ?></option>
+	  <?php 
+   $categorylist_sub_sub1 = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_res['id']; 
+   $category_sub_sub1 = $db->getRows($categorylist_sub_sub1);
+   foreach($category_sub_sub1 as  $category_sub_res1){?>
+   <option value="<?php echo $category_sub_res1['id']; ?>"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res1['category_name']; ?></option>
+   
+  <?php }}}
+  }
+}
+ 
+?>
+
+</select>
+</div></td>
+</tr>
 <tr>
 <td colspan="3" bgcolor="#eaeaea"><strong>Product Properties</strong></td>
 </tr>
@@ -379,7 +422,7 @@ foreach( $dealer_re as $dealer_res){ ?>
 <tr>
 <td width="300" align="left" valign="top">Product Primary Image</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" style="width:300px;"  name="product_primary_image" id="product_primary_image"/><img src="..<?php echo $Productedit['product_primary_image']; ?>"  width="150"  /></td>
+<td width="650" align="left"><input type="file" style="width:300px;"  name="product_primary_image" id="product_primary_image"/><img src="../<?php echo $Productedit['product_primary_image']; ?>"  width="150"  /></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Product Secondary Image</td>

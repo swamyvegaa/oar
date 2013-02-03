@@ -14,7 +14,8 @@ Checklogin();
 include("includes/function_category.php");
 include('includes/class.upload.php');
 $cat=Categoryedit($_REQUEST['id'],$_REQUEST['start']);
-
+ $catRoot = "SELECT category_root  FROM  categories WHERE id=".$_REQUEST['id']; 
+ $catRootArr = $db->getRow($catRoot);
 if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
 
 if(@$_REQUEST['category_name']!=''){
@@ -64,7 +65,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
-      echo $handle->file_dst_name= '/images/category/'. $handle->file_dst_name;
+      echo $handle->file_dst_name= 'images/category/'. $handle->file_dst_name;
   }
   
 }
@@ -84,7 +85,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $foo->image_x               = 255;
      
       $foo->process($dir_dest1);
-       $foo->file_dst_name= '/images/category/thumb/'. $foo->file_dst_name;
+       $foo->file_dst_name= 'images/category/thumb/'. $foo->file_dst_name;
   }
   }else{
   @ $foo->file_dst_name='';
@@ -142,22 +143,22 @@ Categoryupdate(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUES
  $category_num = sqlnumber($categorylist);
  if( $category_num>0){
  foreach($categorylistre as  $categorylist_result){?>
-  <option value="<?php echo $categorylist_result['id']; ?>"  <?php if( $categorylist_result['id']==$_REQUEST['id']){?>selected="selected"<?php }?> ><?php echo $categorylist_result['category_name']; ?></option>
+  <option value="<?php echo $categorylist_result['id']; ?>"  <?php if( $categorylist_result['id']==$catRootArr['category_root']){?>selected="selected"<?php }?> ><?php echo $categorylist_result['category_name']; ?></option>
   <?php 
    $categorylist_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$categorylist_result['id']; 
    $category_sub = $db->getRows($categorylist_sub);
    foreach($category_sub as  $category_sub_re){?>
-  <option value="<?php echo $category_sub_re['id']; ?>" <?php if( $category_sub_re['id']==$_REQUEST['id']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;<?php echo $category_sub_re['category_name']; ?></option>
+  <option value="<?php echo $category_sub_re['id']; ?>" <?php if( $category_sub_re['id']==$catRootArr['category_root']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;<?php echo $category_sub_re['category_name']; ?></option>
    <?php 
    $categorylist_sub_sub = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_re['id']; 
    $category_sub_sub = $db->getRows($categorylist_sub_sub);
    foreach($category_sub_sub as  $category_sub_res){?>
-    <option value="<?php echo $category_sub_res['id']; ?>"  <?php if( $category_sub_res['id']==$_REQUEST['id']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res['category_name']; ?></option>
+    <option value="<?php echo $category_sub_res['id']; ?>"  <?php if( $category_sub_res['id']==$catRootArr['category_root']){?>selected="selected"<?php }?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res['category_name']; ?></option>
 	  <?php 
    $categorylist_sub_sub1 = "SELECT id,category_name,category_root  FROM  categories WHERE category_root=".$category_sub_res['id']; 
    $category_sub_sub1 = $db->getRows($categorylist_sub_sub1);
    foreach($category_sub_sub1 as  $category_sub_res1){?>
-   <option value="<?php echo $category_sub_res1['id']; ?>"  disabled="disabled" <?php if( $category_sub_res1['id']==$_REQUEST['id']){?>selected="selected"<?php }?> >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res1['category_name']; ?></option>
+   <option value="<?php echo $category_sub_res1['id']; ?>"  disabled="disabled" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_sub_res1['category_name']; ?></option>
    
   <?php }}}
   }
@@ -166,7 +167,8 @@ Categoryupdate(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUES
 ?>
 
 </select>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td colspan="3" bgcolor="#eaeaea"><strong>Category Properties</strong></td>
@@ -212,7 +214,9 @@ Categoryupdate(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUES
 <tr>
 <td width="300" align="left" valign="top">Category Banner [Size]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left" style="vertical-align:top;"><input type="file" name="category_banner" style="width:300px;vertical-align:top;" /><img src="../<?php echo $cat['category_banner']; ?>" width="150" height="150" /></td>
+<td width="650" align="left" style="vertical-align:top;"><input type="file" name="category_banner" style="width:300px;vertical-align:top;" />
+<br />
+<img src="../<?php echo $cat['category_banner']; ?>" width="300" /></td>
 </tr>
 <tr>
 <tr>
