@@ -37,7 +37,14 @@ if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
 if(@$_REQUEST['dealer_name']==''){
 @$error['dealer_name']="<span class='error'>Enter delear name</span>";
 }
-
+if(@$_REQUEST['dealer_pwd']==''){
+@$error['dealer_pwd']="<span class='error'>Enter password</span>";
+}
+if(@$_REQUEST['dealer_cpwd']==''){
+@$error['dealer_cpwd']="<span class='error'>Enter confirm password</span>";
+}else if(@$_REQUEST['dealer_pwd']!=@$_REQUEST['dealer_cpwd']){
+@$error['dealer_cpwd']="<span class='error'>password & confirm password not match</span>";
+}
 
 
 if(@$_REQUEST['dealer_store_name']==''){
@@ -178,7 +185,16 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="dealer_code" id="dealer_code" style="width:400px;" value="<?php echo @$dealer['dealer_code']; ?>"/><?php echo @$error['dealer_code']; ?></td>
 </tr>
-
+<tr>
+<td width="300" align="left" valign="top">Dealer Password</td>
+<td width="50">&nbsp;</td>
+<td width="650" align="left"><input type="password" name="dealer_pwd" id="dealer_pwd" style="width:400px;" /><?php echo @$error['dealer_pwd']; ?></td>
+</tr>
+<tr>
+<td width="300" align="left" valign="top">Dealer Confirm Password</td>
+<td width="50">&nbsp;</td>
+<td width="650" align="left"><input type="password" name="dealer_cpwd" id="dealer_cpwd" style="width:400px;" /><?php echo @$error['dealer_cpwd']; ?></td>
+</tr>
 <tr>
 <td width="300" align="left" valign="top">Priority [For Sorting]</td>
 <td width="50">&nbsp;</td>
@@ -284,17 +300,17 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <tr>
 <td width="300" align="left" valign="top">Dealer Banner [Size: 740x250]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_banner" id="dealer_banner"  style="width:300px;" /><img src="..<?php echo @$dealer['dealer_banner']; ?>" width="225" /></td>
+<td width="650" align="left"><input type="file" name="dealer_banner" id="dealer_banner"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_banner']; ?>" width="225" /></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Thumbnail [Size: 225x170]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_thumbnail" id="dealer_thumbnail"  style="width:300px;" /><img src="..<?php echo @$dealer['dealer_thumbnail']; ?>" width="225" /></td>
+<td width="650" align="left"><input type="file" name="dealer_thumbnail" id="dealer_thumbnail"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_thumbnail']; ?>" width="225" /></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Icon [Size: 100x50]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_icon" id="dealer_icon"  style="width:300px;" /><img src="..<?php echo @$dealer['dealer_icon']; ?>" /></td>
+<td width="650" align="left"><input type="file" name="dealer_icon" id="dealer_icon"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_icon']; ?>" /></td>
 </tr>
 
 <tr>
