@@ -4,19 +4,9 @@
 <?php
 ob_start();
 include 'common.php';
-include 'includes/head.php';
+//include 'includes/head.php';
 ?>
-<script type="text/javascript" src="design/scripts/jquery.cycle.all.js"></script>
-<script type="text/javascript" language="javascript">
-function slideArrivals(){
-$('#arrSlide').cycle({ 
-    fx:      'scrollRight', 
-    next:   '.nextArr', 
-    timeout:  3, 
-    easing:  'easeInOutBack' 
-});
-};
-</script>
+
 <head>
 <title>iFortune</title>
 <meta name="description" content="ifortune">
@@ -42,19 +32,19 @@ $featuredDealers = "SELECT dealer_thumbnail,dealer_store_name FROM  `dealers` WH
  //print_r($featuredDealersData);
  //echo $featuredDealersData[0]
  //$category_sub_re['category_name']
- echo "<br />";
+ //echo "<br />";
  $featuredProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_featured` = 1 ORDER BY `id` desc LIMIT 0, 4"; 
  $featuredProductsData = $db->getRows($featuredProducts);
  //print_r($featuredProductsData);
- echo "<br />";
+ //echo "<br />";
  $featuredCategories = "SELECT category_thumbnail,category_name FROM  `categories` WHERE `category_featured_status` = 1 ORDER BY `id` desc LIMIT 0, 4"; 
  $featuredCategoriesData = $db->getRows($featuredCategories);
  //print_r($featuredCategoriesData[0]);
  //echo "<br /> arrr";
- $newArrProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_new_arrival` = 1 ORDER BY `id` desc LIMIT 0, 12"; 
+ $newArrProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_new_arrival` = 1 ORDER BY `id` desc LIMIT 0, 20"; 
  $newArrProductsData = $db->getRows($newArrProducts);
  //print_r($newArrProductsData);
- echo "<br /> sale";
+ //echo "<br /> sale";
  $saleProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_on_sale` = 1 ORDER BY `id` desc LIMIT 0, 12"; 
  $saleProductsData = $db->getRows($saleProducts);
  //print_r($saleProductsData);

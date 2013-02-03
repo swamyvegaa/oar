@@ -7,71 +7,13 @@
 <img src="design/images/icons/arrow-grey-icon.png" />
 </div>
 </div>
-<div id="arrSlide">
-<div class="nextArr">
-<div class="new-arrivals">
 
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
-</div>
-<div class="new-arrivals">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 
-</div></div>
-<div class="nextArr">
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
+<?php include 'design/includes/new-arrivals-box-slideshow.php';?>
 
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
 
-</div>
-</div>
-<div class="nextArr">
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
-
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
-
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
-
-</div>
-<div class="new-arrivals" style="margin-right:0px;">
-<a href="product-details.php" title="<?php echo $newArrProductsData[0]['product_name'];?>"><img src="<?php echo $newArrProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $newArrProductsData[0]['product_name'];?>" title="<?php echo $newArrProductsData[0]['product_name'];?>"/></a>
-<h4><?php echo $newArrProductsData[0]['product_name'];?></h4>
-
-</div>
-</div>
-</div>
 </aside>
 
 <aside class="home-page-right-side">
@@ -171,62 +113,6 @@
 </ul>
 </div>
 
-
-</section>
-
-
-<div id="newsletter-box">
-<div class="page-link-buttons">
-<h4 class="clearleft">Sale</h4>
-</div>
-<div class="full-width-brdr clearfix"></div>
-<div class="sale-box">
-<ul>
-
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-<li><a href="sale.php" title="<?php echo $saleProductsData[0]['product_name'];?>"><img src="<?php echo $saleProductsData[0]['product_primary_image'];?>" style="width:100px;height:100px;" alt="<?php echo $saleProductsData[0]['product_name'];?>" title="<?php echo $saleProductsData[0]['product_name'];?>"/></a></li>
-</ul>
-</div>
-<div class="clearfix"></div>
-
-<div class="page-link-buttons">
-<h4 class="clearleft">News Letter</h4>
-</div>
-<div class="full-width-brdr"></div>
-
-<img src="design/images/news-letter-form-logo.jpg" class="news-letter-side-logo" />
-<form class="news-letter-form">
-<input type="text" id="" name="text-box" onblur="if(this.value=='')this.value='Name:'" onfocus="if(this.value=='Name:')this.value=''" value="Name:" />
-<input type="text" id="" name="text-box" onblur="if(this.value=='')this.value='Email:'" onfocus="if(this.value=='Email:')this.value=''" value="Email:" />
-<input type="button" value="Subscribe" id="" />
-</form>
-<div class="page-link-buttons">
-<h4 class="clearleft">Blog</h4>
-</div>
-<div class="full-width-brdr"></div>
-<div class="blog-list">
-<ul>
-<li><a href="#">Great Gardens – Green With Envy</a></li>
-<li><a href="#">Park Avenue Apartment of Brooke Astor</a></li>
-<li><a href="#">MoMA Exhibit and Michelle Oka Doner Reception</a></li>
-<li><a href="#">Shop Talk: Hyde Park Antiques</a></li>
-<li><a href="#">Capsule Collection: Line Vautrin</a></li>
-</ul>
-</div>
-
-</div>
-
-
 <div id="featured-designers-box">
 <div class="page-link-buttons">
 <h4 class="clearleft">Featured Designers</h4>
@@ -275,6 +161,49 @@
 <a href="designers.php"><img src="design/images/icons/view-profile-button.jpg" style="border:0; float:right;" alt=""  /></a>
 </div>
 </div>
+
+</section>
+
+
+<div id="newsletter-box">
+<!--<div class="page-link-buttons">
+<h4 class="clearleft">Sale</h4>
+</div>
+<div class="full-width-brdr clearfix"></div>
+<div class="sale-box">
+<ul>
+</ul>
+</div>
+<div class="clearfix"></div>
+-->
+<div class="page-link-buttons">
+<h4 class="clearleft">News Letter</h4>
+</div>
+<div class="full-width-brdr"></div>
+
+<img src="design/images/news-letter-form-logo.jpg" class="news-letter-side-logo" />
+<form class="news-letter-form">
+<input type="text" id="" name="text-box" onblur="if(this.value=='')this.value='Name:'" onfocus="if(this.value=='Name:')this.value=''" value="Name:" />
+<input type="text" id="" name="text-box" onblur="if(this.value=='')this.value='Email:'" onfocus="if(this.value=='Email:')this.value=''" value="Email:" />
+<input type="button" value="Subscribe" id="" />
+</form>
+<div class="page-link-buttons">
+<h4 class="clearleft">Blog</h4>
+</div>
+<div class="full-width-brdr"></div>
+<div class="blog-list">
+<ul>
+<li><a href="#">Great Gardens – Green With Envy</a></li>
+<li><a href="#">Park Avenue Apartment of Brooke Astor</a></li>
+<li><a href="#">MoMA Exhibit and Michelle Oka Doner Reception</a></li>
+<li><a href="#">Shop Talk: Hyde Park Antiques</a></li>
+<li><a href="#">Capsule Collection: Line Vautrin</a></li>
+</ul>
+</div>
+
+</div>
+
+
 
 <div id="event-right-side-box">
 
