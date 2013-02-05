@@ -12,7 +12,7 @@ $dealers = "select dealer_code,dealer_name,dealer_thumbnail,dealer_store_name fr
 <?php
 foreach($dealers_data as $data => $value){
 ?>
-<li style=""><a href="dealer-inventory.php?name=<?php echo $value['dealer_name'];?>" title=""><img src="<?php echo $value['dealer_thumbnail'];?>" width="225px" height="170px" alt="<?php echo $value['dealer_store_name'];?>" title="<?php echo $value['dealer_store_name'];?>" /></a>
+<li style=""><a href="dealer-inventory.php?name=<?php echo $value['dealer_name'];?>&code=<?php echo $value['dealer_code'];?>" title=""><img src="<?php echo $value['dealer_thumbnail'];?>" width="225px" height="170px" alt="<?php echo $value['dealer_store_name'];?>" title="<?php echo $value['dealer_store_name'];?>" /></a>
 <h3><a href="dealer-inventory.php" title=""><?php echo $value['dealer_store_name'];?></a></h3>
 <?php
 }

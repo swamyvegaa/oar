@@ -13,7 +13,8 @@ Checklogin();
 include("includes/function_dealers.php");
 include('includes/class.upload.php');
 $vlc= new validator();
-
+//print_r($_REQUEST);
+//exit;
 if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
    if(@$_REQUEST['dealer_store_name']!=''){
   $denamere = "SELECT dealer_store_name  FROM  dealers WHERE dealer_status!='-1' AND dealer_store_name='".$_REQUEST['dealer_store_name']."'"; 
@@ -27,23 +28,23 @@ if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
  $dealire = "SELECT dealer_alias  FROM  dealers WHERE dealer_status!='-1' AND dealer_alias='".$_REQUEST['dealer_alias']."' AND dealer_alias!=''"; 
  $dealire_num = $db->getRow($dealire);
  }
- if(isset($_REQUEST['dealer_email'])){
- $sql="SELECT dealer_email FROM  dealers  WHERE dealer_email = '" .$_REQUEST['dealer_email']."' and dealer_status='1' ";
+ if(isset($_REQUEST['dealer_login_email'])){
+ $sql="SELECT dealer_login_email FROM  dealers  WHERE dealer_login_email = '" .$_REQUEST['dealer_login_email']."' and dealer_status='1' ";
  $userdetail = $db->getRow($sql);
 	}
 	
 	
 if(@$_REQUEST['dealer_name']==''){
-@$error['dealer_name']="<span class='error'>Enter delear name</span>";
+@$error['dealer_name']="<span class='error'>Enter dealer name</span>";
 }
-if(@$_REQUEST['dealer_email']==''){
-@$error['dealer_email']="<span class='error'>Enter delear email</span> ";
+//if(@$_REQUEST['dealer_email']==''){
+//@$error['dealer_email']="<span class='error'>Enter dealer email</span> ";
+//}
+else if(!$vlc->is_email(@$_REQUEST['dealer_login_email'])){
+  @$error['dealer_login_email'] = "<span class='error'>Enter valid email id</span>";
 }
-else if(!$vlc->is_email(@$_REQUEST['dealer_email'])){
-  @$error['dealer_email'] = "<span class='error'>Enter valid email id</span>";
-}
-else if($userdetail['dealer_email']==@$_REQUEST['dealer_email']){
-@$error['dealer_email'] = "<span class='error'>delear email exists</span>";
+else if($userdetail['dealer_login_email']==@$_REQUEST['dealer_login_email']){
+@$error['dealer_login_email'] = "<span class='error'>dealer login email exists</span>";
 }
 if(@$_REQUEST['dealer_pwd']==''){
 @$error['dealer_pwd']="<span class='error'>Enter password</span>";
@@ -55,18 +56,18 @@ if(@$_REQUEST['dealer_cpwd']==''){
 }
 
 if(@$_REQUEST['dealer_store_name']==''){
-@$error['dealer_store_name']="<span class='error'>Enter delear store name</span>";
+@$error['dealer_store_name']="<span class='error'>Enter dealer store name</span>";
 }else if(@$denamere_num>0){
-@$error['dealer_store_name']="<span class='error'>delear store name exists</span>";
+@$error['dealer_store_name']="<span class='error'>dealer store name exists</span>";
 }
 if(@$_REQUEST['dealer_code']==''){
-@$error['dealer_code']="<span class='error'>Enter  delear code</span>";
+@$error['dealer_code']="<span class='error'>Enter  dealer code</span>";
 
 }else if(@$decodere_num>0){
-@$error['dealer_code']="<span class='error'>delear code exists</span>";
+@$error['dealer_code']="<span class='error'>dealer code exists</span>";
 }
 if(@$dealire_num>0){
-@$error['dealer_alias']="<span class='error'>delear alias exists</span>";
+@$error['dealer_alias']="<span class='error'>dealer alias exists</span>";
 }
 
 if(count(@$error)==0){
@@ -156,7 +157,7 @@ if(@$_REQUEST['dealer_show_in_sitemap']==''){
 $_REQUEST['dealer_show_in_sitemap']='0';
 }
 
-Delearadd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer_email'],@$_REQUEST['dealer_pwd'],@$_REQUEST['dealer_order'],@$_REQUEST['dealer_status'],@$_REQUEST['dealer_featured'],@$_REQUEST['dealer_show_in_sitemap'],@$_REQUEST['dealer_store_name'],@$_REQUEST['dealer_alias'],@$_REQUEST['dealer_title'],@$_REQUEST['dealer_address1'],@$_REQUEST['dealer_address2'],@$_REQUEST['dealer_address3'],@$_REQUEST['dealer_city'],@$_REQUEST['dealer_state'],@$_REQUEST['dealer_country'],@$_REQUEST['dealer_zip_code'],@$_REQUEST['dealer_phone'],@$_REQUEST['dealer_fax'],@$_REQUEST['dealer_toll_free'],@$_REQUEST['dealer_website'],@$_REQUEST['dealer_description_top'],@$_REQUEST['dealer_description_bottom'],@$handle->file_dst_name,@$foo->file_dst_name,@$dealer_icon->file_dst_name,@$_REQUEST['dealer_meta_title'],@$_REQUEST['dealer_meta_description'],@$_REQUEST['dealer_meta_keywords'],@$_REQUEST['dealer_ad']); 
+Dealeradd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer_login_email'],@$_REQUEST['dealer_pwd'],@$_REQUEST['dealer_order'],@$_REQUEST['dealer_status'],@$_REQUEST['dealer_featured'],@$_REQUEST['dealer_show_in_sitemap'],@$_REQUEST['dealer_store_name'],@$_REQUEST['dealer_alias'],@$_REQUEST['dealer_title'],@$_REQUEST['dealer_address1'],@$_REQUEST['dealer_address2'],@$_REQUEST['dealer_address3'],@$_REQUEST['dealer_city'],@$_REQUEST['dealer_state'],@$_REQUEST['dealer_country'],@$_REQUEST['dealer_zip_code'],@$_REQUEST['dealer_phone'],@$_REQUEST['dealer_fax'],@$_REQUEST['dealer_toll_free'],@$_REQUEST['dealer_email'],@$_REQUEST['dealer_website'],@$_REQUEST['dealer_description_top'],@$_REQUEST['dealer_description_bottom'],@$handle->file_dst_name,@$foo->file_dst_name,@$dealer_icon->file_dst_name,@$_REQUEST['dealer_meta_title'],@$_REQUEST['dealer_meta_description'],@$_REQUEST['dealer_meta_keywords'],@$_REQUEST['dealer_ad']); 
  }
  
 }
@@ -193,9 +194,9 @@ Delearadd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer
 <td width="650" align="left"><input type="text" name="dealer_code" id="dealer_code" style="width:400px;" /><?php echo @$error['dealer_code']; ?></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Dealer Email</td>
+<td width="300" align="left" valign="top">Dealer Login Email</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="text" name="dealer_email" id="dealer_email" style="width:400px;" /><?php echo @$error['dealer_email']; ?></td>
+<td width="650" align="left"><input type="text" name="dealer_login_email" id="dealer_login_email" style="width:400px;" /><?php echo @$error['dealer_login_email']; ?></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Password</td>
@@ -293,7 +294,7 @@ Delearadd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer
 <tr>
 <td width="300" align="left" valign="top">Dealer Email</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="text"  style="width:400px;" /></td>
+<td width="650" align="left"><input type="text"  name="dealer_email" id="dealer_email" style="width:400px;" /></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Website</td>
