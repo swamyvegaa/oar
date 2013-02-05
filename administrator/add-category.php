@@ -60,7 +60,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
-      echo $handle->file_dst_name= '/images/category/'. $handle->file_dst_name;
+      echo $handle->file_dst_name= 'images/category/'. $handle->file_dst_name;
   }
   
 }
@@ -80,7 +80,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $foo->image_x               = 255;
      
       $foo->process($dir_dest1);
-       $foo->file_dst_name= '/images/category/thumb/'. $foo->file_dst_name;
+       $foo->file_dst_name= 'images/category/thumb/'. $foo->file_dst_name;
   }
   }else{
   @ $foo->file_dst_name='';

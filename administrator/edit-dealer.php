@@ -14,7 +14,7 @@ include("includes/function_dealers.php");
 include('includes/class.upload.php');
 $vlc= new validator();
 $dealer=Dealeredit($_REQUEST['id'],$_REQUEST['start']);
-
+//print_r($dealer);
 
 
 
@@ -37,12 +37,7 @@ if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
 if(@$_REQUEST['dealer_name']==''){
 @$error['dealer_name']="<span class='error'>Enter delear name</span>";
 }
-if(@$_REQUEST['dealer_pwd']==''){
-@$error['dealer_pwd']="<span class='error'>Enter password</span>";
-}
-if(@$_REQUEST['dealer_cpwd']==''){
-@$error['dealer_cpwd']="<span class='error'>Enter confirm password</span>";
-}else if(@$_REQUEST['dealer_pwd']!=@$_REQUEST['dealer_cpwd']){
+if(@$_REQUEST['dealer_pwd']!=@$_REQUEST['dealer_cpwd']){
 @$error['dealer_cpwd']="<span class='error'>password & confirm password not match</span>";
 }
 
@@ -167,7 +162,7 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <div class="content">
 <div class="clear"></div>
 <div class="dashboard-button clearfix"><a href="dealers.php?start=<?php echo $_REQUEST['start'];?>"><img src="cms-images/back-to-dealers.png"  /><br/>Manage<br/>Dealers</a></div>
-<div class="cms-heading">New Dealer</div>
+<div class="cms-heading">Edit Dealer</div>
 <div class="clear"></div>
 <div class="main-content">
 <form action="" method="post" enctype="multipart/form-data">
@@ -184,6 +179,11 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td width="300" align="left" valign="top">Dealer Code</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="dealer_code" id="dealer_code" style="width:400px;" value="<?php echo @$dealer['dealer_code']; ?>"/><?php echo @$error['dealer_code']; ?></td>
+</tr>
+<tr>
+<td width="300" align="left" valign="top">Dealer Email</td>
+<td width="50">&nbsp;</td>
+<td width="650" align="left"><input type="text" name="dealer_email" id="dealer_email" style="width:400px;" value=<?php echo $dealer['dealer_email']; ?> /></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Password</td>

@@ -157,7 +157,9 @@ if(@$_REQUEST['dealer_show_in_sitemap']==''){
 $_REQUEST['dealer_show_in_sitemap']='0';
 }
 
+
 Dealeradd(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer_login_email'],@$_REQUEST['dealer_pwd'],@$_REQUEST['dealer_order'],@$_REQUEST['dealer_status'],@$_REQUEST['dealer_featured'],@$_REQUEST['dealer_show_in_sitemap'],@$_REQUEST['dealer_store_name'],@$_REQUEST['dealer_alias'],@$_REQUEST['dealer_title'],@$_REQUEST['dealer_address1'],@$_REQUEST['dealer_address2'],@$_REQUEST['dealer_address3'],@$_REQUEST['dealer_city'],@$_REQUEST['dealer_state'],@$_REQUEST['dealer_country'],@$_REQUEST['dealer_zip_code'],@$_REQUEST['dealer_phone'],@$_REQUEST['dealer_fax'],@$_REQUEST['dealer_toll_free'],@$_REQUEST['dealer_email'],@$_REQUEST['dealer_website'],@$_REQUEST['dealer_description_top'],@$_REQUEST['dealer_description_bottom'],@$handle->file_dst_name,@$foo->file_dst_name,@$dealer_icon->file_dst_name,@$_REQUEST['dealer_meta_title'],@$_REQUEST['dealer_meta_description'],@$_REQUEST['dealer_meta_keywords'],@$_REQUEST['dealer_ad']); 
+
  }
  
 }
