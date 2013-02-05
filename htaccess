@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^testmail_2/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ testmail_2.php?page=$1&q=$2
+RewriteRule ^index/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?page=$1&q=$2

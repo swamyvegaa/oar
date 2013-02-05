@@ -27,7 +27,7 @@ include 'common.php';
 <?php include 'design/includes/main-menu.php'; ?>        
 
 <?php
-$featuredDealers = "SELECT dealer_thumbnail,dealer_store_name FROM  `dealers` WHERE `dealer_featured` = 1 ORDER BY `id` desc LIMIT 0, 4"; 
+$featuredDealers = "SELECT dealer_thumbnail,dealer_store_name FROM  `dealers` WHERE `dealer_featured` = 1 AND `dealer_status` =  '1' ORDER BY `id` desc LIMIT 0, 4"; 
  $featuredDealersData = $db->getRows($featuredDealers);
  //print_r($featuredDealersData);
  //echo $featuredDealersData[0]

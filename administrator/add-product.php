@@ -202,7 +202,7 @@ function DelRow() //This function will delete the last row
 <select style="width:600px;" size="10" name="product_dealer" id="product_dealer">
 <option value="0" selected="">On Antique Row</option>
 <?php
-$dealer_list = "SELECT id,dealer_store_name,dealer_code,dealer_status,dealer_featured  FROM  dealers WHERE dealer_status!='-1'"; 
+$dealer_list = "SELECT id,dealer_store_name,dealer_code,dealer_status,dealer_featured  FROM  dealers WHERE dealer_status='1'"; 
 $dealer_re = $db->getRows($dealer_list);
 foreach( $dealer_re as $dealer_res){ ?>
 <option value="<?php echo $dealer_res['id'];?>"><?php echo $dealer_res['dealer_store_name'];?></option>

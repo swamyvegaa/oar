@@ -136,7 +136,7 @@ Categoryupdate(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUES
 <td width="650" align="left">
 <div>
 <select name="category_root" id="category_root" style="width:600px;" size="10">
-<option value="0" >Root Category</option>
+<option value="0" <?php if($catRootArr['category_root'] == 0){?>selected="selected"<?php }?> >Root Category</option>
 <?php 
  $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE category_status!='-1' AND category_root=0"; 
  $categorylistre = $db->getRows($categorylist);

@@ -1,6 +1,6 @@
 <?php 
 
-function Delearadd($dealer_name,$dealer_code,$dealer_email,$dealer_pwd,$dealer_order,$dealer_status,$dealer_featured,$dealer_show_in_sitemap,$dealer_store_name,$dealer_alias,$dealer_title,$dealer_address1,$dealer_address2,$dealer_address3,$dealer_city,$dealer_state,$dealer_country,$dealer_zip_code,$dealer_phone,$dealer_fax,$dealer_toll_free,$dealer_website,$dealer_description_top,$dealer_description_bottom,$dealer_banner,$dealer_thumbnail,$dealer_icon,$dealer_meta_title,$dealer_meta_description,$dealer_meta_keywords,$dealer_ad){
+function Dealeradd($dealer_name,$dealer_code,$dealer_email,$dealer_pwd,$dealer_order,$dealer_status,$dealer_featured,$dealer_show_in_sitemap,$dealer_store_name,$dealer_alias,$dealer_title,$dealer_address1,$dealer_address2,$dealer_address3,$dealer_city,$dealer_state,$dealer_country,$dealer_zip_code,$dealer_phone,$dealer_fax,$dealer_toll_free,$dealer_website,$dealer_description_top,$dealer_description_bottom,$dealer_banner,$dealer_thumbnail,$dealer_icon,$dealer_meta_title,$dealer_meta_description,$dealer_meta_keywords,$dealer_ad){
 global $db;
 
 $today=date("Y-m-d H:i:s");
