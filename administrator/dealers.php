@@ -74,15 +74,16 @@ Statusdealer($_REQUEST['dealer_id'],$start,$statusdealer);
 <th width="500" align="left">Dealer Name</th>
 <th width="100" align="center">Dealer Code</th>
 <th width="100" align="center">Dealer Products</th>
-<th width="100" align="center">Featured</th>
-<th width="250" align="center">Action</th>
+<th width="75" align="center">Priority</th>
+<th width="75" align="center">Featured</th>
+<th width="200" align="center">Action</th>
 </tr>
 </thead>
 
 <?php 
 $rownum=$start;
 
-$dealer_list = "SELECT id,dealer_store_name,dealer_code,dealer_status,dealer_featured  FROM  dealers WHERE dealer_status!='-1'  LIMIT ".$start.", ".$q_limit.""; 
+$dealer_list = "SELECT id,dealer_store_name,dealer_code,dealer_order,dealer_status,dealer_featured  FROM  dealers WHERE dealer_status!='-1'  LIMIT ".$start.", ".$q_limit.""; 
 $dealer_re = $db->getRows($dealer_list);
  
  
@@ -100,6 +101,7 @@ $zibracolor = ($rownum%2==0)?"":"alt-row";
   <td align="left"><img src="cms-images/dealer.png" style="margin-right:10px;"  /><a href="#"><?php echo $dealer_res['dealer_store_name']; ?></a></td>
   <td align="center"><?php echo $dealer_res['dealer_code']; ?></td>
   <td><a href="dealer-products.php?dealer_id=<?php echo $dealer_res['id']; ?>"><img src="cms-images/view-products.png" style="margin:0px 5px 0px 5px;" alt="View Products" title="View Products"/></a></td>
+  <td align="center"><span><?php echo $dealer_res['dealer_order']; ?></span></td>
   <td align="center" valign="middle"><form action=""  method="post" name='dealer_form<?php echo $dealer_res['id']; ?>'><input class="check-all" type="checkbox" onclick="document.dealer_form<?php echo $dealer_res['id']; ?>.submit();" name="dealer_check"  id="dealer_check" value="1" <?php if($dealer_res['dealer_featured']=='1'){ ?> checked="checked"<?php } ?>/><input type="hidden" name="dealer_id" id="dealer_id" value="<?php echo $dealer_res['id']; ?>"  /></form></td>
   <td align="center" valign="middle">
    <a href="?action=status&id=<?php echo $dealer_res['id']; ?>&status=<?php echo $dealer_res['dealer_status']; ?>&start=<?php echo $start; ?>"><?php if($dealer_res['dealer_status']=='1'){?><img src="cms-images/active.png" style="margin:0px 5px 0px 5px;" alt="Active" title="Active"/><?php }else{ ?><img src="cms-images/inactive.png" style="margin:0px 5px 0px 5px;" alt="Inactive" title="Inactive"/><?php } ?></a>&nbsp;

@@ -84,7 +84,7 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 	if($category_num4>0){
    echo "<ul>".$category_num4;
   foreach($category_sub_sub1 as  $category_sub_res1){?>
-   <span></span><a href="category.php?name=<?php echo $category_sub_res1['category_name']; ?>"><?php echo $category_sub_res1['category_name']; ?></a></li>
+   <li><span></span><a href="category.php?name=<?php echo $category_sub_res1['category_name']; ?>"><?php echo $category_sub_res1['category_name']; ?></a></li>
    
   <?php }
    echo "</ul>";
@@ -133,12 +133,17 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 <section id="category-page-rightside">
 
 <p><img src="<?php echo $dealer_row['dealer_banner'];?>" width="740px" height="250px;"  /></p><br/>
-
+<?php if(!empty($dealer_row['dealer_description_top'])){?>
+<p><?php echo $dealer_row['dealer_description_top'];?></p><br><br>
+<?php
+}
+?>
 <h4>Products</h4>
 <div class="full-width-brdr"></div>
 <div class="category-list-imgs">
 <ul>
 <?php 
+if(!empty($products_rows)){
 foreach($products_rows as $row => $product_value){
 ?>
 <li><a href="#" title=""><img src="<?php echo $product_value['product_primary_image'];?>" />
@@ -161,10 +166,10 @@ else if($product_value['product_coming_soon']==1){
 echo "<div style='text-align:center; font-weight:bold;'>Coming Soon</div>";
 }
 ?>
-
 </li>
 <?php
 }
+
 ?>
 </ul>
 </div>
@@ -245,11 +250,16 @@ if($page_id <=1)
 	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>">>></a>
 	<?php
    }
+   }
+else{
+echo "<p>No products to display.</p>";
+}
 ?>
 
 </div>
 <!-- End Paging for products -->
-
+<p><?php echo $dealer_row['dealer_description_bottom'];?></p><br><br>
+<p><?php echo $dealer_row['dealer_ad'];?></p><br><br>
 
 <!--
 <div class="page-numeric">

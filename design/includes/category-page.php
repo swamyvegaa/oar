@@ -62,380 +62,9 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 ?>
 	
 </div>
-<!--<div id="treeMenu">
-	<ul>   First Li Start Here.... 
-   	<li><a href="#" class="parent">Antique Furniture</a><span></span>
-   	<div>
-   	<ul>
-   	<li><span></span><a href="#" class="parent">Armories</a>
-   	<div>
-   	<ul>
-   	<li><span></span><a href="#">Subcategory1.1</a>
-   	<div>
-   	<ul>
-   	<li><span></span><a href="#">Subcategory1.1.1</a></li>
-   <li><span></span><a href="#">Subcategory1.1.2</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#">Other links</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#" class="parent">Bedroom Furniture</a>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Subcategory1.2.1</a></li>
-   <li><span></span><a href="#">Subcategory1.2.2</a></li>
-   <li><span></span><a href="#">Subcategory1.2.3</a></li>
-   <li><span></span><a href="#">Subcategory1.2.4</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#" class="parent">Clocks</a>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   </ul>
-   </div>
-   </li>
-   <li><span></span><a href="#" class="parent">Desks &amp; Secretaires</a>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   </ul>
-   </div>
-   </li>
-   </ul>
-   </div>
-   </li>  First Li End Here.... 
-   
-   Second Li Start Here.... 
-   <li><a href="#">Fine Art</a><span></span>
-   <div>
-   <ul>
-   <li><span></span><a href="#">Director Academic</a></li>
-   <li><span></span><a href="#" class="parent">Director Student Services</a> 
-   <div>
-   <ul>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-   <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-	<li><span></span><a href="#">Director GRADE</a></li>
-	<li><span></span><a href="#" class="parent">I/C Officer Material Production</a>
-    	<div>
-		<ul>
-			<li><span></span><a href="#">Other links</a></li>
-			<li><span></span><a href="#">Other links</a></li>
-			<li><span></span><a href="#">Other links</a></li>
-		</ul>
-		</div>
-	</li>
-	<li><span></span><a href="#">Staff Training Development</a></li>
-	</ul>
-	</div>
-	</li>
-    <li><span></span><a href="#" class="parent">Architechtural Elements</a> 
-            <div>
-              <ul>
-                <li><span></span><a href="#">Bathrooms</a> 
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Bathrooms-01</a></li>
-                      <li><span></span><a href="#">Bathrooms-02</a></li>
-                      <li><span></span><a href="#">Bathrooms-03</a></li>
-                      <li><span></span><a href="#">Bathrooms-04</a></li>
-                      <li><span></span><a href="#">Bathrooms-05</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">Doors</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Doors-01</a></li>
-                      <li><span></span><a href="#">Doors-02</a></li>
-                      <li><span></span><a href="#">Doors-03</a></li>
-                      <li><span></span><a href="#">Doors-04</a></li>
-                      <li><span></span><a href="#">Doors-05</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">Gates</a></li>
-              </ul>
-            </div>
-          </li>
-	<li><a href="#" class="parent">Asian Antiques</a><span></span>
-            <div>
-              <ul>
-                <li><span></span><a href="#">Library</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">SC / ST Cell</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><span></span><a href="#">STML</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                      <li><span></span><a href="#">Other links</a></li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          	<li><span></span><a href="#">American Antiques</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">French Antiques</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Collections</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Gift Ideas</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">New Arrivals</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Coming Soon!</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-        <li><span></span><a href="#">Sale!</a>
-                  <div>
-                    <ul>
-                      <li><span></span><a href="#">Director Academic</a></li>
-                      <li><span></span><a href="#">Faculty Details</a></li>
-                      <li><span></span><a href="#">Academic Programs</a></li>
-                    </ul>
-                  </div>
-		</li>
-	</ul>
-</div>-->
+
 </div>
 
-<!--<div class="left_menu_main">
-            <div class="accordion"> <a class="menuitem submenuheader" href="#">Antique Furniture
-            </a>
-              <div class="submenu">
-			  <ul>
-                  <li><a href="#">Armories</a></li>
-                 
-                </ul>
-				<ul>
-                  <li><a href="#">Bedroom Furniture</a></li>
-                 
-                </ul>
-				<ul>
-                  <li><a href="#">Clocks</a></li>
-                 
-                </ul>
-				<ul>
-                  <li><a href="#">Desks &amp; Secretaires</a></li>
-                 
-                </ul>
-				</div>
-              <a class="menuitem submenuheader" href="#" >Fine Art</a>
-              <div class="submenu">
-			  <ul>
-                  <li><a href="#">Director Academic</a></li>
-                  
-                </ul>
-				<ul>
-                  <li><a href="#">Director Student Services</a></li>
-                  
-                </ul>
-				<ul>
-                  <li><a href="#">Director GRADE</a></li>
-                  
-                </ul>
-				<ul>
-                  <li><a href="#">I/C Officer Material Production</a></li>
-                  
-                </ul>
-				<ul>
-                  <li><a href="#">Staff Training Development</a></li>
-                  
-                </ul>
-				</div>
-              	<a class="menuitem submenuheader" href="#">Architechtural Elements</a>
-              	<div class="submenu">
-				<ul>
-                  <li><a href="#">Bathrooms</a></li>
-                 
-                </ul>
-				<ul>
-                  <li><a href="#">Doors</a></li>
-                 
-                </ul>
-				<ul>
-                  <li><a href="#">Gates</a></li>
-                 
-                </ul>
-				</div>
-              	<a class="menuitem submenuheader" href="#">Asian Antiques</a>
-              	<div class="submenu">
-			    <ul>
-                  <li><a href="#">Library</a></li>
-                  
-                </ul>
-				<ul>
-                  <li><a href="#">SC / ST Cell</a></li>
-                  
-                </ul>
-				<ul>
-                  <li><a href="#">STML</a></li>
-                  
-                </ul>
-				</div>
-			   	<a class="menuitem submenuheader" href="#">American Antiques</a>
-              	<div class="submenu">
-			    <ul>
-                  <li><a href="#">Director Academic</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Faculty Details</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Academic Programs</a></li>
-                </ul>
-				</div>
-                <a class="menuitem submenuheader" href="#">French Antiques</a>
-                <div class="submenu">
-			    <ul>
-                  <li><a href="#">Director Academic</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Faculty Details</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Academic Programs</a></li>
-                </ul>
-				</div>
-                <a class="menuitem submenuheader" href="#">Collections</a>
-                <div class="submenu">
-			    <ul>
-                  <li><a href="#">Director Academic</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Faculty Details</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Academic Programs</a></li>
-                </ul>
-				</div>
-                <a class="menuitem submenuheader" href="#">Gift Ideas</a>
-                <div class="submenu">
-			    <ul>
-                  <li><a href="#">Director Academic</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Faculty Details</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Academic Programs</a></li>
-                </ul>
-				</div>
-                <a class="menuitem submenuheader" href="#">New Arrivals</a>
-                <div class="submenu">
-			    <ul>
-                  <li><a href="#">Director Academic</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Faculty Details</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Academic Programs</a></li>
-                </ul>
-				</div>
-                <a class="menuitem submenuheader" href="#">Coming Soon!</a>
-                <div class="submenu">
-			    <ul>
-                  <li><a href="#">Director Academic</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Faculty Details</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Academic Programs</a></li>
-                </ul>
-				</div>
-                <a class="menuitem submenuheader" href="#">Sale!</a>
-                <div class="submenu">
-			    <ul>
-                  <li><a href="#">Director Academic</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Faculty Details</a></li>
-                </ul>
-				<ul>
-                  <li><a href="#">Academic Programs</a></li>
-                </ul>
-				</div>
-	</div>
-</div> -->
 <div class="clear"></div>
 <div class="category-leftside-form">
     		<form>
@@ -464,10 +93,13 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 <section id="category-page-rightside">
 <h4><?php echo $category_row['category_name'];?></h4>
 <div class="full-width-brdr"></div>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br/><br/>
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
+<?php
+if(!empty($category_row['category_description_top'])){
+?>
+<p><?php echo $category_row['category_description_top'];?></p><br><br>
+<?php
+}
+?>
 <div class="category-list-imgs">
 <!-- Category products -->
 <?php
@@ -494,6 +126,7 @@ $show=10;
 <?php 
 $i=1;
 $results=count($products_rows); //counting the total number of results
+if($results!=0){
 foreach($products_rows as $row => $product_value){
 ?>
 <ul>
@@ -537,6 +170,11 @@ echo '</ul>';
 <a href="#">....</a>
 <a href="#">>></a>
 </div>
+<?php } else{
+echo "<p>No products to display.</p>";
+}?>
 <!-- End of Products paging -->
+<p><?php echo $category_row['category_description_bottom'];?></p><br><br>
+<p><?php echo $category_row['category_ad'];?></p><br><br>
 </section>
 <!--category Page End -->
