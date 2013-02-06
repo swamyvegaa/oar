@@ -1,7 +1,7 @@
 
 <!--Dealer inventory Page Start -->
 <?php
-$dealer_data="select * from dealers where dealer_code='".$_GET['name']."'";// get the dealer data.
+$dealer_data="select * from dealers where dealer_code='".$_GET['code']."'";// get the dealer data.
 $dealer_row=$db->getrow($dealer_data);// fetching the dealer data
 $page_id=1;
 $start_count = 1;
@@ -151,13 +151,10 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 <?php 
 foreach($products_rows as $row => $product_value){
 ?>
-<<<<<<< HEAD
+
 <li><a href="product-details.php?product_id=<?php echo $product_value['id'];?>" title=""><img src="<?php echo $product_value['product_primary_image'];?>" />
 <h3><?php echo $product_value['product_name'];?></h3></a>
-=======
-<li><a href="#" title=""><img src="<?php echo $product_value['product_primary_image'];?>" /></a>
-<h3><?php echo $product_value['product_name'];?></h3>
->>>>>>> origin/master
+
 <span class="price">$<?php echo $product_value['product_sale_price'];?></span>
 </li>
 <?php
