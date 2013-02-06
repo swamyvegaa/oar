@@ -63,12 +63,12 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
  
   if ($handle->uploaded) {
       
-      $handle->image_resize         = true;
+    //  $handle->image_resize         = true;
 	  $handle->image_y               = 250;
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
-      $handle->file_dst_name= '/images/products/'. $handle->file_dst_name;
+      $handle->file_dst_name= 'images/products/'. $handle->file_dst_name;
   }
   
 }
@@ -94,13 +94,13 @@ $productaler_icon = new upload($file);
    if ($productaler_icon->uploaded) {
       
       $productaler_icon->image_resize         = true;
-	  $productaler_icon->image_y               = 50;
-      $productaler_icon->image_x               = 100;
+	  $productaler_icon->image_y               = 225;
+      $productaler_icon->image_x               = 225;
      
        $productaler_icon->process($dir_dest1);
       
 	   }
-	  $product_secondary_image[]= '/images/products/thumb/'. $productaler_icon->file_dst_name;
+	  $product_secondary_image[]= 'images/products/thumb/'. $productaler_icon->file_dst_name;
   }
   
  $product_secondary_image= implode(",",$product_secondary_image);
@@ -117,8 +117,8 @@ $_REQUEST['product_call_for_fee']='0';
 if(@$_REQUEST['product_free_shipping']==''){
 $_REQUEST['product_free_shipping']='0';
 }
-if(@$_REQUEST['product_available']==''){
-$_REQUEST['product_available']='0';
+if(@$_REQUEST['product_status']==''){
+$_REQUEST['product_status']='0';
 }
 if(@$_REQUEST['product_sold']==''){
 $_REQUEST['product_sold']='0';
@@ -126,8 +126,8 @@ $_REQUEST['product_sold']='0';
 if(@$_REQUEST['product_featured']==''){
 $_REQUEST['product_featured']='0';
 }
-if(@$_REQUEST['product_on_sale']==''){
-$_REQUEST['product_on_sale']='0';
+if(@$_REQUEST['product_on_hold']==''){
+$_REQUEST['product_on_hold']='0';
 }
 if(@$_REQUEST['product_new_arrival']==''){
 $_REQUEST['product_new_arrival']='0';
@@ -137,7 +137,7 @@ $_REQUEST['product_coming_soon']='0';
 }
 $_REQUEST['product_category']=implode(",",$_REQUEST['product_category']);
 
-Productupdate(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_available'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_sale'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad'],$_REQUEST['start'],$_REQUEST['id']); 
+Productupdate(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_status'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_hold'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad'],$_REQUEST['start'],$_REQUEST['id']); 
  }
  
 }
@@ -402,13 +402,11 @@ foreach( $dealer_re as $dealer_res){ ?>
 <td width="300" align="left" style="vertical-align:top">Product Display</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left">
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_available" id="product_available" value="1" <?php if($Productedit['product_available']==1){ ?> checked="checked"<?php } ?>/>Available
+<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_status" id="product_status" value="1" <?php if($Productedit['product_status']==1){ ?> checked="checked"<?php } ?>/>Available
+<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_on_hold" id="product_on_hold" value="1" <?php if($Productedit['product_on_hold']==1){ ?> checked="checked"<?php } ?>/>On Hold
 <input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_sold" id="product_sold" value="1" <?php if($Productedit['product_sold']==1){ ?> checked="checked"<?php } ?>/>Sold
-<br /><br />
 <input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_featured" id="product_featured" value="1" <?php if($Productedit['product_featured']==1){ ?> checked="checked"<?php } ?>/>Featured
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_on_sale" id="product_on_sale" value="1" <?php if($Productedit['product_on_sale']==1){ ?> checked="checked"<?php } ?>/>On Sale
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_new_arrival" id="product_new_arrival" value="1" <?php if($Productedit['product_new_arrival']==1){ ?> checked="checked"<?php } ?>/>New Arrival
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_coming_soon" id="product_coming_soon" value="1" <?php if($Productedit['product_coming_soon']==1){ ?> checked="checked"<?php } ?>/>Coming Soon
+
 </td>
 </tr>
 <tr>
@@ -422,7 +420,10 @@ foreach( $dealer_re as $dealer_res){ ?>
 <tr>
 <td width="300" align="left" valign="top">Product Primary Image</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" style="width:300px;"  name="product_primary_image" id="product_primary_image"/><img src="../<?php echo $Productedit['product_primary_image']; ?>"  width="150"  /></td>
+<td width="650" align="left"><input type="file" style="width:300px;"  name="product_primary_image" id="product_primary_image"/>
+<br />
+<br />
+<img src="../<?php echo $Productedit['product_primary_image']; ?>"  style="width:225px;height:225px;"  /></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Product Secondary Image</td>

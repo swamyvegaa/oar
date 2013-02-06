@@ -463,18 +463,18 @@ global $db;
 
 function Dealerlogin($username,$pwd){
 global $db;
- $sel_admins = "SELECT * FROM users  WHERE 	username = '" . $username . "' AND password = '" . md5($pwd). "' AND status = '1' AND type = 'dealer'";
- $admin_info = $db->getRow($sel_admins);
+ $sel_dealer = "SELECT * FROM dealers  WHERE dealer_login_email = '" . $username . "' AND dealer_pwd = '" . md5($pwd). "' AND dealer_status = '1'";
+ $admin_info = $db->getRow($sel_dealer);
  
  
             if( count( $admin_info) > 0){
-            $_SESSION['aor'][$admin_info['type']]['admin_user'] = $admin_info['username'];
-			$_SESSION['aor'][$admin_info['type']]['admin_name'] = $admin_info['name'];  			
+            $_SESSION['aor'][$admin_info['type']]['admin_user'] = $admin_info['dealer_login_email'];
+			$_SESSION['aor'][$admin_info['type']]['admin_name'] = $admin_info['dealer_name'];  			
 			$_SESSION['aor'][$admin_info['type']]['admin_id']   = $admin_info['id'];
-			$_SESSION['aor'][$admin_info['type']]['type'] = $admin_info['type'];
+			//$_SESSION['aor'][$admin_info['type']]['type'] = $admin_info['type'];
 			$out1 = ob_get_contents();
 			var_dump($out1);
-			header('Location:dashboard.php');
+			header('Location:profile.php');
 			}else {
 			header("Location: index.php");
 			}

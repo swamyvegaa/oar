@@ -144,7 +144,7 @@ if(@$_REQUEST['dealer_show_in_sitemap']==''){
 $_REQUEST['dealer_show_in_sitemap']='0';
 }
 
-Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer_email'],@$_REQUEST['dealer_pwd'],@$_REQUEST['dealer_order'],@$_REQUEST['dealer_status'],@$_REQUEST['dealer_featured'],@$_REQUEST['dealer_show_in_sitemap'],@$_REQUEST['dealer_store_name'],@$_REQUEST['dealer_alias'],@$_REQUEST['dealer_title'],@$_REQUEST['dealer_address1'],@$_REQUEST['dealer_address2'],@$_REQUEST['dealer_address3'],@$_REQUEST['dealer_city'],@$_REQUEST['dealer_state'],@$_REQUEST['dealer_country'],@$_REQUEST['dealer_zip_code'],@$_REQUEST['dealer_phone'],@$_REQUEST['dealer_fax'],@$_REQUEST['dealer_toll_free'],@$_REQUEST['dealer_website'],@$_REQUEST['dealer_description_top'],@$_REQUEST['dealer_description_bottom'],@$handle->file_dst_name,@$foo->file_dst_name,@$dealer_icon->file_dst_name,@$_REQUEST['dealer_meta_title'],@$_REQUEST['dealer_meta_description'],@$_REQUEST['dealer_meta_keywords'],@$_REQUEST['dealer_ad'],$_REQUEST['start'],$_REQUEST['id']); 
+Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer_login_email'],@$_REQUEST['dealer_pwd'],@$_REQUEST['dealer_order'],@$_REQUEST['dealer_status'],@$_REQUEST['dealer_featured'],@$_REQUEST['dealer_show_in_sitemap'],@$_REQUEST['dealer_store_name'],@$_REQUEST['dealer_alias'],@$_REQUEST['dealer_title'],@$_REQUEST['dealer_address1'],@$_REQUEST['dealer_address2'],@$_REQUEST['dealer_address3'],@$_REQUEST['dealer_city'],@$_REQUEST['dealer_state'],@$_REQUEST['dealer_country'],@$_REQUEST['dealer_zip_code'],@$_REQUEST['dealer_phone'],@$_REQUEST['dealer_fax'],@$_REQUEST['dealer_toll_free'],@$_REQUEST['dealer_email'],@$_REQUEST['dealer_website'],@$_REQUEST['dealer_description_top'],@$_REQUEST['dealer_description_bottom'],@$handle->file_dst_name,@$foo->file_dst_name,@$dealer_icon->file_dst_name,@$_REQUEST['dealer_meta_title'],@$_REQUEST['dealer_meta_description'],@$_REQUEST['dealer_meta_keywords'],@$_REQUEST['dealer_ad'],$_REQUEST['start'],$_REQUEST['id']); 
  }
  
 }
@@ -181,9 +181,9 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td width="650" align="left"><input type="text" name="dealer_code" id="dealer_code" style="width:400px;" value="<?php echo @$dealer['dealer_code']; ?>"/><?php echo @$error['dealer_code']; ?></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Dealer Email</td>
+<td width="300" align="left" valign="top">Dealer Login Email</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="text" name="dealer_email" id="dealer_email" style="width:400px;" value=<?php echo $dealer['dealer_email']; ?> /></td>
+<td width="650" align="left"><input type="text" name="dealer_login_email" id="dealer_login_email" style="width:400px;" value=<?php echo $dealer['dealer_login_email']; ?> /></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Password</td>
@@ -278,19 +278,23 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="dealer_toll_free" id="dealer_toll_free" style="width:400px;" value="<?php echo @$dealer['dealer_toll_free']; ?>"/></td>
 </tr>
-
+<tr>
+<td width="300" align="left" valign="top">Dealer Email</td>
+<td width="50">&nbsp;</td>
+<td width="650" align="left"><input type="text" name="dealer_email" id="dealer_email" style="width:400px;" value=<?php echo $dealer['dealer_email']; ?> /></td>
+</tr>
 <tr>
 <td width="300" align="left" valign="top">Website</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="text" name="dealer_website" id="dealer_website" style="width:400px;" value="<?php echo @$dealer['dealer_website']; ?>"/></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Dealer Description [Top]</td>
+<td width="300" align="left" style="vertical-align:top;">Dealer Description [Top]</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_description_top" id="dealer_description_top" style="width:600px; height:100px;"><?php echo @$dealer['dealer_description_top']; ?></textarea></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Dealer Description [Bottom]</td>
+<td width="300" align="left"  style="vertical-align:top;">Dealer Description [Bottom]</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_description_bottom" id="dealer_description_bottom" style="width:600px; height:100px;"><?php echo @$dealer['dealer_description_bottom']; ?></textarea></td>
 </tr>
@@ -300,17 +304,17 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <tr>
 <td width="300" align="left" valign="top">Dealer Banner [Size: 740x250]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_banner" id="dealer_banner"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_banner']; ?>" width="225" /></td>
+<td width="650" align="left"><input type="file" name="dealer_banner" id="dealer_banner"  style="width:300px;" /><br><br><img src="../<?php echo @$dealer['dealer_banner']; ?>" width="225" /><br><br></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Thumbnail [Size: 225x170]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_thumbnail" id="dealer_thumbnail"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_thumbnail']; ?>" width="225" /></td>
+<td width="650" align="left"><input type="file" name="dealer_thumbnail" id="dealer_thumbnail"  style="width:300px;" /><br><br><img src="../<?php echo @$dealer['dealer_thumbnail']; ?>" width="225" /><br><br></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Icon [Size: 100x50]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_icon" id="dealer_icon"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_icon']; ?>" /></td>
+<td width="650" align="left"><input type="file" name="dealer_icon" id="dealer_icon"  style="width:300px;" /><br><br><img src="../<?php echo @$dealer['dealer_icon']; ?>" /><br><br></td>
 </tr>
 
 <tr>
@@ -339,7 +343,7 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td colspan="3" bgcolor="#eaeaea"><strong>Ads</strong></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Ad Content on Dealer Page</td>
+<td width="300" align="left"  style="vertical-align:top;">Ad Content on Dealer Page</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><textarea name="dealer_ad" id="dealer_ad" style="width:600px; height:50px;"><?php echo @$dealer['dealer_ad']; ?></textarea></td>
 </tr>
