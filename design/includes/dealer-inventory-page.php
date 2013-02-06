@@ -1,6 +1,8 @@
 
 <!--Dealer inventory Page Start -->
 <?php
+$dealer_data="select * from dealers where dealer_code='".$_GET['name']."'";// get the dealer data.
+$dealer_row=$db->getrow($dealer_data);// fetching the dealer data
 $page_id=1;
 $start_count = 1;
 if(!empty($_GET['page'])){//Check wether page is empty
@@ -17,31 +19,39 @@ $start=($page_id-1)*$limit; //Setting the starting limit.
 $last=$page_id*$limit; //Setting the ending limit.
 $products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1 limit ".$start.",".$last; //Getting the products data based on dealer id.
 $products_rows=$db->getrows($products_data); // Fetching the results.
-//print_r($dealer_row['id']);
-//exit;
 ?>
 <div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealers.php">Dealers</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>"><?php echo $dealer_row['dealer_store_name'];?></a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <address>
 <h3 style="font-size:17px; margin:0px; line-height:24px;"><?php echo $dealer_row['dealer_store_name'];?></h3>
-<?php if(!empty($dealer_row['dealer_address1'])) echo $dealer_row['dealer_address1']."<br/>";?>
-<?php if(!empty($dealer_row['dealer_address2'])) echo $dealer_row['dealer_address2']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_address3'])) echo $dealer_row['dealer_address3']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_city'])) echo $dealer_row['dealer_city']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_state'])) echo $dealer_row['dealer_state']."<br/>";?> 
-<?php  if(!empty($dealer_row['dealer_zip_code'])) echo $dealer_row['dealer_zip_code']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_country'])) echo $dealer_row['dealer_country']."<br/><br/>";?>
-
-
-<?php  if(!empty($dealer_row['dealer_phone'])) echo "Phone: ".$dealer_row['dealer_phone']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_fax'])) echo "Fax: ".$dealer_row['dealer_fax']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_toll_free'])) echo "Toll-Free: ".$dealer_row['dealer_toll_free']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_email'])) echo "E-Mail: <br/>".$dealer_row['dealer_email']."<br/>";?>
-<?php  if(!empty($dealer_row['dealer_website'])) echo "Website: <br/><a target='_blank' href='".$dealer_row['dealer_website']."'>".$dealer_row['dealer_website']."</a><br/>";?>
-
-
-
+<?php echo $dealer_row['dealer_address1'];?><br/>
+<?php echo $dealer_row['dealer_address2'];?><br/>
+<?php echo $dealer_row['dealer_address3'];?><br/>
+<?php echo $dealer_row['dealer_city'];?>, <?php echo $dealer_row['dealer_state'];?>, <?php echo $dealer_row['dealer_zip_code'];?><br/>
+<?php echo $dealer_row['dealer_country'];?><br/><br/>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td>Phone:</td>
+<td><?php echo $dealer_row['dealer_phone'];?></td>
+</tr>
+<tr>
+<td>Fax:</td>
+<td><?php echo $dealer_row['dealer_fax'];?></td>
+</tr>
+<tr>
+<td>Toll-free:</td>
+<td><?php echo $dealer_row['dealer_toll_free'];?></td>
+</tr>
+<tr>
+<td>E-Mail:</td>
+<td style="font-size:11px;"><?php echo $dealer_row['dealer_email'];?></td>
+</tr>
+<tr>
+<td>Website:</td>
+<td style="font-size:11px;"><?php echo $dealer_row['dealer_website'];?></td>
+</tr>
+</table>
 </address>
 <h4>Store</h4>
 <div class="full-width-brdr"></div>
@@ -84,7 +94,7 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 	if($category_num4>0){
    echo "<ul>".$category_num4;
   foreach($category_sub_sub1 as  $category_sub_res1){?>
-   <li><span></span><a href="category.php?name=<?php echo $category_sub_res1['category_name']; ?>"><?php echo $category_sub_res1['category_name']; ?></a></li>
+   <span></span><a href="category.php?name=<?php echo $category_sub_res1['category_name']; ?>"><?php echo $category_sub_res1['category_name']; ?></a></li>
    
   <?php }
    echo "</ul>";
@@ -133,43 +143,20 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 <section id="category-page-rightside">
 
 <p><img src="<?php echo $dealer_row['dealer_banner'];?>" width="740px" height="250px;"  /></p><br/>
-<?php if(!empty($dealer_row['dealer_description_top'])){?>
-<p><?php echo $dealer_row['dealer_description_top'];?></p><br><br>
-<?php
-}
-?>
+
 <h4>Products</h4>
 <div class="full-width-brdr"></div>
 <div class="category-list-imgs">
 <ul>
 <?php 
-if(!empty($products_rows)){
 foreach($products_rows as $row => $product_value){
 ?>
-<li><a href="#" title=""><img src="<?php echo $product_value['product_primary_image'];?>" />
-<h3><?php echo $product_value['product_name'];?></h3></a>
+<li><a href="#" title=""><img src="<?php echo $product_value['product_primary_image'];?>" /></a>
+<h3><?php echo $product_value['product_name'];?></h3>
 <span class="price">$<?php echo $product_value['product_sale_price'];?></span>
-<?php 
-if($product_value['product_on_hold']==1){
-echo "<div style='text-align:center; font-weight:bold;'>On Hold</div>";
-}
-else if($product_value['product_on_sale']==1){
-echo "<div style='text-align:center; font-weight:bold;'>Sale</div>";
-}
-else if($product_value['product_sold']==1){
-echo "<div style='text-align:center; font-weight:bold;'>Sold</div>";
-}
-else if($product_value['product_new_arrival']==1){
-echo "<div style='text-align:center; font-weight:bold;'>New Arrivals</div>";
-}
-else if($product_value['product_coming_soon']==1){
-echo "<div style='text-align:center; font-weight:bold;'>Coming Soon</div>";
-}
-?>
 </li>
 <?php
 }
-
 ?>
 </ul>
 </div>
@@ -250,16 +237,11 @@ if($page_id <=1)
 	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>">>></a>
 	<?php
    }
-   }
-else{
-echo "<p>No products to display.</p>";
-}
 ?>
 
 </div>
 <!-- End Paging for products -->
-<p><?php echo $dealer_row['dealer_description_bottom'];?></p><br><br>
-<p><?php echo $dealer_row['dealer_ad'];?></p><br><br>
+
 
 <!--
 <div class="page-numeric">

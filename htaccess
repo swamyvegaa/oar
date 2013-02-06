@@ -1,2 +1,7 @@
+Options +FollowSymLinks
+addtype application/x-httpd-php .xml
+<IfModule mod_rewrite.c>
+RewriteBase /
 RewriteEngine On
-RewriteRule ^index/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?page=$1&q=$2
+RewriteRule ^product-details/(.*) index.php [L]	        
+</IfModule>
