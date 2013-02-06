@@ -91,7 +91,7 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 </aside>
 <div class="product-details-box">
 
-<h1>Superb Swedish Art Deco 3 drawer chest with pewter inlay.</h1>
+<h1><?php echo $product_data['product_name'];?></h1>
 <div class="full-width-brdr"></div>
 <div class="product-details-left">
 <a href="design/images/products/lighting-img-large-01.jpg" rel="lightbox"><img src="design/images/products/lighting-img-500x500-01.jpg" width="500" height="500"  /></a>
