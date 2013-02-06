@@ -1,7 +1,7 @@
 <?php
 ob_start();
 include '../common.php';
-Checklogin();
+CheckDealerlogin();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,9 +9,12 @@ Checklogin();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>On Antique Row : Products</title>
 <?php include 'includes/head.php'; 
-Checklogin(); 
+//Checklogin(); 
 include("includes/function_dealers_product.php");
-
+if($_REQUEST['dealer_id'] != $_SESSION['dealer_id']){
+header("Location:index.php");
+echo "hai";
+}
 
 
  $q_limit     = 20;
@@ -118,7 +121,6 @@ if(@$_REQUEST['status']=='1')
 <th width="60" align="left">Added Date</th>
 <th width="60" align="left">Sold Date</th>
 
-<th width="50" align="right">Featured</th>
 <th width="200" align="center">Action</th>
 </tr>
 </thead>
@@ -141,14 +143,9 @@ if(@$_REQUEST['status']=='1')
   <td><a href="#"><?php if($productlist_result['product_modified_date'] != "0000-00-00 00:00:00") echo date("d/m/Y", strtotime($productlist_result['product_modified_date'])); else echo "Not Sold";?></a></td>
  
    <td align="center" valign="middle">
-  
-  <form action=""  method="post" name='product_form<?php echo $productlist_result['id']; ?>'><input class="check-all" type="checkbox" onclick="document.product_form<?php echo $productlist_result['id']; ?>.submit();" name="featured_check"  id="featured_check" value="1" <?php if($productlist_result['product_featured']=='1'){ ?> checked="checked"<?php } ?>/><input type="hidden" name="featured_id" id="featured_id" value="<?php echo $productlist_result['id']; ?>"  /></form>
-  
-  </td>
-  <td align="center" valign="middle">
-  <a href="?action=status&id=<?php echo $productlist_result['id']; ?>&status=<?php echo $productlist_result['product_status']; ?>&start=<?php echo $start; ?>"><?php if($productlist_result['product_status']=='1'){?><img src="cms-images/active.png" style="margin:0px 5px 0px 5px;" alt="Active" title="Active"/><?php }else{ ?><img src="cms-images/inactive.png" style="margin:0px 5px 0px 5px;" alt="Inactive" title="Inactive"/><?php } ?></a>&nbsp;
+
   <a href="edit-product.php?id=<?php echo $productlist_result['id']; ?>&start=<?php echo $start; ?>"><img src="cms-images/edit.png" style="margin:0px 5px 0px 5px;" alt="Edit" title="Edit"/></a>&nbsp;
-  <a href="?action=delete&id=<?php echo $productlist_result['id']; ?>&start=<?php echo $start; ?>"><img src="cms-images/delete.png" style="margin:0px 5px 0px 5px;" alt="Delete" title="Delete"/></a>&nbsp;
+  
   <a href="#" target="_blank"><img src="cms-images/view.png" style="margin:0px 5px 0px 5px;" alt="View" title="View"/></a>&nbsp;
   </td>
 </tr>

@@ -464,13 +464,15 @@ global $db;
 function Dealerlogin($username,$pwd){
 global $db;
  $sel_dealer = "SELECT * FROM dealers  WHERE dealer_login_email = '" . $username . "' AND dealer_pwd = '" . md5($pwd). "' AND dealer_status = '1'";
+ echo $sel_dealer;
+ //exit;
  $admin_info = $db->getRow($sel_dealer);
  
  
             if( count( $admin_info) > 0){
-            $_SESSION['aor'][$admin_info['type']]['admin_user'] = $admin_info['dealer_login_email'];
-			$_SESSION['aor'][$admin_info['type']]['admin_name'] = $admin_info['dealer_name'];  			
-			$_SESSION['aor'][$admin_info['type']]['admin_id']   = $admin_info['id'];
+            $_SESSION['dealer_login_email'] = $admin_info['dealer_login_email'];
+			$_SESSION['dealer_name'] = $admin_info['dealer_name'];  			
+			$_SESSION['dealer_id'] = $admin_info['id'];
 			//$_SESSION['aor'][$admin_info['type']]['type'] = $admin_info['type'];
 			$out1 = ob_get_contents();
 			var_dump($out1);
@@ -486,6 +488,16 @@ global $db;
 function Checklogin(){
 
 if($_SESSION['aor']['admin']['admin_id']==''){
+header("Location:index.php");
+}
+
+
+}
+
+function CheckDealerlogin(){
+
+
+if($_SESSION['dealer_login_email']==''){
 header("Location:index.php");
 }
 

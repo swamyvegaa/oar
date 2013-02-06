@@ -12,7 +12,7 @@ $vlc= new validator();
 if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Login'){
 
 if(isset($_REQUEST['username'])){
- $sql="SELECT * FROM  users  WHERE username = '" .$_REQUEST['username']."' and status='1' ";
+ $sql="SELECT * FROM  dealers  WHERE dealer_login_email = '" .$_REQUEST['username']."' and dealer_status='1' ";
  $userdetail = $db->getRow($sql);
 	}
 	
@@ -21,7 +21,7 @@ if(@$_REQUEST['username']==''){
 @$error['username']="<br><span class='error'>Enter user email</span>";
 }else if(!$vlc->is_email(@$_REQUEST['username'])){
   @$error['username'] = " <br><span class='error'>Enter valid email id</span>";
-}else if($userdetail['email']!=@$_REQUEST['username']){
+}else if($userdetail['dealer_login_email']!=@$_REQUEST['username']){
 @$error['username'] = "<br><span class='error'>Invalied username</span>";
 }
 if(@$_REQUEST['password']==''){
@@ -29,7 +29,7 @@ if(@$_REQUEST['password']==''){
 }
 
 if(count($error)==0){
-Adminlogin($_REQUEST['username'],$_REQUEST['password']);
+Dealerlogin($_REQUEST['username'],$_REQUEST['password']);
 }
 }
 

@@ -1,15 +1,15 @@
 <?php
 ob_start();
 include '../common.php';
-Checklogin();
+CheckDealerlogin();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>On Antique Row : Add Product</title>
+<title>On Antique Row : Edit Dealer Products</title>
 <?php include 'includes/head.php'; 
-Checklogin(); 
+CheckDealerlogin();
 include("includes/function_products.php");
 include('includes/class.upload.php');
 $catRootPr = "SELECT product_primary_category,product_secodary_category  FROM  products WHERE id=".$_REQUEST['id']; 
@@ -109,7 +109,9 @@ $productaler_icon = new upload($file);
   @$product_secondary_image='';
   }
   
-
+if(@$_REQUEST['product_on_hold']==''){
+$_REQUEST['product_on_hold']='0';
+}
 
 if(@$_REQUEST['product_call_for_fee']==''){
 $_REQUEST['product_call_for_fee']='0';
@@ -137,7 +139,7 @@ $_REQUEST['product_coming_soon']='0';
 }
 $_REQUEST['product_category']=implode(",",$_REQUEST['product_category']);
 
-Productupdate(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_available'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_sale'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad'],$_REQUEST['start'],$_REQUEST['id']); 
+Productupdate(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_status'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_hold'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad'],$_REQUEST['start'],$_REQUEST['id']); 
  }
  
 }
@@ -187,31 +189,11 @@ function DelRow() //This function will delete the last row
 
 <div class="content">
 <div class="clear"></div>
-<div class="dashboard-button clearfix"><a href="products.php"><img src="cms-images/back-to-products.png"  /><br/>Manage<br/>Products</a></div>
-<div class="cms-heading">New Product</div>
-<div class="clear"></div>
 <div class="main-content clearfix">
 <form action="" method="post" enctype="multipart/form-data">
 <table width="1000" cellpadding="0" cellspacing="0" border="0" align="center">
 <tr>
 <td colspan="3" bgcolor="#eaeaea"><strong>Dealer Information</strong></td>
-</tr>
-<tr>
-<td width="300" align="left" style="vertical-align:top">Select Dealer</td>
-<td width="50">&nbsp;</td>
-<td width="650" align="left">
-<div>
-<select style="width:600px;" size="10" name="product_dealer" id="product_dealer">
-<option value="0" selected="">On Antique Row</option>
-<?php
-$dealer_list = "SELECT id,dealer_store_name,dealer_code,dealer_status,dealer_featured  FROM  dealers WHERE dealer_status!='-1'"; 
-$dealer_re = $db->getRows($dealer_list);
-foreach( $dealer_re as $dealer_res){ ?>
-<option value="<?php echo $dealer_res['id'];?>"  <?php if($Productedit['product_dealer']==$dealer_res['id']){?>selected="selected"<?php } ?>><?php echo $dealer_res['dealer_store_name'];?></option>
-<?php } ?>
-</select>
-</div>
-</td>
 </tr>
 <tr>
 
@@ -402,13 +384,9 @@ foreach( $dealer_re as $dealer_res){ ?>
 <td width="300" align="left" style="vertical-align:top">Product Display</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left">
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_available" id="product_available" value="1" <?php if($Productedit['product_available']==1){ ?> checked="checked"<?php } ?>/>Available
+
 <input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_sold" id="product_sold" value="1" <?php if($Productedit['product_sold']==1){ ?> checked="checked"<?php } ?>/>Sold
-<br /><br />
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_featured" id="product_featured" value="1" <?php if($Productedit['product_featured']==1){ ?> checked="checked"<?php } ?>/>Featured
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_on_sale" id="product_on_sale" value="1" <?php if($Productedit['product_on_sale']==1){ ?> checked="checked"<?php } ?>/>On Sale
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_new_arrival" id="product_new_arrival" value="1" <?php if($Productedit['product_new_arrival']==1){ ?> checked="checked"<?php } ?>/>New Arrival
-<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_coming_soon" id="product_coming_soon" value="1" <?php if($Productedit['product_coming_soon']==1){ ?> checked="checked"<?php } ?>/>Coming Soon
+<input type="checkbox" style="margin-left:25px; margin-right:10px;"  name="product_on_hold" id="product_on_hold" value="1" <?php if($Productedit['product_on_hold']==1){ ?> checked="checked"<?php } ?>/>On Hold
 </td>
 </tr>
 <tr>

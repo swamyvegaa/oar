@@ -6,7 +6,7 @@
 <div class="header-right">
 <div class="profile-box">
 <a href="admin-profile.php"><img src="cms-images/user-profile-img.jpg" title="User" /></a>
-<a href="admin-profile.php"><h4><?php echo $_SESSION['aor']['admin']['admin_name']; ?></h4></a>
+<a href="admin-profile.php"><h4><?php echo $_SESSION['dealer_name']; ?></h4></a>
 <p><a href="admin-profile.php">Profile</a></p><br/>
 <a href="logout.php"><button>Logout</button></a>
 </div>
