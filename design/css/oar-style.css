@@ -601,22 +601,21 @@
 	float:left;
 	width: 235px;
 	padding:5px;
-	margin:0px 10px 0px 0px;	
+	margin:0px 58px 0px 0px;	
 }
 .category-list-imgs li h3 {
-	font-family:"arial";
-	font-weight:bold;
-	font-size:11px;
+	font-family:"Oxygen";
+	font-size:14px;
+	font-weight:200;
 	color:#444;
-	width:225px;
 	margin:5px 0px 0px;
 	text-align:center;
-	line-height:15px;	
+	line-height:18px;	
 }
 .category-list-imgs li .price {
-	font-family:"arial";
-	font-size:11px;
-	font-weight:bold;
+	font-family:"Oxygen";
+	font-size:12px;
+	font-weight:200;
 	color:#444;
 	display:block;
 	text-align:center;
@@ -628,8 +627,8 @@
 	display:inline;	
 }
 .category-list-imgs li a img {
-	width:225px;
-	height:225px;
+	width:200px;
+	height:200px;
 	vertical-align:top;	
 }
 .category-list-imgs li:nth-child(3) {
@@ -645,11 +644,7 @@
 	margin-right:0px;	
 }
 .category-list-imgs li a:hover {
-	text-decoration:none;
-color:#d90009;	
-}
-.category-list-imgs li a:hover  h3{
-color: #d90009;	
+	text-decoration:none;	
 }
 
 .page-numeric {
