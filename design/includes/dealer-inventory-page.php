@@ -20,7 +20,7 @@ $last=$page_id*$limit; //Setting the ending limit.
 $products_data="select * from products where product_dealer=".$dealer_row['id']." and product_available=1 limit ".$start.",".$last; //Getting the products data based on dealer id.
 $products_rows=$db->getrows($products_data); // Fetching the results.
 ?>
-<div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealers.php">Dealers</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>"><?php echo $dealer_row['dealer_store_name'];?></a></div>
+<div class="bread-crumb"><a href="index.php">Home</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealers.php">Dealers</a><img src="design/images/icons/bread-crumb-icon.png" /><a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&code=<?php echo $dealer_row['dealer_code'];?>"><?php echo $dealer_row['dealer_store_name'];?></a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <address>
@@ -151,8 +151,13 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 <?php 
 foreach($products_rows as $row => $product_value){
 ?>
+<<<<<<< HEAD
+<li><a href="product-details.php?product_id=<?php echo $product_value['id'];?>" title=""><img src="<?php echo $product_value['product_primary_image'];?>" />
+<h3><?php echo $product_value['product_name'];?></h3></a>
+=======
 <li><a href="#" title=""><img src="<?php echo $product_value['product_primary_image'];?>" /></a>
 <h3><?php echo $product_value['product_name'];?></h3>
+>>>>>>> origin/master
 <span class="price">$<?php echo $product_value['product_sale_price'];?></span>
 </li>
 <?php
@@ -164,7 +169,7 @@ foreach($products_rows as $row => $product_value){
 <?php 
 $products_count="select * from products where product_dealer=".$dealer_row['id']." and product_available=1";
 $products_rows_count=sqlnumber($products_count);
-$page_count=round($products_rows_count/$limit);
+$page_count=ceil($products_rows_count/$limit);
 $show=10;
 ?>
 <!-- Paging for products -->
@@ -180,7 +185,7 @@ if($page_id <=1)
    {
     $j = $page_id - 1;
     ?>
-	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>"><<</a>
+	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&code=<?php echo $dealer_row['dealer_code'];?>&page=<?php echo $j ?>"><<</a>
 	
 	<?php
 	if($page_id > $limit)
@@ -196,7 +201,7 @@ if($page_id <=1)
     if($i<>$page_id)
     {
 	?>
-     <a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+     <a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&code=<?php echo $dealer_row['dealer_code'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
     <?php
 	}
     else
@@ -212,7 +217,7 @@ if($page_id <=1)
     if($i<>$page_id)
     {
 	?>
-     <a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+     <a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&code=<?php echo $dealer_row['dealer_code'];?>&page=<?php echo $i ?>"><?php echo $i ?></a>
     <?php
 	}
     else
@@ -234,7 +239,7 @@ if($page_id <=1)
    echo "<span id='page_links' style='font-weight:bold;'>...</span>";
    }
 	?>
-	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&page=<?php echo $j ?>">>></a>
+	<a href="dealer-inventory.php?name=<?php echo $dealer_row['dealer_name'];?>&code=<?php echo $dealer_row['dealer_code'];?>&page=<?php echo $j ?>">>></a>
 	<?php
    }
 ?>
