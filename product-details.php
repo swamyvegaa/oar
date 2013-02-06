@@ -3,12 +3,8 @@ include 'common.php';
 $product_id=$_GET['product_id'];
 $products="select * from products where product_status=1 and id=".$product_id;
 $product_data = $db->getRow($products);
-print_r($product_data);
-exit;
-// Meta description
-//$Meta_description='';
-//$Meta_keywords='';
-//$Meta_title='';
+//print_r($product_data);
+//exit;
 if(!empty($product_data['product_meta_description'])) {
 $Meta_description=$product_data['product_meta_description']; 
 }
@@ -34,12 +30,6 @@ else{
 $Meta_title=substr($product_data['product_title'], 0, 300);
 }
 // End of Meta Title
-
-//$Meta_description=$product_data['product_meta_description'];
-//$Meta_keywords=$product_data['product_meta_keywords'];
-//$Meta_title=$product_data['product_meta_title'];
-//echo $product_id;
-//exit;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
