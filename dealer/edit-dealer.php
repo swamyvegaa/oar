@@ -1,20 +1,23 @@
 <?php
 ob_start();
 include '../common.php';
-Checklogin();
+CheckDealerlogin();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>On Antique Row : Add Dealer</title>
+<title>On Antique Row : Edit Dealer Profile</title>
 <?php include 'includes/head.php';
-Checklogin(); 
+CheckDealerlogin();
 include("includes/function_dealers.php");
 include('includes/class.upload.php');
 $vlc= new validator();
 $dealer=Dealeredit($_REQUEST['id'],$_REQUEST['start']);
 //print_r($dealer);
+if($_REQUEST['id'] != $_SESSION['dealer_id']){
+header("Location:index.php");
+}
 
 
 
@@ -161,8 +164,7 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 
 <div class="content">
 <div class="clear"></div>
-<div class="dashboard-button clearfix"><a href="dealers.php?start=<?php echo $_REQUEST['start'];?>"><img src="cms-images/back-to-dealers.png"  /><br/>Manage<br/>Dealers</a></div>
-<div class="cms-heading">Edit Dealer</div>
+<div class="cms-heading">Edit Profile</div>
 <div class="clear"></div>
 <div class="main-content">
 <form action="" method="post" enctype="multipart/form-data">
@@ -173,17 +175,17 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <tr>
 <td width="300" align="left" valign="top">Dealer Name</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="text"  name="dealer_name" id="dealer_name" style="width:400px;" value="<?php echo @$dealer['dealer_name']; ?>" /><?php echo @$error['dealer_name']; ?></td>
+<td width="650" align="left"><input type="text"  name="dealer_name" id="dealer_name" style="width:400px;display:none;" value="<?php echo @$dealer['dealer_name']; ?>" /><?php echo @$dealer['dealer_name']; ?></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Code</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="text" name="dealer_code" id="dealer_code" style="width:400px;" value="<?php echo @$dealer['dealer_code']; ?>"/><?php echo @$error['dealer_code']; ?></td>
+<td width="650" align="left"><input type="text" name="dealer_code" id="dealer_code" style="width:400px;display:none;" value="<?php echo @$dealer['dealer_code']; ?>" /><?php echo @$dealer['dealer_code']; ?></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Email</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="text" name="dealer_email" id="dealer_email" style="width:400px;" value=<?php echo $dealer['dealer_email']; ?> /></td>
+<td width="650" align="left"><input type="text" name="dealer_email" id="dealer_email" style="width:400px;display:none;" value=<?php echo $dealer['dealer_email']; ?> /><?php echo $dealer['dealer_email']; ?></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Password</td>
@@ -195,20 +197,7 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="password" name="dealer_cpwd" id="dealer_cpwd" style="width:400px;" /><?php echo @$error['dealer_cpwd']; ?></td>
 </tr>
-<tr>
-<td width="300" align="left" valign="top">Priority [For Sorting]</td>
-<td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="text" name="dealer_order" id="dealer_order" width="150" value="<?php echo @$dealer['dealer_order']; ?>"/></td>
-</tr>
-<tr>
-<td width="300" align="left" valign="top">Dealer Display</td>
-<td width="50">&nbsp;</td>
-<td width="650" align="left">
-<input type="checkbox" name="dealer_status" id="dealer_status" style="margin-left:25px; margin-right:10px;" value="1"  <?php if($dealer['dealer_status']=='1'){?> checked="checked"<?php } ?>/>Active
-<input type="checkbox"  name="dealer_featured" id="dealer_featured" style="margin-left:25px; margin-right:10px;"  value="1" <?php if($dealer['dealer_featured']=='1'){?> checked="checked"<?php } ?>/>Featured
-<input type="checkbox" name="dealer_show_in_sitemap" id="dealer_show_in_sitemap" style="margin-left:25px; margin-right:10px;"  value="1" <?php if($dealer['dealer_show_in_sitemap']=='1'){?> checked="checked"<?php } ?>/>Show in Sitemap
-</td>
-</tr>
+
 <tr>
 <td colspan="3" bgcolor="#eaeaea"><strong>Dealer Information [Displayed on Dealer Page]</strong></td>
 </tr>
