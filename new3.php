@@ -1,4 +1,6 @@
 <?php
+echo $_GET['name'];
+exit;
   if(isset($page))
   {
    $result = mysql_query("select Count(*) As Total from post");

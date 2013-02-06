@@ -1,6 +1,8 @@
 
 <!--Dealer inventory Page Start -->
 <?php
+//echo $_SERVER['REQUEST_URI'];
+//exit;
 $dealer_data="select * from dealers where dealer_code='".$_GET['code']."'";// get the dealer data.
 $dealer_row=$db->getrow($dealer_data);// fetching the dealer data
 $page_id=1;

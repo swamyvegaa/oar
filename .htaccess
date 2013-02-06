@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^dealer-inventory/(.*)$ dealer-inventory.php?code=$1
+
+

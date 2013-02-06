@@ -91,13 +91,13 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 </aside>
 <div class="product-details-box">
 
-<h1><?php echo $product_data['product_name'];?></h1>
+<h1><?php echo $product_data['product_title'];?></h1>
 <div class="full-width-brdr"></div>
 <div class="product-details-left">
-<a href="design/images/products/lighting-img-large-01.jpg" rel="lightbox"><img src="design/images/products/lighting-img-500x500-01.jpg" width="500" height="500"  /></a>
-<a href="#"><img src="design/images/products/dealer-logo.jpg"  /></a>
+<a href="<?php echo $product_data['product_primary_image'];?>" rel="lightbox"><img style="width:500px;height:500px" src="<?php echo $product_data['product_primary_image'];?>" width="500" height="500"  /></a>
+<a href="#"><img src="<?php echo $dealer_data['dealer_icon'];?>"  /><br><?php echo $dealer_data['dealer_store_name'];?></a><br><br>
 
-<a href="#"><img style="margin:0px 10px 0px 10px;" src="design/images/icons/dealer-storefront-button.jpg"  /></a>
+<a href="#"><img style="margin:0px 10px 0px 0px;" src="design/images/icons/dealer-storefront-button.jpg"  /></a>
 <a href="#"><img style="margin:0px 10px 0px 10px;" src="design/images/icons/contact-dealer-button.jpg"  /></a>
 <a href="pop-up-window.html" target="_blank"><img style="margin:0px 10px 0px 10px;" src="design/images/icons/print.jpg"  /></a>
 <br/><br/>
@@ -115,11 +115,29 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>-->
 <!-- AddThis Button END -->
 <br/>
-<h1>Superb Swedish Art Deco 3 drawer chest with pewter inlay.</h1>
+<h1><?php echo $product_data['product_title'];?></h1>
 <br/><br/>
+<div>
+<?php if(!empty($product_data['product_sale_price'])){?><div><span>Sale Price: </span><span><?php echo $product_data['product_sale_price'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_offer_price'])){?><div><span>Offer Price: </span><span><?php echo $product_data['product_offer_price'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_call_for_fee'])){?><div><span>Call for Price: </span><span><?php echo $product_data['product_call_for_fee'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_period'])){?><div><span>Period: </span><span><?php echo $product_data['product_period'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_origin'])){?><div><span>Origin: </span><span><?php echo $product_data['product_origin'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_condition'])){?><div><span>Condition: </span><span><?php echo $product_data['product_condition'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_instock_qty'])){?><div><span>Number of Items: </span><span><?php echo $product_data['product_instock_qty'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_status'])){?><div><span>Status: </span><span><?php echo $product_data['product_status'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_width'])){?><div><span>Width: </span><span><?php echo $product_data['product_width'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_height'])){?><div><span>Height: </span><span><?php echo $product_data['product_height'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_depth'])){?><div><span>Depth: </span><span><?php echo $product_data['product_depth'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_weight'])){?><div><span>Weight: </span><span><?php echo $product_data['product_weight'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_shipping_price'])){?><div><span>Shipping Price: </span><span><?php echo $product_data['product_shipping_price'];?></span></div><?php }?>
+<?php if(!empty($product_data['product_free_shipping'])){?><div><span>Free Shipping: </span><span><?php echo $product_data['product_free_shipping'];?></span></div><?php }?>
+
+</div>
+<!--
 <table>
 <tr>
-<td style="width:125px; text-align:left; color:#444;">Period:</td>
+<td style="width:125px; text-align:left; color:#444;">Period: </td>
 <td style="width:125px; text-align:left; color:#444;">1947</td>
 <td style="width:125px; text-align:left; color:#444;">Origin:</td>
 <td style="width:125px; text-align:left; color:#444;" align="left" valign="top">France</td>
@@ -156,6 +174,7 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 <td style="width:125px; text-align:left; color:#444;">$888.88</td>
 </tr>
 </table>
+-->
 <br/><br/>
 <p>
 <strong>Product Overview:</strong><br/>

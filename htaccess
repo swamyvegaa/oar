@@ -1,7 +1,0 @@
-Options +FollowSymLinks
-addtype application/x-httpd-php .xml
-<IfModule mod_rewrite.c>
-RewriteBase /
-RewriteEngine On
-RewriteRule ^product-details/(.*) index.php [L]	        
-</IfModule>

@@ -3,7 +3,9 @@ include 'common.php';
 $product_id=$_GET['product_id'];
 $products="select * from products where product_status=1 and id=".$product_id;
 $product_data = $db->getRow($products);
-//print_r($product_data);
+$dealers="select dealer_store_name,dealer_icon from dealers where id=".$product_data['product_dealer'];
+$dealer_data=$db->getRow($dealers);
+//print_r($dealer_data);
 //exit;
 if(!empty($product_data['product_meta_description'])) {
 $Meta_description=$product_data['product_meta_description']; 
