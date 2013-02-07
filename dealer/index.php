@@ -43,9 +43,9 @@ Dealerlogin($_REQUEST['username'],$_REQUEST['password']);
 
 <form action="" method="post">
 					<table cellpadding="0" cellspacing="10px" border="0" align="center">
-                    <tr><td colspan="2" align="center"><img src="cms-images/onantiquerow-cms-login.jpg" /></td></tr>
+                    <tr><td colspan="2" align="center"><img src="cms-images/onantiquerow-dealer-login.jpg" /></td></tr>
                     <tr>
-                    	<td>User Name:</td>
+                    	<td>Dealer Email:</td>
                     	<td><input type="text" id="username" name="username" value="<?php echo @$_REQUEST['username'];?>" />
 						<?php echo @$error['username'];?></td>
                     </tr>

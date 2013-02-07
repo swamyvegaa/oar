@@ -103,12 +103,12 @@ if(@$_REQUEST['status']=='1')
 
 <div class="content">
 
-<div style="margin-left:10px;"><strong>Dealer Name:<?php echo  $dealer_re['dealer_name']; ?></strong><br><strong>Dealer Code:<?php echo  $dealer_re['dealer_code']; ?></strong></div>
+<div style="margin-left:10px;"><strong>Dealer Name: <?php echo  $dealer_re['dealer_name']; ?></strong><br><strong>Dealer Code: <?php echo  $dealer_re['dealer_code']; ?></strong></div>
 <div class="clear"></div>
 
 <div class="dashboard-button clearfix" style="border:none"></div>
 <div class="clear"></div>
-<div class="cms-heading">Products</div>
+<div class="cms-heading">Dealer Products</div>
 <div class="clear"></div>
 <div class="main-content">
 <table>

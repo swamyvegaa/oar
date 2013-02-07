@@ -164,7 +164,7 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 
 <div class="content">
 <div class="clear"></div>
-<div class="cms-heading">Edit Profile</div>
+<div class="cms-heading">Edit Dealer Profile</div>
 <div class="clear"></div>
 <div class="main-content">
 <form action="" method="post" enctype="multipart/form-data">
@@ -287,19 +287,22 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td colspan="3" bgcolor="#eaeaea"><strong>Dealer Images</strong></td>
 </tr>
 <tr>
-<td width="300" align="left" valign="top">Dealer Banner [Size: 740x250]</td>
+<td width="300" align="left" valign="top">Dealer Banner [Size: 750x250]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_banner" id="dealer_banner"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_banner']; ?>" width="225" /></td>
+<td width="650" align="left"><input type="file" name="dealer_banner" id="dealer_banner"  style="width:300px;" />
+<br/><br/><img src="../<?php echo @$dealer['dealer_banner']; ?>" width="400" /><br/><br/></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Thumbnail [Size: 225x170]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_thumbnail" id="dealer_thumbnail"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_thumbnail']; ?>" width="225" /></td>
+<td width="650" align="left"><input type="file" name="dealer_thumbnail" id="dealer_thumbnail"  style="width:300px;" />
+<br/><br/><img src="../<?php echo @$dealer['dealer_thumbnail']; ?>" width="225" /><br/><br/></td>
 </tr>
 <tr>
 <td width="300" align="left" valign="top">Dealer Icon [Size: 100x50]</td>
 <td width="50">&nbsp;</td>
-<td width="650" align="left"><input type="file" name="dealer_icon" id="dealer_icon"  style="width:300px;" /><img src="../<?php echo @$dealer['dealer_icon']; ?>" /></td>
+<td width="650" align="left"><input type="file" name="dealer_icon" id="dealer_icon"  style="width:300px;" />
+<br/><br/><img src="../<?php echo @$dealer['dealer_icon']; ?>" style="width:100px;"/><br/><br/></td>
 </tr>
 
 <tr>

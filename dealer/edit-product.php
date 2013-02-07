@@ -193,7 +193,7 @@ function DelRow() //This function will delete the last row
 <form action="" method="post" enctype="multipart/form-data">
 <table width="1000" cellpadding="0" cellspacing="0" border="0" align="center">
 <tr>
-<td colspan="3" bgcolor="#eaeaea"><strong>Dealer Information</strong></td>
+<td colspan="3" bgcolor="#eaeaea"><strong>Product Information</strong></td>
 </tr>
 <tr>
 
@@ -406,7 +406,7 @@ function DelRow() //This function will delete the last row
 <td width="300" align="left" valign="top">Product Secondary Image</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="file"  name="product_secondary_image[]" id="product_secondary_image[]" />
-<a href="product_images.php" onclick="javascript:void window.open('product_images.php?id=<?php echo $_REQUEST['id'];?>','1359041203233','width=1000,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=100,top=100');return false;">Pop-up Window</a><table id="specifications" width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="border:none;border-collapse: separate;" style="visibility:hidden">
+<a href="product_images.php" onclick="javascript:void window.open('product_images.php?id=<?php echo $_REQUEST['id'];?>','1359041203233','width=1000,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=100,top=100');return false;">Secondary Images : Pop-up Window</a><table id="specifications" width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="border:none;border-collapse: separate;" style="visibility:hidden">
 <tr><td></td></tr>
 </table>
  <table id="extrarows" width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="border:none;border-collapse: separate; margin-left:-11px;"></table><input name="button2" type="button" onclick="AddRow()" value="Add Row" /> 

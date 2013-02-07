@@ -468,7 +468,7 @@
 /* Breadcrumb Style:Start */
 .bread-crumb {
 	display:inline;
-	line-height:20px;
+	line-height:30px;
 	padding:5px;
 	background:#eaeaea none repeat scroll 0 0 transparent;	
 }
@@ -1023,14 +1023,14 @@
 
 /* Product Details Page Style:Start */
 .product-details-box {
-	width:755px;
-	float:left;	
+	width:980px;
+	float:left;
+	padding:10px;
 }
 .product-details-left {
-	width:495px;
+	width:740px;
 	float:left;
-	padding:0px 0px 0px 5px
-	margin:0px 25px 10px 0px;	
+	padding-right:5px;	
 }
 
 .product-details-left h1 {
@@ -1099,8 +1099,7 @@
 .product-details-right {
 	width:225px;
 	float:right;
-	border:0 none;
-	margin:0px 0px 10px 0px;	
+	border:0 none;	
 }
 .product-details-right img {
 	width:225px;
