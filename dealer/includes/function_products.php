@@ -56,7 +56,7 @@ $today=date("Y-m-d H:i:s");
 								$product_secondary_images= explode(",",$product_secondary_image);
 								if(count($product_secondary_image)>0){
 								foreach($product_secondary_images as $product_secondary_image_th){
-								if($product_secondary_image_th!='/images/products/thumb'){
+								if($product_secondary_image_th!='images/products/thumb'){
 								$sub_array = array(
 										'product_id' 			         => $product_id,
 										'product_secondary_image' 		 => $product_secondary_image_th);
@@ -134,7 +134,7 @@ if($product_primary_image!=''){
 	$product_secondary_images= explode(",",$product_secondary_image);
 								if(count($product_secondary_image)>0){
 								foreach($product_secondary_images as $product_secondary_image_th){
-								if($product_secondary_image_th!='/images/products/thumb/'){
+								if($product_secondary_image_th!='images/products/thumb/'){
 								$sub_array = array(
 										'product_id' 			         => $product_id,
 										'product_secondary_image' 		 => $product_secondary_image_th);

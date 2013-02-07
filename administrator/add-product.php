@@ -49,7 +49,6 @@ if(@$productalire_num>0){
 
 if(count(@$error)==0){
 
-
 if(@$_FILES['product_primary_image']['name']!=''){
 
 $dir_dest = (isset($_GET['dir']) ? $_GET['dir'] : '../images/products');
@@ -59,15 +58,24 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
  $handle = new upload($_FILES['product_primary_image']);
  
   if ($handle->uploaded) {
-      
-     // $handle->image_resize         = true;
-	 // $handle->image_y               = 250;
-      //$handle->image_x               = 750;
-     
+  //Original image
+		$handle->process($dir_dest);
+		$handle->file_original_dst_name= 'images/products/'. $handle->file_dst_name;
+		//Primary image
+      $handle->image_resize         = true;
+	  $handle->image_y               = 500;
+      $handle->image_x               = 500;
+     $dir_dest = (isset($_GET['dir']) ? $_GET['dir'] : '../images/products/primary');
       $handle->process($dir_dest);
-      $handle->file_dst_name= 'images/products/'. $handle->file_dst_name;
+      $handle->file_primary_dst_name= 'images/products/primary'. $handle->file_dst_name;
+	  //Thumb image
+	  $handle->image_resize         = true;
+	  $handle->image_y               = 225;
+      $handle->image_x               = 225;
+     $dir_dest = (isset($_GET['dir']) ? $_GET['dir'] : '../images/products/thumb');
+      $handle->process($dir_dest);
+      $handle->file_thumb_dst_name= 'images/products/thumb'. $handle->file_dst_name;
   }
-  
 }
 else{
   @ $handle->file_dst_name='';
@@ -86,18 +94,19 @@ else{
 	 
  foreach ($files as $file) {
 $productaler_icon = new upload($file);
-@$dir_dest1 = (isset($_GET['dir']) ? $_GET['dir'] : '../images/products/thumb');
+@$dir_dest1 = (isset($_GET['dir']) ? $_GET['dir'] : '../images/products/secondary');
 @$dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
    if ($productaler_icon->uploaded) {
-      
+      $productaler_icon->process($dir_dest1);
+	  $product_secondary_image[]= 'images/products/secondary/'. $productaler_icon->file_dst_name;
       $productaler_icon->image_resize         = true;
-	  $productaler_icon->image_y               = 225;
+	  $productaler_icon->image_y               = 170;
       $productaler_icon->image_x               = 225;
-     
-       $productaler_icon->process($dir_dest1);
+     @$dir_dest2 = (isset($_GET['dir']) ? $_GET['dir'] : '../images/products/secondary_thumb');
+       $productaler_icon->process($dir_dest2);
       
 	   }
-	  $product_secondary_image[]= 'images/products/thumb/'. $productaler_icon->file_dst_name;
+	  $product_secondary_image_thumb[]= 'images/products/secondary_thumb/'. $productaler_icon->file_dst_name;
   }
   
  $product_secondary_image= implode(",",$product_secondary_image);
@@ -134,7 +143,7 @@ $_REQUEST['product_coming_soon']='0';
 }
 $_REQUEST['product_category']=implode(",",$_REQUEST['product_category']);
 
-Productadd(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_status'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_hold'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad']); 
+Productadd(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_status'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_hold'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_original_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad']); 
 
  }
  

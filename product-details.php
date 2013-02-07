@@ -3,7 +3,7 @@ include 'common.php';
 $product_id=$_GET['product_id'];
 $products="select * from products where product_status=1 and id=".$product_id;
 $product_data = $db->getRow($products);
-$dealers="select dealer_store_name,dealer_icon from dealers where id=".$product_data['product_dealer'];
+$dealers="select * from dealers where id=".$product_data['product_dealer'];
 $dealer_data=$db->getRow($dealers);
 //print_r($dealer_data);
 //exit;

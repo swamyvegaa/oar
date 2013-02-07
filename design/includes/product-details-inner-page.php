@@ -21,7 +21,7 @@
 <a class="addthis_button_pinterest_pinit"></a>
 <a class="addthis_counter addthis_pill_style"></a>
 </div>
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<!--<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>-->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
 <!-- AddThis Button END -->
 <div class="clear"></div>
@@ -49,45 +49,70 @@
 <div style="margin-top:15px; margin-bottom:15px;">
 <?php if(!empty($product_data['product_instock_qty'])){?><p><strong>Number of Items: </strong><strong><?php echo $product_data['product_instock_qty'];?></strong></p><br/><?php }?>
 <?php if(!empty($product_data['product_condition'])){?><p><strong>Condition: </strong><strong><?php echo $product_data['product_condition'];?></strong></p><br/><?php }?>
-<?php if(!empty($product_data['product_status'])){?><p><strong>Status: </strong><strong><?php echo $product_data['product_status'];?></strong></p><br/><?php }?>
+
+<?php if($product_data['product_on_hold']=1){?>
+<p><img src="design/images/icons/on-hold.jpg"/></p><br/>
+<?php }else if($product_data['product_sold']=1){?>
+<p><img src="design/images/icons/sold.jpg"/></p><br/>
+<?php }?>
 </div>
 <div style="margin-top:15px; margin-bottom:15px;">
 <?php if(!empty($product_data['product_shipping_price'])){?><p><strong>Shipping Price: </strong><strong><?php echo $product_data['product_shipping_price'];?></strong></p><br/><?php }?>
 <?php if(!empty($product_data['product_free_shipping'])){?><p><strong>Free Shipping: </strong><strong><?php echo $product_data['product_free_shipping'];?></strong></p><br/><?php }?>
 </div>
 <p>
+<!-- Product Overview -->
+<?php 
+if(!empty($product_data['product_overview'])){?>
 <strong>Product Overview:</strong><br/>
-hgjhgkjhgsdhgajhgdjhgjhsgahgjsahgjdh
+<?php echo $product_data['product_overview'];?>
 <br/><br/>
+<?php }?>
+<!-- End of Product Overview -->
+<!-- Product Description -->
+<?php 
+if(!empty($product_data['product_description'])){?>
 <strong>Product Description:</strong><br/>
-Superb Swedish Art Deco 3 drawer chest with wood marquetry and inlay in pewter. The chest's center drawer features a young male figure wearing a laurel wreath on his head and a quiver around his waist. He is delighted by a butterfly which is above his head. A stylized neo-classical wreath frames this scene. The center round ring pulls are offset from upper and lower pairs. and pewter inlays detail the feet and the upper and lower edges of the chest. The body is stained lemon wood. H: 28.75", L 33.5", D 17.25". Restored in excellent condition.
+<?php echo $product_data['product_description'];?>
 <br/><br/>
+<?php }?>
+<!-- End of Product Description -->
+<!-- Product Additional Information -->
+<?php 
+if(!empty($product_data['product_additional_information'])){?>
 <strong>Product Additional Information:</strong><br/>
-* If you are purchasing this item directly from the dealer based on their description above, please request to have this page acknowledged and incorporated into a dated receipt of sale and request that the item be promptly marked sold on the 1stdibs system. All items purchased on-line through 1stdibs will automatically incorporate the description into the record.
+<?php echo $product_data['product_additional_information'];?>
 <br/><br/>
-* It is highly recommended, when arranging your own shipping, that you request from the shipper a condition report generated at the time of collection and acknowledged by the dealer.<br/><br/>  
-<br/><br/>
+<?php }?>
+<!-- End of Product Additional Information -->
+<!-- Product Dealer Information -->
+<?php if(!empty($dealer_data['dealer_store_name'])){?>
 <strong>Dealer Information:</strong><br/>
-<?php echo $dealer_data['dealer_store_name'];?></a><br/>
-<br/><br/>
+<?php echo $dealer_data['dealer_store_name'];?><br/>
+<?php echo $dealer_data['dealer_city'];?>, 
+<?php echo $dealer_data['dealer_state'];?>, 
+<?php echo $dealer_data['dealer_zip_code'];?><br/>
+<?php echo $dealer_data['dealer_country'];?><br/>
+<?php }?><br/><br/>
+<!-- End of Product Dealer Information -->
 </p>
-
 </div>
+<!-- Product details right -->
 <div class="product-details-right">
-<a href="design/images/products/lighting-img-large-01.jpg" rel="lightbox">
-<img src="design/images/products/lighting-img-225x170-01.jpg"  /></a>
-<a href="design/images/products/lighting-img-large-02.jpg" rel="lightbox">
-<img src="design/images/products/lighting-img-225x170-02.jpg"  /></a>
-<a href="design/images/products/lighting-img-large-03.jpg" rel="lightbox">
-<img src="design/images/products/lighting-img-225x170-03.jpg"  /></a>
-<a href="design/images/products/lighting-img-large-04.jpg" rel="lightbox">
-<img src="design/images/products/lighting-img-225x170-04.jpg"  /></a>
-<a href="design/images/products/lighting-img-large-05.jpg" rel="lightbox">
-<img src="design/images/products/lighting-img-225x170-05.jpg"  /></a>
-<a href="design/images/products/lighting-img-large-06.jpg" rel="lightbox">
-<img src="design/images/products/lighting-img-225x170-06.jpg"  /></a>
+<?php
+$product_secondary_images="select product_secondary_image from product_secondary_images where product_id=".$product_id;
+$product_secondary_image_data = $db->getRows($product_secondary_images);
 
+foreach($product_secondary_image_data as $key => $value){
+//print_r($product_secondary_image_data);
+//exit;
+?>
+<a href="<?php echo $value['product_secondary_image'];?>" rel="lightbox">
+<img src="<?php echo $value['product_secondary_image'];?>"  /></a>
+<?php }?>
 </div>
+<!-- End of Product details right -->
+
 <div class="clear"></div>
 <h4>Other Items You May Like:</h4>
 <div class="full-width-brdr"></div>

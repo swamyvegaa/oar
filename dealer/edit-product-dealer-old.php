@@ -66,7 +66,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
-      $handle->file_dst_name= '/images/products/'. $handle->file_dst_name;
+      $handle->file_dst_name= 'images/products/'. $handle->file_dst_name;
   }
   
 }
@@ -91,14 +91,14 @@ $productaler_icon = new upload($file);
 @$dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
    if ($productaler_icon->uploaded) {
       
-      $productaler_icon->image_resize         = true;
-	  $productaler_icon->image_y               = 50;
-      $productaler_icon->image_x               = 100;
+      //$productaler_icon->image_resize         = true;
+	  //$productaler_icon->image_y               = 50;
+      //$productaler_icon->image_x               = 100;
      
        $productaler_icon->process($dir_dest1);
       
 	   }
-	  $product_secondary_image[]= '/images/products/thumb/'. $productaler_icon->file_dst_name;
+	  $product_secondary_image[]= 'images/products/thumb/'. $productaler_icon->file_dst_name;
   }
   
  $product_secondary_image= implode(",",$product_secondary_image);
