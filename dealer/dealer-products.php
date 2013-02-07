@@ -18,7 +18,7 @@ echo "hai";
 
 
  $q_limit     = 20;
- if ( !isset($_REQUEST['start']) || $_REQUEST['start'] >=$product_num  || $_REQUEST['start']==""){
+ if ( !isset($_REQUEST['start']) || $_REQUEST['start']==""){
 	$start = 0;
 }else{
 $start=$_REQUEST['start'];

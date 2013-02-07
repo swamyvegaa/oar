@@ -498,6 +498,8 @@ function CheckDealerlogin(){
 
 
 if($_SESSION['dealer_login_email']==''){
+
+//echo "hai";exit;
 header("Location:index.php");
 }
 
