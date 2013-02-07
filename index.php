@@ -41,7 +41,7 @@ $featuredDealers = "SELECT dealer_thumbnail,dealer_store_name FROM  `dealers` WH
  $featuredCategoriesData = $db->getRows($featuredCategories);
  //print_r($featuredCategoriesData[0]);
  //echo "<br /> arrr";
- $newArrProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_new_arrival` = 1 ORDER BY `id` desc LIMIT 0, 20"; 
+ $newArrProducts = "SELECT product_name,product_primary_image FROM  `products` WHERE `product_primary_category` = 1 OR `product_secodary_category` LIKE '%14%' ORDER BY `id` desc LIMIT 0, 16"; 
  $newArrProductsData = $db->getRows($newArrProducts);
  //print_r($newArrProductsData);
  //echo "<br /> sale";
