@@ -11,10 +11,25 @@ $dealer_row=$db->getrow($dealer_data);// fetching the dealer data
 if(empty($dealer_row)){
     header("Location: ".$base_url."dealers.php");
 }
-//Meta data related data.
-$Meta_description=$dealer_row['dealer_meta_description'];
-$Meta_keywords=$dealer_row['dealer_meta_keywords'];
+//Meta tags data
+if(!empty($dealer_row['dealer_meta_title'])){
 $Meta_title=$dealer_row['dealer_meta_title'];
+}
+else{
+$Meta_title=$dealer_row['dealer_store_name'];
+}
+if(!empty($dealer_row['dealer_meta_description'])){
+$Meta_description=$dealer_row['dealer_meta_description'];
+}
+else{
+$Meta_description=$dealer_row['dealer_store_name'];
+}
+if(!empty($dealer_row['dealer_meta_keywords'])){
+$Meta_keywords=$dealer_row['dealer_meta_keywords'];
+}
+else{
+$Meta_keywords=$dealer_row['dealer_store_name'];
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -23,7 +38,7 @@ $Meta_title=$dealer_row['dealer_meta_title'];
 <meta name="description" content="<?php if(isset($Meta_description)){echo $Meta_description;}?>">
 <meta name="keywords" content="<?php if(isset($Meta_keywords)){echo $Meta_keywords;}?>">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="author" content="<?php echo $Meta_title;?>" />
+<meta name="author" content="iFortune" />
 
 <?php include 'design/includes/head.php'; ?>
 

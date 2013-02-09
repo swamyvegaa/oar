@@ -36,7 +36,7 @@ $newArrProducts = "SELECT * FROM  `products` WHERE `product_new_arrival` = 1 ORD
 </aside>
 <section id="category-page-rightside">
 <h4>New Arrivals</h4>
-<<div class="full-width-brdr"></div>
+<div class="full-width-brdr"></div>
 <div class="category-list-imgs">
 <ul>
 <?php 

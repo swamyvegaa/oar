@@ -28,6 +28,8 @@
 <section id="category-page-rightside">
 <h4>Events</h4>
 <div class="full-width-brdr"></div>
-
+<div class="category-page-alphabet">
+<p>Coming soon</p>
+</div>
 </section>
 <!--Events Page End -->

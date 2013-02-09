@@ -2,7 +2,7 @@
 
 <div id="primary-menu" style="clear:both;">
 	<ul>
-		<li><a class="menu-home" href="<?php echo $base_url;?>index"><div>Home</div></a></li>
+		<li><a class="menu-home" href="<?php echo $base_url;?>"><div>Home</div></a></li>
 		<li><a href="<?php echo $base_url;?>shop"><div>Shop</div></a>
         	
 		
@@ -61,15 +61,16 @@ $categorylist = "SELECT id,category_name,category_root  FROM  categories WHERE c
 }
 ?>
         </li>
+		<li><a href="<?php echo $base_url;?>about-us"><div>About Us</div></a></li>
 		<li><a href="<?php echo $base_url;?>dealers"><div>Dealers</div></a></li>
 		<li><a href="<?php echo $base_url;?>designers"><div>Designers</div></a></li>
-		<li><a href="<?php echo $base_url;?>services"><div>Services</div></a></li>
-		<li><a href="<?php echo $base_url;?>sale"><div>Sale</div></a></li>
+		<!--<li><a href="<?php //echo $base_url;?>services"><div>Services</div></a></li>
+		<li><a href="<?php //echo $base_url;?>sale"><div>Sale</div></a></li>-->
 		<li><a href="<?php echo $base_url;?>new-arrivals"><div>New Arrivals</div></a></li>
         <li><a href="<?php echo $base_url;?>events"><div>Events</div></a></li>
-        <li><a href="<?php echo $base_url;?>gallery"><div>Gallery</div></a></li>
+       <!-- <li><a href="<?php //echo $base_url;?>gallery"><div>Gallery</div></a></li>-->
         <li><a href="<?php echo $base_url;?>/blog"><div>Blog</div></a></li>
-        <li><a href="<?php echo $base_url;?>contact-us"><div>Contact Us</div></a></li>
+        <li><a href="<?php echo $base_url;?>contact"><div>Contact</div></a></li>
 	</ul>
 </div>
 

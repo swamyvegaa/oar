@@ -1,5 +1,5 @@
 <!--category Page Start -->
-<div class="bread-crumb"><a href="<?php echo $base_url; ?>index.php">Home</a><img src="<?php echo $base_url;?>design/images/icons/bread-crumb-icon.png" /><a href="category.php?name=<?php echo $category_row['category_name'];?>"><?php echo $category_row['category_name'];?></a></div>
+<div class="bread-crumb"><a href="<?php echo $base_url; ?>">Home</a><img src="<?php echo $base_url;?>design/images/icons/bread-crumb-icon.png" /><a href="<?php echo $base_url; ?>category/<?php echo url_rewite($category_row['category_name']); ?>/<?php echo $category_row['id']; ?>/1"><?php echo $category_row['category_name'];?></a></div>
 <div class="clear"></div>
 <aside id="category-page-leftside">
 <h4>Store</h4>
@@ -100,10 +100,6 @@
 <br/><br/>
 <h4>Products</h4>
 <div class="full-width-brdr"></div>
-
-
-
-
 <div class="category-list-imgs">
 <!-- Category products -->
 <?php
@@ -130,13 +126,43 @@ $page_count=ceil($products_rows_count/$limit);
 $i=1;
 $results=count($products_rows); //counting the total number of results
 foreach($products_rows as $row => $product_value){
+$dealers="select id,dealer_name,dealer_icon from dealers where id=".$product_value['product_dealer'];
+$dealer_row=$db->getrow($dealers);
     if($i==1){
         echo "<ul>";
     }
 ?>
-<li><a href="<?php echo $base_url; ?>category/product-details/<?php echo url_rewite($product_value['product_name']); ?>/<?php echo url_rewite($product_value['id']); ?>/1" title=""><img src="<?php echo $base_url;?><?php echo $product_value['product_primary_image'];?>" /></a>
-    <h3><a href="<?php echo $base_url; ?>category/product-details/<?php echo url_rewite($product_value['product_name']); ?>/<?php echo url_rewite($product_value['id']); ?>/1" title=""><?php echo $product_value['product_name'];?></a></h3>
-<span class="price">$<?php echo $product_value['product_sale_price'];?></span>
+<li><a href="<?php echo $base_url; ?>products/<?php echo url_rewite($product_value['product_name']); ?>/<?php echo url_rewite($product_value['id']); ?>/1" title=""><img src="<?php echo $base_url;?><?php echo $product_value['product_primary_image'];?>" /></a>
+    <div align="center"><a href="<?php echo $base_url; ?>dealer/<?php echo url_rewite($dealer_row['dealer_name']); ?>/<?php echo url_rewite($dealer_row['id']); ?>/1" title=""><img src="<?php echo $base_url; ?><?php echo $dealer_row['dealer_icon']?>" style="width:150px;height:50px;" /></a></div>
+	<h3><a href="<?php echo $base_url; ?>products/<?php echo url_rewite($product_value['product_name']); ?>/<?php echo url_rewite($product_value['id']); ?>/1" title=""><?php if(strlen($product_value['product_name'])>50) echo substr($product_value['product_name'], 0, 50).'...'; else echo $product_value['product_name']; ?></a></h3>
+
+<div align="center">
+									
+									<?php 
+									
+									if(!empty($product_value['product_offer_price'])){
+									echo "<span><del>".$product_value['product_sale_price']."</del></span><br/><span style='color: #d90009;'>".$product_value['product_offer_price']."</span>";
+									}
+									else if(!empty($product_value['product_sale_price'])){
+									echo "<span>".$product_value['product_sale_price']."</span>";
+									}
+									else if(!empty($product_value['product_call_for_fee'])){
+									echo "<span>Call for price</span>";
+									}
+									?>
+									</div>
+									<div align="center">
+									<?php 
+									
+									if($product_value['product_on_hold']==1){
+									echo "<img src=".$base_url."design/images/icons/on-hold.jpg />";
+									}
+									else if($product_value['product_sold']==1){
+									echo "<img src=".$base_url."design/images/icons/sold.jpg />";
+									}
+									?>
+									</div>
+
 </li>
 <?php
 if($i<$results){//If $i value not equal to $results appendinding with </ul>.
@@ -177,7 +203,7 @@ echo '</ul>';
                         //Numbers
                         echo "<span style='margin-right:5px;margin-left:5px;'>";
                         $start_count = $page_id - $limit;
-                        if ($start_count < 0) {
+                        if ($start_count < 1) {
                             for ($i = 1; $i <= $page_count; $i++) {
                                 if ($i <> $page_id) {
                                     ?>

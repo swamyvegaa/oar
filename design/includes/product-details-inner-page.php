@@ -1,12 +1,12 @@
 
 <!--category Page Start -->
-<div class="bread-crumb"><a href="<?php echo $base_url; ?>index.php">Home</a><img src="<?php echo $base_url; ?>design/images/icons/bread-crumb-icon.png" /><a href="<?php echo $base_url; ?>category.php">Category</a><img src="<?php echo $base_url; ?>design/images/icons/bread-crumb-icon.png" /><a href="<?php echo $base_url; ?>product.php">Product</a></div>
+<div class="bread-crumb"><a href="<?php echo $base_url; ?>">Home</a><img src="<?php echo $base_url; ?>design/images/icons/bread-crumb-icon.png" /><a href="<?php echo $base_url;?>dealer/<?php echo url_rewite($dealer_data['dealer_name']);?>/<?php echo $dealer_data['id'];?>/1"><?php echo $dealer_data['dealer_name'];?></a><img src="<?php echo $base_url; ?>design/images/icons/bread-crumb-icon.png" /><a href="<?php echo $base_url; ?>products/<?php echo url_rewite($product_data['product_name'])?>/<?php echo url_rewite($product_data['id'])?>/1"><?php echo $product_data['product_name']?></a></div>
 <div class="clear"></div>
 <div class="product-details-box">
     <h1><?php echo $product_data['product_title']; ?></h1>
     <div class="full-width-brdr"></div>
     <div class="product-details-left">
-        <a href="<?php echo $base_url; ?><?php echo $product_data['product_primary_image']; ?>" rel="lightbox"><img style="width:500px;height:500px" src="<?php echo $base_url; ?><?php echo $product_data['product_primary_image']; ?>" width="500" height="500"  /></a><br/><br/>
+        <a href="<?php echo $base_url; ?><?php echo $product_data['product_primary_image']; ?>" rel="lightbox"><img style="width:500px;height:500px" src="<?php echo $base_url; ?><?php echo str_replace('images/products/','images/products/primary/',$product_data['product_primary_image']); ?>" width="500" height="500"  /></a><br/><br/>
         <a href="<?php echo $base_url; ?>#"><img style="margin:5px 0px;" src="<?php echo $base_url; ?><?php echo $dealer_data['dealer_icon']; ?>"  /><br/>
 
 
@@ -99,13 +99,15 @@
         <?php
         $product_secondary_images = "select product_secondary_image from product_secondary_images where product_id=" . $product_id;
         $product_secondary_image_data = $db->getRows($product_secondary_images);
+		//print_r($product_secondary_image_data);
+		//exit;
 
         foreach ($product_secondary_image_data as $key => $value) {
 //print_r($product_secondary_image_data);
 //exit;
             ?>
             <a href="<?php echo $base_url; ?><?php echo $value['product_secondary_image']; ?>" rel="lightbox">
-                <img src="<?php echo $base_url; ?><?php echo $value['product_secondary_image']; ?>"  /></a>
+                <img src="<?php echo $base_url; ?><?php echo str_replace('images/products/secondary/','images/products/secondary_thumb/',$value['product_secondary_image']); ?>"  /></a>
         <?php } ?>
     </div>
     <!-- End of Product details right -->
@@ -116,7 +118,7 @@
     <div class="featured-products-list">
 
         <?php
-        if ($page['0'] == 'category') {
+        /*if ($page['0'] == 'category') {
             $category_products = "select * from products where product_primary_category=" . $product_data['product_primary_category'] . " or product_secodary_category=" . $product_data['product_secodary_category'] . " and product_status=1";
             $category_products_data = $db->getRows($category_products);
             //print_r($category_products_data);
@@ -138,8 +140,8 @@
                     $i = 1;
                 }
             }
-        } else if ($page['0'] == 'dealer') {
-            $dealer_products = "select * from products where product_dealer=" . $product_data['product_dealer'] . " and product_status=1";
+        } else if ($page['0'] == 'dealer') {*/
+            $dealer_products = "select * from products where product_dealer=" . $product_data['product_dealer'] . " and product_status=1 limit 8";
             $dealer_products_data = $db->getRows($dealer_products);
             $i = 1;
 
@@ -148,8 +150,8 @@
                     echo '<div><ul>';
                 }
                 ?>
-                <li><a href="<?php echo $base_url; ?>dealer/product-details/<?php echo url_rewite($value['product_name']); ?>/<?php echo url_rewite($value['id']); ?>/1"><img src="<?php echo $base_url; ?><?php echo $value['product_primary_image']; ?>"  /></a>
-                    <span class="details"><a href="<?php echo $base_url; ?>dealer/product-details/<?php echo url_rewite($value['product_name']); ?>/<?php echo url_rewite($value['id']); ?>/1"><?php echo $value['product_name']; ?></a><br/><?php echo $value['product_sale_price']; ?></span>
+                <li><a href="<?php echo $base_url; ?>products/<?php echo url_rewite($value['product_name']); ?>/<?php echo url_rewite($value['id']); ?>"><img src="<?php echo $base_url; ?><?php echo str_replace('images/products/','images/products/thumb/',$value['product_primary_image']); ?>"  /></a>
+                    <!--<span class="details"><a href="<?php //echo $base_url; ?>dealer/product-details/<?php //echo url_rewite($value['product_name']); ?>/<?php //echo url_rewite($value['id']); ?>/1"><?php //echo $value['product_name']; ?></a><br/><?php //echo $value['product_sale_price']; ?></span>-->
                 </li>
                 <?php
                 $i = $i + 1;
@@ -158,7 +160,7 @@
                     $i = 1;
                 }
             }
-        }
+        //}
         ?>
 
 
