@@ -7,4 +7,10 @@
 <script src="scripts/jquery.MultiFile.js" type="text/javascript" language="javascript"></script>
 <script src='scripts/jquery.form.js' type="text/javascript" language="javascript"></script>
 <script src='scripts/jquery.blockUI.js' type="text/javascript" language="javascript"></script>
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script>
 <!--Scripts Ends Here: -->

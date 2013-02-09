@@ -47,7 +47,7 @@ $_REQUEST['page_status']='0';
 if($_REQUEST['page_status_sitemap']==''){
 $_REQUEST['page_status_sitemap']='0';
 }
-Pageadd(@$_REQUEST['page_name'],@$_REQUEST['page_alias'],@$_REQUEST['page_title'],@$_REQUEST['page_order'],@$_REQUEST['page_content'],@$handle->file_dst_name,@$_REQUEST['page_meta_title'],@$_REQUEST['page_meta_description'],@$_REQUEST['page_meta_keywords'],@$_REQUEST['page_status'],@$_REQUEST['page_status_sitemap'],@$_REQUEST['page_ad']);
+Pageadd(mysql_real_escape_string(@$_REQUEST['page_name']),mysql_real_escape_string(@$_REQUEST['page_alias']),mysql_real_escape_string(@$_REQUEST['page_title']),@$_REQUEST['page_order'],mysql_real_escape_string(@$_REQUEST['page_content']),@$handle->file_dst_name,mysql_real_escape_string(@$_REQUEST['page_meta_title']),mysql_real_escape_string(@$_REQUEST['page_meta_description']),mysql_real_escape_string(@$_REQUEST['page_meta_keywords']),@$_REQUEST['page_status'],@$_REQUEST['page_status_sitemap'],mysql_real_escape_string(@$_REQUEST['page_ad']));
 }
 }
 ?>
@@ -178,7 +178,7 @@ Pageadd(@$_REQUEST['page_name'],@$_REQUEST['page_alias'],@$_REQUEST['page_title'
 <td width="300" align="left" valign="top">&nbsp;</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="submit" name="submit" id="submit"  value="Save"  class="grey-button" />
-&nbsp;&nbsp;&nbsp;&nbsp;<input class="grey-button" type="button" value="Cancel" />
+&nbsp;&nbsp;&nbsp;&nbsp;<input class="grey-button" type="button" value="Cancel" onClick="window.history.go(-1);"/>
 </td>
 </tr>
 <tr>

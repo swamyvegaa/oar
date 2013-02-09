@@ -1,23 +1,23 @@
 <?php 
-function Statusdelete($id,$start){
+function Statusdelete($id,$start,$dealer_id){
  global $db;
 $db->update('products',"product_status= '-1'","id=".$id);
-header('Location:products.php?start='.$start);
+header('Location:dealer-products.php?dealer_id='.$dealer_id);
 
 	
 }
-function Statusfeatured($id,$start,$statusdealer){
+function Statusfeatured($id,$start,$statusdealer,$dealer_id){
  global $db;
 $db->update('products',"product_featured='".$statusdealer."'","id=".$id);
-header('Location:dealers.php?start='.$start);
+header('Location:dealer-products.php?dealer_id='.$dealer_id);
 
 	
 }
-function Statuschange($id,$newstatus,$start,$dealer){
+function Statuschange($id,$newstatus,$start,$dealer_id){
  global $db;
 $db->update('products',"product_status= '".$newstatus."'","id=".$id);
 //header('Location:dealer-products.php?start='.$start.'&dealer_id='.$dealer);
-header('Location:dealers.php?start='.$start);
+header('Location:dealer-products.php?dealer_id='.$dealer_id);
 
 	
 }

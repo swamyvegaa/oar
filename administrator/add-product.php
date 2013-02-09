@@ -16,15 +16,15 @@ include('includes/class.upload.php');
 
 if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
    if(@$_REQUEST['product_name']!=''){
-  $productnamere = "SELECT product_name  FROM  products WHERE product_status!='-1' AND product_name='".$_REQUEST['product_name']."'"; 
+  $productnamere = "SELECT product_name  FROM  products WHERE product_status!='-1' AND product_name='".mysql_real_escape_string($_REQUEST['product_name'])."'"; 
   $productnamere_num = sqlnumber($productnamere);
   }
  if(@$_REQUEST['product_code']!=''){
- $productcodere = "SELECT product_code  FROM  products WHERE product_status!='-1' AND product_code='".$_REQUEST['product_code']."'"; 
+ $productcodere = "SELECT product_code  FROM  products WHERE product_status!='-1' AND product_code='".mysql_real_escape_string($_REQUEST['product_code'])."'"; 
  $productcodere_num = $db->getRow($productcodere);
  }
  if(@$_REQUEST['product_alias']!=''){
- $productalire = "SELECT product_alias  FROM  products WHERE product_status!='-1' AND product_alias='".$_REQUEST['product_alias']."' AND product_alias!=''"; 
+ $productalire = "SELECT product_alias  FROM  products WHERE product_status!='-1' AND product_alias='".mysql_real_escape_string($_REQUEST['product_alias'])."' AND product_alias!=''"; 
  $productalire_num = $db->getRow($productalire);
  }
 
@@ -70,8 +70,8 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       $handle->file_primary_dst_name= 'images/products/primary'. $handle->file_dst_name;
 	  //Thumb image
 	  $handle->image_resize         = true;
-	  $handle->image_y               = 225;
-      $handle->image_x               = 225;
+	  $handle->image_y               = 200;
+      $handle->image_x               = 200;
      $dir_dest = (isset($_GET['dir']) ? $_GET['dir'] : '../images/products/thumb');
       $handle->process($dir_dest);
       $handle->file_thumb_dst_name= 'images/products/thumb'. $handle->file_dst_name;
@@ -143,7 +143,7 @@ $_REQUEST['product_coming_soon']='0';
 }
 $_REQUEST['product_category']=implode(",",$_REQUEST['product_category']);
 
-Productadd(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],@$_REQUEST['product_name'],@$_REQUEST['product_alias'],@$_REQUEST['product_title'],@$_REQUEST['product_code'],@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],@$_REQUEST['product_overview'],@$_REQUEST['product_description'],@$_REQUEST['product_additional_information'],@$_REQUEST['product_status'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_hold'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_original_dst_name,@$product_secondary_image,@$_REQUEST['product_meta_title'],@$_REQUEST['product_meta_description'],@$_REQUEST['product_meta_keywords'],@$_REQUEST['product_ad']); 
+Productadd(@$_REQUEST['product_dealer'],@$_REQUEST['product_categoryPrimary'],@$_REQUEST['product_category'],mysql_real_escape_string(@$_REQUEST['product_name']),mysql_real_escape_string(@$_REQUEST['product_alias']),mysql_real_escape_string(@$_REQUEST['product_title']),mysql_real_escape_string(@$_REQUEST['product_code']),@$_REQUEST['product_cost_price'],@$_REQUEST['product_sale_price'],@$_REQUEST['product_call_for_fee'],@$_REQUEST['product_offer_price'],@$_REQUEST['product_period'],@$_REQUEST['product_origin'],@$_REQUEST['product_condition'],@$_REQUEST['product_height'],@$_REQUEST['product_width'],@$_REQUEST['product_depth'],@$_REQUEST['product_weight'],@$_REQUEST['product_shipping_price'],@$_REQUEST['product_free_shipping'],@$_REQUEST['product_instock_qty'],mysql_real_escape_string(@$_REQUEST['product_overview']),mysql_real_escape_string(@$_REQUEST['product_description']),mysql_real_escape_string(@$_REQUEST['product_additional_information']),@$_REQUEST['product_status'],@$_REQUEST['product_sold'],@$_REQUEST['product_featured'],@$_REQUEST['product_on_hold'],@$_REQUEST['product_new_arrival'],@$_REQUEST['product_coming_soon'],@$_REQUEST['product_priority'],@$handle->file_original_dst_name,@$product_secondary_image,mysql_real_escape_string(@$_REQUEST['product_meta_title']),mysql_real_escape_string(@$_REQUEST['product_meta_description']),mysql_real_escape_string(@$_REQUEST['product_meta_keywords']),mysql_real_escape_string(@$_REQUEST['product_ad'])); 
 
  }
  
@@ -479,7 +479,7 @@ foreach( $dealer_re as $dealer_res){ ?>
 <td width="300" align="left" valign="top">&nbsp;</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input class="grey-button" type="submit" name="submit"  id="submit" value="Save" />
-&nbsp;&nbsp;&nbsp;&nbsp;<input class="grey-button" type="button" value="Cancel" />
+&nbsp;&nbsp;&nbsp;&nbsp;<input class="grey-button" type="button" value="Cancel" onClick="window.history.go(-1);"/>
 </td>
 </tr>
 <tr>
