@@ -120,7 +120,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       
       $dealer_icon->image_resize         = true;
 	  $dealer_icon->image_y               = 50;
-      $dealer_icon->image_x               = 100;
+      $dealer_icon->image_x               = 150;
      
        $dealer_icon->process($dir_dest1);
 

@@ -76,7 +76,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
   if ($handle->uploaded) {
       
       $handle->image_resize         = true;
-	  $handle->image_y               = 250;
+	  $handle->image_y               = 350;
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
@@ -123,7 +123,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
       
       $dealer_icon->image_resize         = true;
 	  $dealer_icon->image_y               = 50;
-      $dealer_icon->image_x               = 100;
+      $dealer_icon->image_x               = 150;
      
        $dealer_icon->process($dir_dest1);
 

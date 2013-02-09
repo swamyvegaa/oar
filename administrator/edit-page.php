@@ -49,7 +49,7 @@ $_REQUEST['page_status']='0';
 if($_REQUEST['page_status_sitemap']==''){
 $_REQUEST['page_status_sitemap']='0';
 }
-Pageupdate(@$_REQUEST['page_name'],@$_REQUEST['page_alias'],@$_REQUEST['page_title'],@$_REQUEST['page_order'],@$_REQUEST['page_content'],@$handle->file_dst_name,@$_REQUEST['page_meta_title'],@$_REQUEST['page_meta_description'],@$_REQUEST['page_meta_keywords'],@$_REQUEST['page_status'],@$_REQUEST['page_status_sitemap'],@$_REQUEST['page_ad'],$_REQUEST['start'],$_REQUEST['id']);
+Pageupdate(mysql_real_escape_string(@$_REQUEST['page_name']),mysql_real_escape_string(@$_REQUEST['page_alias']),mysql_real_escape_string(@$_REQUEST['page_title']),@$_REQUEST['page_order'],mysql_real_escape_string(@$_REQUEST['page_content']),@$handle->file_dst_name,mysql_real_escape_string(@$_REQUEST['page_meta_title']),mysql_real_escape_string(@$_REQUEST['page_meta_description']),mysql_real_escape_string(@$_REQUEST['page_meta_keywords']),@$_REQUEST['page_status'],@$_REQUEST['page_status_sitemap'],mysql_real_escape_string(@$_REQUEST['page_ad']),$_REQUEST['start'],$_REQUEST['id']);
 }
 }
 ?>
