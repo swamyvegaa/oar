@@ -670,7 +670,9 @@
 	float:left;
 	width: 230px;
 	padding:5px;
+
 	margin:0px 5px 0px 5px;	
+
 }
 .category-list-imgs li h3 {
 	font-family:"Arial";
@@ -1201,7 +1203,7 @@
 
 	width:100px;
 	padding:5px;
-	margin:0px 16px 25px 0px;	
+	margin:0px 10px 25px 0px;	
 }
 .featured-products-list li:hover {
 	border:1px solid #d90009;	

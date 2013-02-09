@@ -11,17 +11,17 @@
 
 <!--Google Fonts Link Style Ends Here: -->
 
-<link rel="stylesheet" href="design/css/style.css" type="text/css" />
-<link rel="stylesheet" href="design/css/oar-style.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $base_url;?>design/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $base_url;?>design/css/oar-style.css" type="text/css" />
 
 <!--<link rel="stylesheet" href="design/css/colors.php" type="text/css" /> -->
-<link rel="stylesheet" href="design/css/slider.css" type="text/css" />
-<link rel="stylesheet" href="design/css/tipsy.css" type="text/css" />
-<link rel="stylesheet" href="design/images/fancybox/jquery.fancybox.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $base_url;?>design/css/slider.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $base_url;?>design/css/tipsy.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $base_url;?>design/images/fancybox/jquery.fancybox.css" type="text/css" />
 <!--<link rel="stylesheet" href="design/css/responsive.css" type="text/css" /> -->
 
-<link rel="stylesheet" href="design/images/flexslider.css" type="text/css" />
-<link rel="stylesheet" href="design/css/gallery-style.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $base_url;?>design/images/flexslider.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $base_url;?>design/css/gallery-style.css" type="text/css" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
@@ -30,23 +30,23 @@
 <![endif]-->
 
 
-<script type="text/javascript" src="design/scripts/jquery.js"></script>
-<script type="text/javascript" src="design/scripts/jquery.easing.js"></script>
-<script type="text/javascript" src="design/scripts/superfish.js"></script>
-<script type="text/javascript" src="design/scripts/jquery.fitvids.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/jquery.easing.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/superfish.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/jquery.fitvids.js"></script>
 
-<script type="text/javascript" src="design/scripts/jquery.carouFredSel.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/jquery.carouFredSel.js"></script>
 
-<script type="text/javascript" src="design/scripts/accordion.js"></script>
-<script type="text/javascript" src="design/scripts/jquery.scrollTo-slider.js"></script>
-<script type="text/javascript" src="design/scripts/common.js"></script>
-<script type="text/javascript" src="design/scripts/jquery.flexslider.js"></script>
-<script type="text/javascript" src="design/scripts/amazon_scroller.js"></script>
-<script type="text/javascript" src="design/scripts/jquery.ad-gallery.js"></script>
-<script type="text/javascript" src="design/scripts/treeMenu.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/accordion.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/jquery.scrollTo-slider.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/common.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/jquery.flexslider.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/amazon_scroller.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/jquery.ad-gallery.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/treeMenu.js"></script>
 
 
-<script type="text/javascript" src="design/scripts/lightbox-01.js"></script>
+<script type="text/javascript" src="<?php echo $base_url;?>design/scripts/lightbox-01.js"></script>
 <style type="text/css">
 #lightbox{
 	background-color:#eaeaea;
@@ -122,14 +122,14 @@ $(document).ready(function()
 	//slides the element with class "menu_body" when paragraph with class "menu_head" is clicked 
 	$("#firstpane p.menu_head").click(function()
     {
-		$(this).css({backgroundImage:"url(design/images/icons/down.png)"}).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
-       	$(this).siblings().css({backgroundImage:"url(design/images/icons/left.png)"});
+		$(this).css({backgroundImage:"url(<?php echo $base_url;?>design/images/icons/down.png)"}).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+       	$(this).siblings().css({backgroundImage:"url(<?php echo $base_url;?>design/images/icons/left.png)"});
 	});
 	//slides the element with class "menu_body" when mouse is over the paragraph
 	$("#secondpane p.menu_head").mouseover(function()
     {
-	     $(this).css({backgroundImage:"url(design/images/icons/down.png)"}).next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
-         $(this).siblings().css({backgroundImage:"url(design/images/icons/left.png)"});
+	     $(this).css({backgroundImage:"url(<?php echo $base_url;?>design/images/icons/down.png)"}).next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+         $(this).siblings().css({backgroundImage:"url(<?php echo $base_url;?>design/images/icons/left.png)"});
 	});
 });
 </script>

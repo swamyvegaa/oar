@@ -2,11 +2,13 @@
 include('common.php');
 ?>
 <?php 
-if(!empty($_GET['name'])){
-$category_name=$_GET['name'];
+if(!empty($_GET['id'])){
+$category_id=$_GET['id'];
 }
-$category_data="select * from categories where category_name='".$category_name."' and category_status=1";
+$category_data="select * from categories where id='".$category_id."' and category_status=1";
 $category_row=$db->getrow($category_data);
+//print_r($category_row);
+//exit;
 $Meta_description=$category_row['category_meta_description'];
 $Meta_keywords=$category_row['category_meta_keywords'];
 $Meta_title=$category_row['category_meta_title'];

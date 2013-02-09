@@ -8,25 +8,25 @@
 			<!--<p>iFortune .... <a href="#">Link</a></p>-->
 			<div class="widget widget-social" align="right">
                     	<a title="facebook" href="#" class="soc_facebook">
-					<img src="design/images/icons/facebook.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/facebook.png"></a>
 <a title="google" href="#" class="soc_google">
-					<img src="design/images/icons/google.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/google.png"></a>
 <a title="twitter" href="#" class="soc_twitter">
-					<img src="design/images/icons/twitter.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/twitter.png"></a>
 <a title="youtube" href="#" class="soc_youtube">
-					<img src="design/images/icons/youtube.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/youtube.png"></a>
 <a title="vimeo" href="#" class="soc_vimeo">
-					<img src="design/images/icons/vimeo.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/vimeo.png"></a>
 <a title="flickr" href="#" class="soc_flickr">
-					<img src="design/images/icons/flickr.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/flickr.png"></a>
 <a title="picasa" href="#" class="soc_picasa">
-					<img src="design/images/icons/picasa.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/picasa.png"></a>
 <a title="linkedin" href="#" class="soc_linkedin">
-					<img src="design/images/icons/linkedin.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/linkedin.png"></a>
 <a title="dribbble" href="#" class="soc_dribbble">
-					<img src="design/images/icons/dribbble.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/dribbble.png"></a>
 <a title="RSS" href="#" class="soc_rss">
-					<img src="design/images/icons/rss.png"></a>
+					<img src="<?php echo $base_url;?>design/images/icons/rss.png"></a>
 </div>
 		</div>
 
@@ -66,7 +66,7 @@
  <div id="header" class="clearfix">
 
 		<div id="logo">
-			<a href="index.php"><img src="design/images/oar-logo-200x100.jpg" alt="On Antique Row" title="On Antique Row" /></a>
+			<a href="index.php"><img src="<?php echo $base_url;?>design/images/oar-logo-200x100.jpg" alt="On Antique Row" title="On Antique Row" /></a>
         </div>
 
 	<div id="top-contacts-area">
