@@ -24,7 +24,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font: Arial;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -1342,12 +1342,10 @@ label.error {
 #copyrights #foo-right {
 	display: block;
 	position: relative;
-	float: left;
-
+	float: right;
     padding: 15px 0px;
     max-width: 37%;
-
-	margin-right: 6%;
+	margin-right:30px;
 
 }
 
@@ -1355,18 +1353,6 @@ label.error {
     display: inline-block;
     line-height: 20px;
     margin: 0 7px;
-}
-
-#copyrights #foo-right {
-	float: right;
-
-	margin-right: 0px;
-}
-#copyrights #foo-right-ifc-logo {
-	float: right;
-	border:0 none;
-	margin:10px 20px 0px 0px;
-
 }
 
 #fsocial,#fsocial li {

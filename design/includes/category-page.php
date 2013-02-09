@@ -97,6 +97,13 @@
 <h4><?php echo $category_row['category_name'];?></h4>
 <div class="full-width-brdr"></div>
 <p><?php echo $category_row['category_description_top'];?></p>
+<br/><br/>
+<h4>Products</h4>
+<div class="full-width-brdr"></div>
+
+
+
+
 <div class="category-list-imgs">
 <!-- Category products -->
 <?php
