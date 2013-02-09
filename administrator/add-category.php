@@ -16,15 +16,15 @@ include('includes/class.upload.php');
 if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
 
 if(@$_REQUEST['category_name']!=''){
-  $catnamere = "SELECT category_name  FROM  categories WHERE category_status!='-1' AND category_name='".$_REQUEST['category_name']."'"; 
+  $catnamere = "SELECT category_name  FROM  categories WHERE category_status!='-1' AND category_name='".mysql_real_escape_string($_REQUEST['category_name'])."'"; 
   $catnamere_num = sqlnumber($catnamere);
   }
  if(@$_REQUEST['category_code']!=''){
- $catcodere = "SELECT category_name  FROM  categories WHERE category_status!='-1' AND category_code='".$_REQUEST['category_code']."'"; 
+ $catcodere = "SELECT category_name  FROM  categories WHERE category_status!='-1' AND category_code='".mysql_real_escape_string($_REQUEST['category_code'])."'"; 
  $catcodere_num = $db->getRow($catcodere);
  }
  if(@$_REQUEST['category_alias']!=''){
- $catalire = "SELECT category_alias  FROM  categories WHERE category_status!='-1' AND category_alias='".$_REQUEST['category_alias']."' AND category_alias!=''"; 
+ $catalire = "SELECT category_alias  FROM  categories WHERE category_status!='-1' AND category_alias='".mysql_real_escape_string($_REQUEST['category_alias'])."' AND category_alias!=''"; 
  $catalire_num = $db->getRow($catalire);
  }
  
@@ -56,7 +56,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
   if ($handle->uploaded) {
       
       $handle->image_resize         = true;
-	  $handle->image_y               = 250;
+	  $handle->image_y               = 350;
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
@@ -76,8 +76,8 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
    if ($foo->uploaded) {
       
       $foo->image_resize         = true;
-	  $foo->image_y               = 255;
-      $foo->image_x               = 255;
+	  $foo->image_y               = 225;
+      $foo->image_x               = 225;
      
       $foo->process($dir_dest1);
        $foo->file_dst_name= 'images/category/thumb/'. $foo->file_dst_name;
@@ -97,7 +97,7 @@ $_REQUEST['category_featured_status']='0';
 }
 
 
-Categoryadd(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUEST['category_alias'],@$_REQUEST['category_title'],@$_REQUEST['category_code'],@$_REQUEST['category_order'],@$_REQUEST['category_description_top'],@$_REQUEST['category_description_bottom'],@$handle->file_dst_name,@$foo->file_dst_name,@$_REQUEST['category_meta_title'],@$_REQUEST['category_meta_description'],@$_REQUEST['category_meta_keywords'],@$_REQUEST['category_status'],@$_REQUEST['category_featured_status'],@$_REQUEST['category_ad']); 
+Categoryadd(@$_REQUEST['category_root'],mysql_real_escape_string(@$_REQUEST['category_name']),mysql_real_escape_string(@$_REQUEST['category_alias']),mysql_real_escape_string(@$_REQUEST['category_title']),mysql_real_escape_string(@$_REQUEST['category_code']),@$_REQUEST['category_order'],mysql_real_escape_string(@$_REQUEST['category_description_top']),mysql_real_escape_string(@$_REQUEST['category_description_bottom']),@$handle->file_dst_name,@$foo->file_dst_name,mysql_real_escape_string(@$_REQUEST['category_meta_title']),mysql_real_escape_string(@$_REQUEST['category_meta_description']),mysql_real_escape_string(@$_REQUEST['category_meta_keywords']),@$_REQUEST['category_status'],@$_REQUEST['category_featured_status'],mysql_real_escape_string(@$_REQUEST['category_ad'])); 
  }
  }
  
@@ -277,7 +277,7 @@ Categoryadd(@$_REQUEST['category_root'],@$_REQUEST['category_name'],@$_REQUEST['
 <td width="300" align="left" style="vertical-align:top;">&nbsp;</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="submit" name="submit" id="submit"  value="Save" class="grey-button" />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="categories.php?start=<?php echo $_REQUEST['start'];?>" style="text-decoration:none; cursor:pointer;"><input class="grey-button" type="button" value="Cancel" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="categories.php?start=<?php echo $_REQUEST['start'];?>" style="text-decoration:none; cursor:pointer;"><input class="grey-button" type="button" value="Cancel" onClick="window.history.go(-1);"/></a>
 </td>
 </tr>
 <tr>

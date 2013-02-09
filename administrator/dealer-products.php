@@ -57,7 +57,7 @@ $statusproduct='1';
 $statusproduct='0';
 }
 
-Statusfeatured($_REQUEST['featured_id'],$start,$statusproduct);
+Statusfeatured($_REQUEST['featured_id'],$start,$statusproduct,$_REQUEST['dealer_id']);
 }
 if(@$_REQUEST['sale_id']!=''){
 
@@ -68,7 +68,7 @@ $statusdealer='1';
 $statusdealer='0';
 }
 
-Statussale($_REQUEST['sale_id'],$start,$statusdealer);
+Statussale($_REQUEST['sale_id'],$start,$statusdealer,$_REQUEST['dealer_id']);
 }
  if(@$_REQUEST['action']=='status'){
 if(@$_REQUEST['status']=='1')
@@ -142,13 +142,13 @@ if(@$_REQUEST['status']=='1')
  
    <td align="center" valign="middle">
   
-  <form action=""  method="post" name='product_form<?php echo $productlist_result['id']; ?>'><input class="check-all" type="checkbox" onclick="document.product_form<?php echo $productlist_result['id']; ?>.submit();" name="featured_check"  id="featured_check" value="1" <?php if($productlist_result['product_featured']=='1'){ ?> checked="checked"<?php } ?>/><input type="hidden" name="featured_id" id="featured_id" value="<?php echo $productlist_result['id']; ?>"  /></form>
+  <form action=""  method="post" name='product_form<?php echo $productlist_result['id']; ?>'><input class="check-all" type="checkbox" onclick="document.product_form<?php echo $productlist_result['id']; ?>.submit();" name="featured_check"  id="featured_check" value="1" <?php if($productlist_result['product_featured']=='1'){ ?> checked="checked"<?php } ?>/><input type="hidden" name="featured_id" id="featured_id" value="<?php echo $productlist_result['id']; ?>"  /><input type="hidden" name="dealer_id" id="dealer_id" value="<?php echo $_REQUEST['dealer_id']; ?>"  /></form>
   
   </td>
   <td align="center" valign="middle">
-  <a href="?action=status&id=<?php echo $productlist_result['id']; ?>&status=<?php echo $productlist_result['product_status']; ?>&start=<?php echo $start; ?>"><?php if($productlist_result['product_status']=='1'){?><img src="cms-images/active.png" style="margin:0px 5px 0px 5px;" alt="Active" title="Active"/><?php }else{ ?><img src="cms-images/inactive.png" style="margin:0px 5px 0px 5px;" alt="Inactive" title="Inactive"/><?php } ?></a>&nbsp;
+  <a href="?action=status&id=<?php echo $productlist_result['id']; ?>&status=<?php echo $productlist_result['product_status']; ?>&dealer_id=<?php echo $_REQUEST['dealer_id'];?>&start=<?php echo $start; ?>"><?php if($productlist_result['product_status']=='1'){?><img src="cms-images/active.png" style="margin:0px 5px 0px 5px;" alt="Active" title="Active"/><?php }else{ ?><img src="cms-images/inactive.png" style="margin:0px 5px 0px 5px;" alt="Inactive" title="Inactive"/><?php } ?></a>&nbsp;
   <a href="edit-product.php?id=<?php echo $productlist_result['id']; ?>&start=<?php echo $start; ?>"><img src="cms-images/edit.png" style="margin:0px 5px 0px 5px;" alt="Edit" title="Edit"/></a>&nbsp;
-  <a href="?action=delete&id=<?php echo $productlist_result['id']; ?>&start=<?php echo $start; ?>"><img src="cms-images/delete.png" style="margin:0px 5px 0px 5px;" alt="Delete" title="Delete"/></a>&nbsp;
+  <a href="?action=delete&id=<?php echo $productlist_result['id']; ?>&dealer_id=<?php echo $_REQUEST['dealer_id'];?>&start=<?php echo $start; ?>"><img src="cms-images/delete.png" style="margin:0px 5px 0px 5px;" alt="Delete" title="Delete"/></a>&nbsp;
   <a href="#" target="_blank"><img src="cms-images/view.png" style="margin:0px 5px 0px 5px;" alt="View" title="View"/></a>&nbsp;
   </td>
 </tr>

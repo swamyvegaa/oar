@@ -20,15 +20,15 @@ $dealer=Dealeredit($_REQUEST['id'],$_REQUEST['start']);
 
 if(isset($_REQUEST['submit']) && $_REQUEST['submit']=='Save'){
    if(@$_REQUEST['dealer_store_name']!=''){
-  $denamere = "SELECT dealer_store_name  FROM  dealers WHERE dealer_status!='-1'  AND id!='".$_REQUEST['id']."' AND dealer_store_name='".$_REQUEST['dealer_store_name']."'"; 
+  $denamere = "SELECT dealer_store_name  FROM  dealers WHERE dealer_status!='-1'  AND id!='".$_REQUEST['id']."' AND dealer_store_name='".mysql_real_escape_string($_REQUEST['dealer_store_name'])."'"; 
   $denamere_num = sqlnumber($denamere);
   }
  if(@$_REQUEST['dealer_code']!=''){
- $decodere = "SELECT dealer_code  FROM  dealers WHERE dealer_status!='-1'  AND id!='".$_REQUEST['id']."' AND dealer_code='".$_REQUEST['dealer_code']."'"; 
+ $decodere = "SELECT dealer_code  FROM  dealers WHERE dealer_status!='-1'  AND id!='".$_REQUEST['id']."' AND dealer_code='".mysql_real_escape_string($_REQUEST['dealer_code'])."'"; 
  $decodere_num = $db->getRow($decodere);
  }
  if(@$_REQUEST['dealer_alias']!=''){
- $dealire = "SELECT dealer_alias  FROM  dealers WHERE dealer_status!='-1'  AND id!='".$_REQUEST['id']."' AND dealer_alias='".$_REQUEST['dealer_alias']."' AND dealer_alias!=''"; 
+ $dealire = "SELECT dealer_alias  FROM  dealers WHERE dealer_status!='-1'  AND id!='".$_REQUEST['id']."' AND dealer_alias='".mysql_real_escape_string($_REQUEST['dealer_alias'])."' AND dealer_alias!=''"; 
  $dealire_num = $db->getRow($dealire);
  }
  
@@ -73,7 +73,7 @@ $dir_pics = (isset($_GET['pics']) ? $_GET['pics'] : $dir_dest);
   if ($handle->uploaded) {
       
       $handle->image_resize         = true;
-	  $handle->image_y               = 250;
+	  $handle->image_y               = 350;
       $handle->image_x               = 750;
      
       $handle->process($dir_dest);
@@ -144,7 +144,7 @@ if(@$_REQUEST['dealer_show_in_sitemap']==''){
 $_REQUEST['dealer_show_in_sitemap']='0';
 }
 
-Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dealer_login_email'],@$_REQUEST['dealer_pwd'],@$_REQUEST['dealer_order'],@$_REQUEST['dealer_status'],@$_REQUEST['dealer_featured'],@$_REQUEST['dealer_show_in_sitemap'],@$_REQUEST['dealer_store_name'],@$_REQUEST['dealer_alias'],@$_REQUEST['dealer_title'],@$_REQUEST['dealer_address1'],@$_REQUEST['dealer_address2'],@$_REQUEST['dealer_address3'],@$_REQUEST['dealer_city'],@$_REQUEST['dealer_state'],@$_REQUEST['dealer_country'],@$_REQUEST['dealer_zip_code'],@$_REQUEST['dealer_phone'],@$_REQUEST['dealer_fax'],@$_REQUEST['dealer_toll_free'],@$_REQUEST['dealer_email'],@$_REQUEST['dealer_website'],@$_REQUEST['dealer_description_top'],@$_REQUEST['dealer_description_bottom'],@$handle->file_dst_name,@$foo->file_dst_name,@$dealer_icon->file_dst_name,@$_REQUEST['dealer_meta_title'],@$_REQUEST['dealer_meta_description'],@$_REQUEST['dealer_meta_keywords'],@$_REQUEST['dealer_ad'],$_REQUEST['start'],$_REQUEST['id']); 
+Delearupdate(mysql_real_escape_string(@$_REQUEST['dealer_name']),mysql_real_escape_string(@$_REQUEST['dealer_code']),@$_REQUEST['dealer_login_email'],@$_REQUEST['dealer_pwd'],@$_REQUEST['dealer_order'],@$_REQUEST['dealer_status'],@$_REQUEST['dealer_featured'],@$_REQUEST['dealer_show_in_sitemap'],mysql_real_escape_string(@$_REQUEST['dealer_store_name']),mysql_real_escape_string(@$_REQUEST['dealer_alias']),mysql_real_escape_string(@$_REQUEST['dealer_title']),mysql_real_escape_string(@$_REQUEST['dealer_address1']),mysql_real_escape_string(@$_REQUEST['dealer_address2']),mysql_real_escape_string(@$_REQUEST['dealer_address3']),mysql_real_escape_string(@$_REQUEST['dealer_city']),mysql_real_escape_string(@$_REQUEST['dealer_state']),mysql_real_escape_string(@$_REQUEST['dealer_country']),@$_REQUEST['dealer_zip_code'],@$_REQUEST['dealer_phone'],@$_REQUEST['dealer_fax'],@$_REQUEST['dealer_toll_free'],@$_REQUEST['dealer_email'],mysql_real_escape_string(@$_REQUEST['dealer_website']),mysql_real_escape_string(@$_REQUEST['dealer_description_top']),mysql_real_escape_string(@$_REQUEST['dealer_description_bottom']),@$handle->file_dst_name,@$foo->file_dst_name,@$dealer_icon->file_dst_name,mysql_real_escape_string(@$_REQUEST['dealer_meta_title']),mysql_real_escape_string(@$_REQUEST['dealer_meta_description']),mysql_real_escape_string(@$_REQUEST['dealer_meta_keywords']),mysql_real_escape_string(@$_REQUEST['dealer_ad']),$_REQUEST['start'],$_REQUEST['id']); 
  }
  
 }
@@ -354,7 +354,7 @@ Delearupdate(@$_REQUEST['dealer_name'],@$_REQUEST['dealer_code'],@$_REQUEST['dea
 <td width="300" align="left" valign="top">&nbsp;</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="submit" name="submit" id="submit"  value="Save"class="grey-button"/> 
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="dealers.php?start=<?php echo $_REQUEST['start'];?>" style="text-decoration:none;"><input class="grey-button" type="button" value="Cancel" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="dealers.php?start=<?php echo $_REQUEST['start'];?>" style="text-decoration:none;"><input class="grey-button" type="button" value="Cancel" onClick="window.history.go(-1);"/></a>
 </td>
 </tr>
 <tr>

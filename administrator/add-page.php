@@ -178,7 +178,7 @@ Pageadd(@$_REQUEST['page_name'],@$_REQUEST['page_alias'],@$_REQUEST['page_title'
 <td width="300" align="left" valign="top">&nbsp;</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="submit" name="submit" id="submit"  value="Save"  class="grey-button" />
-&nbsp;&nbsp;&nbsp;&nbsp;<input class="grey-button" type="button" value="Cancel" />
+&nbsp;&nbsp;&nbsp;&nbsp;<input class="grey-button" type="button" value="Cancel" onClick="window.history.go(-1);"/>
 </td>
 </tr>
 <tr>

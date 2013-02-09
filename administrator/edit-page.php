@@ -180,7 +180,7 @@ Pageupdate(@$_REQUEST['page_name'],@$_REQUEST['page_alias'],@$_REQUEST['page_tit
 <td width="300" align="left" valign="top">&nbsp;</td>
 <td width="50">&nbsp;</td>
 <td width="650" align="left"><input type="submit" name="submit" id="submit"  value="Save"  class="grey-button" />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="pages.php?start=<?php echo $_REQUEST['start']; ?>" style="text-decoration:none;"><input class="grey-button" type="button" value="Cancel" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="pages.php?start=<?php echo $_REQUEST['start']; ?>" style="text-decoration:none;"><input class="grey-button" type="button" value="Cancel" onClick="window.history.go(-1);"/></a>
 </td>
 </tr>
 <tr>
