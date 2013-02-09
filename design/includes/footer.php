@@ -62,8 +62,7 @@
 
 				<div id="foo-left">&copy; 2012&nbsp;&nbsp;On Antique Row Inc.&nbsp;&nbsp;All Rights Reserved.<br /></div>
 
-                <div id="foo-right-ifc-logo"><a href="http://www.ifortune.org" target="_blank"><img src="design/images/ifortune-logo.png"  /></a></div>
-                <div id="foo-right">Powered By<a href="http://www.ifortune.org" target="_blank">iFortune.org</a></div>
+                <div id="foo-right">Powered by<a href="http://www.ifortune.org" target="_blank">iFortune</a></div>
                 
                 
 

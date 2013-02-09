@@ -68,7 +68,7 @@
 <img src="design/images/icons/arrow-grey-icon.png" />
 </div>
 <div class="full-width-brdr clearfix"></div>
-<div class="featured-dealers-box">
+<div class="featured-categories-box">
 <ul>
 
 <li><a href="product-details.php" title="<?php echo $featuredProductsData[0]['product_name'];?>"><img src="<?php echo $featuredProductsData[0]['product_primary_image'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredProductsData[0]['product_name'];?>" title="<?php echo $featuredProductsData[0]['product_name'];?>"/></a>
@@ -95,7 +95,7 @@
 <img src="design/images/icons/arrow-grey-icon.png" />
 </div>
 <div class="full-width-brdr clearfix"></div>
-<div class="featured-dealers-box">
+<div class="featured-categories-box">
 <ul>
 
 <li><a href="category.php" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"><img src="<?php echo $featuredCategoriesData[0]['category_thumbnail'];?>" style="width:225px;height:225px;" alt="<?php echo $featuredCategoriesData[0]['category_name'];?>" title="<?php echo $featuredCategoriesData[0]['category_name'];?>"/></a>
@@ -112,7 +112,7 @@
 </li>
 </ul>
 </div>
-
+<div class="full-width-brdr clearfix"></div>
 <div id="featured-designers-box">
 <div class="page-link-buttons">
 <h4 class="clearleft">Featured Designers</h4>
