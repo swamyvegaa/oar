@@ -1,4 +1,9 @@
-RewriteEngine On
-RewriteRule ^dealer-inventory/(.*)$ dealer-inventory.php?code=$1
+Options +FollowSymLinks
 
-
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+RewriteRule ^dealer-inventory/(.*)/(.*)/(.*)$ dealer-inventory.php?name=$1&id=$2&page_id=$3
+RewriteRule ^category/(.*)/(.*)/(.*)$ category.php?name=$1&id=$2&page_id=$3
+RewriteRule ^(.*)/product-details/(.*)/(.*)/(.*)$ product-details.php?page=$1&name=$2&id=$3&page_id=$4

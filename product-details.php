@@ -1,6 +1,7 @@
 <?php 
 include 'common.php';
-$product_id=$_GET['product_id'];
+$page=preg_split('/.php/', $_GET['page']);
+$product_id=$_GET['id'];
 $products="select * from products where product_status=1 and id=".$product_id;
 $product_data = $db->getRow($products);
 $dealers="select * from dealers where id=".$product_data['product_dealer'];

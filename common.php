@@ -1,6 +1,7 @@
 <?php 
 ob_start();
 session_start();
+include("config/config.php");
 include("includes/functions.php");
 //include("includes/constants.php");
 include("classes/Database.class.php");
